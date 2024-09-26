@@ -10,6 +10,8 @@ import 'package:tergov/utils/constants/sizes.dart';
 // import 'package:url_launcher/url_launcher_string.dart';
 
 class TDeviceUtils {
+  TDeviceUtils._();
+
   static void hideKeyboard(BuildContext context) {
     FocusScope.of(context).requestFocus(FocusNode());
   }
@@ -118,7 +120,8 @@ class TDeviceUtils {
   }
 
   static bool isTabletScreen(BuildContext context) {
-    return MediaQuery.of(context).size.width >= TSizes.tabletScreenSize && MediaQuery.of(context).size.width <= TSizes.desktopScreenSize;
+    return MediaQuery.of(context).size.width >= TSizes.tabletScreenSize &&
+        MediaQuery.of(context).size.width <= TSizes.desktopScreenSize;
   }
 
   static bool isMobileScreen(BuildContext context) {

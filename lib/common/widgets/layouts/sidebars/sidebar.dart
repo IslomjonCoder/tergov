@@ -1,3 +1,4 @@
+import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
@@ -6,6 +7,7 @@ import 'package:tergov/common/widgets/layouts/sidebars/menu/menu_item.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/enums.dart';
 import 'package:tergov/utils/constants/sizes.dart';
+import 'package:tergov/utils/constants/text_strings.dart';
 
 class TSidebar extends StatelessWidget {
   const TSidebar({super.key});
@@ -21,14 +23,12 @@ class TSidebar extends StatelessWidget {
         ),
         child: Column(
           children: [
-            const TRoundedImage(
-              imageType: ImageType.network,
-              image: 'https://cdn.logojoy.com/wp-content/uploads/20220329171712/dating-app-logo-tinder.png',
-              height: 100,
-              width: 100,
-              fit: BoxFit.cover,
+
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 48),
+              child: Text(TTexts.appName,style: context.headlineMedium,),
             ),
-            const Gap(TSizes.spaceBtwSections),
+            const Divider(),
             Padding(
               padding: const EdgeInsets.all(TSizes.md),
               child: Column(
@@ -37,9 +37,8 @@ class TSidebar extends StatelessWidget {
                 children: [
                   Text("MENU", style: Theme.of(context).textTheme.bodySmall?.apply(letterSpacingDelta: 1.2)),
                   const Gap(TSizes.sm),
-                  const TMenuItem(itemName: "Dashboard", route: "/dashboard", icon: Iconsax.status),
-                  const TMenuItem(itemName: "Media", route: "/users", icon: Iconsax.image),
-                  const TMenuItem(itemName: "Banners", route: "/profile", icon: Iconsax.picture_frame),
+                  const TMenuItem(itemName: "Dashboard", route: "/dashboard", icon: Iconsax.home),
+                  const TMenuItem(itemName: "Profile", route: "/users", icon: Iconsax.profile_2user),
                   const TMenuItem(itemName: "Settings", route: "/settings", icon: Iconsax.setting),
                   const TMenuItem(itemName: "Logout", route: "/login", icon: Iconsax.logout),
                 ],
