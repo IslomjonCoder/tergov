@@ -23,7 +23,9 @@ class TLoginForm extends StatelessWidget {
           children: [
             /// Email
             TextFormField(
-              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: TTexts.email),
+              decoration: const InputDecoration(
+                  prefixIcon: Icon(Iconsax.direct_right),
+                  labelText: TTexts.email),
             ),
             const Gap(TSizes.spaceBtwInputFields),
 
@@ -37,7 +39,9 @@ class TLoginForm extends StatelessWidget {
                     prefixIcon: const Icon(Iconsax.password_check),
                     suffixIcon: IconButton(
                       onPressed: context.read<PasswordVisibilityCubit>().toggle,
-                      icon: Icon(context.watch<PasswordVisibilityCubit>().state ? Iconsax.eye_slash : Iconsax.eye),
+                      icon: Icon(context.watch<PasswordVisibilityCubit>().state
+                          ? Iconsax.eye_slash
+                          : Iconsax.eye),
                     ),
                     labelText: TTexts.password,
                   ),
@@ -63,7 +67,7 @@ class TLoginForm extends StatelessWidget {
                         );
                       }),
                     ),
-                    const Text(TTexts.rememberMe)
+                    const Text(TTexts.keepMe)
                   ],
                 ),
 
@@ -78,10 +82,28 @@ class TLoginForm extends StatelessWidget {
             const Gap(TSizes.spaceBtwSections),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(context, RouteNames.home, (route) => false);
+                Navigator.pushNamedAndRemoveUntil(
+                    context, RouteNames.home, (route) => false);
               },
               child: const Text(TTexts.signIn),
-            )
+            ),
+            const Gap(20),
+            RichText(
+              text: const TextSpan(
+                text: TTexts.notRegistered,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400),
+                children: [
+                  TextSpan(
+                      text: TTexts.createAccount,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF4318FF))),
+                ],
+              ),
+            ),
           ],
         ),
       ),
