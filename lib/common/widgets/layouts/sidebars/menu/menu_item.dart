@@ -32,25 +32,41 @@ class TMenuItem extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: TSizes.xs),
                   child: Container(
                     decoration: BoxDecoration(
-                      color: hoverState || activeState == route ? TColors.primary : Colors.transparent,
+                      color: hoverState || activeState == route ? TColors.white : Colors.transparent,
                       borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
+
                     ),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(TSizes.md).copyWith(left: TSizes.lg),
-                          child: activeState == route
-                              ? Icon(icon, color: TColors.white, size: 22)
-                              : Icon(icon, color: hoverState ? TColors.white : TColors.darkerGrey, size: 22),
-                        ),
-                        Flexible(
-                          child: Text(
-                            itemName,
-                            style: Theme.of(context).textTheme.bodyMedium
-                                ?.apply(color: hoverState || activeState == route ? TColors.white : TColors.darkerGrey),
+                    child: IntrinsicHeight(
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(TSizes.md).copyWith(left: TSizes.lg),
+                            child: activeState == route
+                                ? Icon(icon, color: TColors.primary, size: 22,)
+                                : Icon(icon, color: hoverState ? TColors.primary : TColors.darkGrey, size: 22),
                           ),
-                        )
-                      ],
+                          Expanded(
+                            child: Text(
+                              itemName,
+                              style: Theme.of(context).textTheme.bodyMedium
+                                  ?.apply(
+                                color: hoverState || activeState == route ? TColors.primary : TColors.darkGrey,
+                              ),
+                            ),
+                          ),
+                          Visibility(
+                            visible: activeState == route || hoverState,
+                            child: Container(
+                              width: 4,
+                              height: 36,
+                              decoration: BoxDecoration(
+                                color: hoverState || activeState == route ? TColors.primary : TColors.darkGrey,
+                                borderRadius: BorderRadius.circular(TSizes.borderRadiusFull),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

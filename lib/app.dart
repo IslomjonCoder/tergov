@@ -13,9 +13,6 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      // routerDelegate: AppRouter.router.routerDelegate,
-      // routeInformationParser: AppRouter.router.routeInformationParser,
-
       onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
