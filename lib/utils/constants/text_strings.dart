@@ -29,10 +29,10 @@ class TTexts {
   static const String newPassword = "New Password";
   static const String username = "Username";
   static const String phoneNo = "Phone Number";
-  static const String rememberMe = "Remember Me";
+  static const String keepMe = "Keep me logged in";
   static const String forgetPassword = "Forget Password?";
   static const String signIn = "Sign In";
-  static const String createAccount = "Create Account";
+  static const String createAccount = "Create an Account";
   static const String orSignInWith = "or sign in with";
   static const String orSignUpWith = "or sign up with";
   static const String iAgreeTo = "I agree to";
@@ -41,11 +41,12 @@ class TTexts {
   static const String verificationCode = "verificationCode";
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
+  static const String notRegistered = "Not registered yet? ";
 
 
   // -- Authentication Headings
-  static const String loginTitle = "Welcome back,";
-  static const String loginSubTitle = "Discover Limitless Choices and Unmatched Convenience.";
+  static const String loginTitle = "Sign in";
+  static const String loginSubTitle = "Enter your email and password to sign in!";
   static const String signupTitle = "Let’s create your account";
   static const String forgetPasswordTitle = "Forget password";
   static const String forgetPasswordSubTitle = "Don’t worry sometimes people can forget too, enter your email and we will send you a password reset link.";
