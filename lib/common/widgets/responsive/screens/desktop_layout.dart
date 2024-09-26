@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tergov/common/widgets/app_ui/app_constrained_scroll_view.dart';
 import 'package:tergov/common/widgets/layouts/headers/header.dart';
 import 'package:tergov/common/widgets/layouts/sidebars/sidebar.dart';
 
@@ -22,7 +23,7 @@ class DesktopLayout extends StatelessWidget {
                 // HEADER
                 const THeader(),
                 // BODY
-                if (body != null) body!,
+                if (body != null) Expanded(child: AppConstrainedScrollView(child: body!))
               ],
             ),
           )
