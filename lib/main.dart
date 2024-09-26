@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:tergov/app.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const App());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class TRoundedContainer extends StatelessWidget {
+  const TRoundedContainer({
+    super.key,
+    this.height,
+    this.width,
+    this.backgroundColor,
+    this.child,
+  });
+
+  final double? height, width;
+  final Color? backgroundColor;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return Container(
+      height: height,
+      width: width,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(8),
       ),
+      child: child,
     );
   }
 }
