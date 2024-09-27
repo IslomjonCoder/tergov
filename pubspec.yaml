@@ -18,7 +18,10 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   rename_app: ^1.6.1
   clay_containers: ^0.3.0
-  
+  animations: ^2.0.11
+  data_table_2: ^2.5.15
+  faker: ^2.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -29,7 +32,6 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/icons/
 
 flutter_launcher_icons:
   android: true
