@@ -8,7 +8,6 @@ import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/enums.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/device/device_utility.dart';
-import 'package:tergov/utils/extensions/context_extensions.dart';
 
 class THeader extends StatelessWidget implements PreferredSizeWidget {
   const THeader({super.key, this.scaffoldKey});
@@ -18,7 +17,7 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration:  BoxDecoration(
+      decoration:  const BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: TColors.grey)),
       ),

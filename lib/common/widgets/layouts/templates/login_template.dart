@@ -13,7 +13,7 @@ class TLoginTemplate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: SizedBox(
-        width: 800,
+        width: 550*2,
         child: SingleChildScrollView(
           child: Container(
             padding: padding ? TSpacingStyles.paddingWithAppBarHeight : EdgeInsets.zero,

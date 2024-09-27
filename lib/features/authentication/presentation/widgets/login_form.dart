@@ -77,7 +77,10 @@ class TLoginForm extends StatelessWidget {
             ),
             const Gap(TSizes.spaceBtwSections),
             ElevatedButton(
-              onPressed: () => Navigator.pushNamedAndRemoveUntil(context, RouteNames.navigation, (route) => false),
+              onPressed: () {
+                // Navigator.pushNamedAndRemoveUntil(
+                //     context, RouteNames.home, (route) => false);
+              },
               child: const Text(TTexts.signIn),
             ),
             const Gap(20),
@@ -88,21 +91,7 @@ class TLoginForm extends StatelessWidget {
                 TextButton(onPressed: () {}, child: const Text(TTexts.createAccount))
               ],
             )
-            // RichText(
-            //   text: const TextSpan(
-            //     text: TTexts.notRegistered,
-            //     style: TextStyle(color: Colors.black, fontSize: 12, fontWeight: FontWeight.w400),
-            //     children: [
-            //       TextSpan(
-            //         text: TTexts.createAccount,
-            //         style: TextStyle(
-            //           fontWeight: FontWeight.bold,
-            //           color: Color(0xFF4318FF),
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+
           ],
         ),
       ),

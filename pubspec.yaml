@@ -18,6 +18,14 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   rename_app: ^1.6.1
   clay_containers: ^0.3.0
+  intl: ^0.17.0
+  awesome_flutter_extensions: ^1.2.0
+  flutter_svg: ^1.1.4
+  fl_chart: ^0.69.0
+  mask_text_input_formatter:
+  dotted_line:
+  dotted_border:
+
   animations: ^2.0.11
   data_table_2: ^2.5.15
   faker: ^2.2.0
