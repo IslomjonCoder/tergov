@@ -4,7 +4,6 @@ import 'package:tergov/common/widgets/layouts/templates/login_template.dart';
 import 'package:tergov/features/authentication/presentation/widgets/login_form.dart';
 import 'package:tergov/features/authentication/presentation/widgets/login_header.dart';
 
-import '../../../../../../common/styles/spacing_styles.dart';
 import '../../../../../../utils/constants/sizes.dart';
 
 class LoginDesktopTablet extends StatelessWidget {
