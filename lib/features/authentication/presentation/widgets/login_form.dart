@@ -88,20 +88,22 @@ class TLoginForm extends StatelessWidget {
               child: const Text(TTexts.signIn),
             ),
             const Gap(20),
-            RichText(
-              text: const TextSpan(
-                text: TTexts.notRegistered,
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400),
-                children: [
-                  TextSpan(
-                      text: TTexts.createAccount,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          color: Color(0xFF4318FF))),
-                ],
+            Center(
+              child: RichText(
+                text: const TextSpan(
+                  text: TTexts.notRegistered,
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 12,
+                      fontWeight: FontWeight.w400),
+                  children: [
+                    TextSpan(
+                        text: TTexts.createAccount,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color(0xFF4318FF))),
+                  ],
+                ),
               ),
             ),
           ],
