@@ -6,18 +6,19 @@ import '../../../../../../../utils/constants/colors.dart';
 
 class WarningContainer extends StatelessWidget {
   final String title;
+  final bool margin;
 
   const WarningContainer({
     super.key,
-    required this.title,
+    required this.title, required this.margin,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(26.0),
-      margin: const EdgeInsets.symmetric(
-        horizontal: 100,
+      margin: EdgeInsets.symmetric(
+        horizontal: margin? 100 : 0,
       ),
       width: double.infinity,
       decoration: BoxDecoration(
@@ -26,16 +27,17 @@ class WarningContainer extends StatelessWidget {
           color: TColors.white),
       child: Column(
         children: [
-          const Text(
+          Text(
             "Предупреждение",
             style: TextStyle(
-                fontSize: 30,
+                fontSize:margin? 30 : 20,
                 fontWeight: FontWeight.w700,
-                color: TColors.black),
+                color: TColors.black,
+            ),
           ),
           Text(
             title,
-            style: context.headlineMedium,
+            style: margin? context.headlineMedium : context.titleSmall,
           ),
           const Gap(10),
           // const DottedUploadBox()

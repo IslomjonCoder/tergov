@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import '../../../../../../../utils/constants/colors.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/social_data_elements.dart';
 
@@ -18,10 +19,12 @@ class StepPart extends StatelessWidget {
               color: TColors.text006,
               fontWeight: FontWeight.w600),
         ),
+        const Gap(5.0),
+        Image.asset("assets/images/step_icon.png", width: 400),
+
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("assets/images/step_icon.png", width: 400),
             SocialDataElements(
               title: '838 Cantt Sialkot, pakistan',
               icon: "assets/icons/location.svg",
