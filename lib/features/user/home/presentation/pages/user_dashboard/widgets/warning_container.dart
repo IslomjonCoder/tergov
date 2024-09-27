@@ -1,7 +1,6 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/upload_signature_button.dart';
 
 import '../../../../../../../utils/constants/colors.dart';
 

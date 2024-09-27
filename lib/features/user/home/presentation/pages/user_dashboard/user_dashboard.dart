@@ -8,7 +8,7 @@ class UserDashboardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  TSiteTemplate(
+    return  const TSiteTemplate(
       useLayout: false,
       desktop: UserDashboardDesktop(),
       tablet: UserDashboardTablet(),

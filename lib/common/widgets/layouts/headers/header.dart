@@ -17,7 +17,7 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration:  const BoxDecoration(
         color: Colors.white,
         border: Border(bottom: BorderSide(color: TColors.grey)),
       ),

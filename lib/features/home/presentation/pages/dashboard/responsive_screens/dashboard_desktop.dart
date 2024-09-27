@@ -10,7 +10,7 @@ import 'package:tergov/utils/constants/colors.dart';
 
 
 class DashboardDesktop extends StatelessWidget {
-   DashboardDesktop({super.key});
+   const DashboardDesktop({super.key});
 
 
 

@@ -23,7 +23,7 @@ class GlobalTextField extends StatefulWidget {
   });
 
   @override
-  _GlobalTextFieldState createState() => _GlobalTextFieldState();
+  State<GlobalTextField> createState() => _GlobalTextFieldState();
 }
 
 class _GlobalTextFieldState extends State<GlobalTextField> {
