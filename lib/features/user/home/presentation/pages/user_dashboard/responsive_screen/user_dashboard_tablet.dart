@@ -9,6 +9,7 @@ import '../widgets/warning_message.dart';
 class UserDashboardTablet extends StatelessWidget {
   const UserDashboardTablet({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
