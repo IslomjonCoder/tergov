@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tergov/common/widgets/app_ui/app_constrained_scroll_view.dart';
-import 'package:tergov/features/authentication/presentation/manager/login/login_cubit.dart';
-import 'package:tergov/features/authentication/presentation/manager/remember_cubit/remember_cubit.dart';
 import 'package:tergov/features/authentication/presentation/widgets/login_form.dart';
 import 'package:tergov/features/authentication/presentation/widgets/login_header.dart';
 import 'package:tergov/utils/constants/sizes.dart';
@@ -13,24 +10,18 @@ class LoginMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (context) => RememberCubit()),
-        BlocProvider(create: (context) => LoginCubit(rememberCubit: context.read<RememberCubit>())),
-      ],
-      child: Scaffold(
-        body: AppConstrainedScrollView(
-          padding: const EdgeInsets.all(TSizes.defaultSpace).copyWith(top: TSizes.defaultSpace + TDeviceUtils.getAppBarHeight()),
-          child: const Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              /// Header
-              TLoginHeader(),
+    return Scaffold(
+      body: AppConstrainedScrollView(
+        padding: const EdgeInsets.all(TSizes.defaultSpace).copyWith(top: TSizes.defaultSpace + TDeviceUtils.getAppBarHeight()),
+        child: const Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            /// Header
+            TLoginHeader(),
 
-              /// Form
-              TLoginForm(),
-            ],
-          ),
+            /// Form
+            TLoginForm(),
+          ],
         ),
       ),
     );

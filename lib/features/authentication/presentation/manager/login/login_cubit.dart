@@ -14,5 +14,12 @@ class LoginCubit extends Cubit<LoginState> {
 
   void login() async {
     if (!formKey.currentState!.validate()) return;
+
+    emit(LoginLoading());
+
+    await Future.delayed(const Duration(seconds: 2));
+
+    emit(LoginSuccess());
+
   }
 }
