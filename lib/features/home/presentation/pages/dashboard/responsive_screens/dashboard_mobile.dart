@@ -51,7 +51,7 @@ class DashboardMobile extends StatelessWidget {
               create: (context) => FilterCubit(),
               child: BlocBuilder<FilterCubit, int>(
                 builder: (context, state) {
-                  return const CustomFilter();
+                  return const CustomFilter(isMobile: true,);
                 },
               ),
             ),

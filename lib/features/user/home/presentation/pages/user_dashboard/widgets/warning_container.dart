@@ -30,14 +30,14 @@ class WarningContainer extends StatelessWidget {
           Text(
             "Предупреждение",
             style: TextStyle(
-                fontSize:margin? 30 : 20,
+                fontSize:margin? 30 : 15,
                 fontWeight: FontWeight.w700,
                 color: TColors.black,
             ),
           ),
           Text(
             title,
-            style: margin? context.headlineMedium : context.titleSmall,
+            // style: margin? context.headlineMedium : context.titleSmall,
           ),
           const Gap(10),
           // const DottedUploadBox()

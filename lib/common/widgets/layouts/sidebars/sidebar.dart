@@ -9,6 +9,8 @@ import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
+import '../log_out_dialog/log_out_dialog.dart';
+
 class TSidebar extends StatelessWidget {
   const TSidebar({super.key});
 
@@ -41,6 +43,7 @@ class TSidebar extends StatelessWidget {
                     const Gap(TSizes.sm),
                     const TMenuItem(itemName: "Dashboard", route: RouteNames.dashboard, icon: Iconsax.home),
                     const TMenuItem(itemName: "Profile", route: RouteNames.profile, icon: Iconsax.profile_2user),
+                    const TMenuItem(itemName: "User", route: RouteNames.user, icon: Iconsax.user),
                   ],
                 ),
               ),
@@ -52,7 +55,7 @@ class TSidebar extends StatelessWidget {
                   itemName: "Logout",
                   route: RouteNames.login,
                   icon: Iconsax.logout,
-                  onTap: () => Navigator.pushNamedAndRemoveUntil(context, RouteNames.login, (Route<dynamic> route) => false),
+                  onTap: () => showAdaptiveLogoutDialog(context)
                 ),
               ),
             ],
