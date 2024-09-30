@@ -3,15 +3,13 @@ import 'package:tergov/features/authentication/presentation/pages/forget_passwor
 import 'package:tergov/features/authentication/presentation/pages/login/login_screen.dart';
 import 'package:tergov/features/authentication/presentation/pages/reset_password/reset_password_screen.dart';
 import 'package:tergov/features/navigation/presentation/pages/navigation_screen.dart';
-import 'package:tergov/features/user/home/presentation/pages/home_page.dart';
-import 'package:tergov/features/user/home/presentation/pages/user_dashboard/responsive_screen/user_dashboard_desktop.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
 class AppRouter {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteNames.root:
-        return MaterialPageRoute(builder: (context) =>  const NavigationScreen());
+        return MaterialPageRoute(builder: (context) =>  const LoginScreen());
       case RouteNames.login:
         return MaterialPageRoute(builder: (context) => const LoginScreen());
       case RouteNames.forgetPassword:

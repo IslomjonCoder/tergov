@@ -19,19 +19,16 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Theme(
-      data: context.theme.copyWith(drawerTheme: DrawerThemeData(width: 304)),
-      child: LayoutBuilder(
-        builder: (_, constraints) {
-          final bodyWidth = constraints.maxWidth + (useLayout == false ? context.width - constraints.maxWidth : 0);
-          if (bodyWidth >= TSizes.desktopScreenSize) {
-            return desktop;
-          } else if (constraints.maxWidth <= TSizes.desktopScreenSize && constraints.maxWidth >= TSizes.tabletScreenSize) {
-            return tablet;
-          }
-          return mobile;
-        },
-      ),
+    return LayoutBuilder(
+      builder: (_, constraints) {
+        final bodyWidth = constraints.maxWidth + (useLayout == false ? context.width - constraints.maxWidth : 0);
+        if (bodyWidth >= TSizes.desktopScreenSize) {
+          return desktop;
+        } else if (constraints.maxWidth <= TSizes.desktopScreenSize && constraints.maxWidth >= TSizes.tabletScreenSize) {
+          return tablet;
+        }
+        return mobile;
+      },
     );
   }
 }

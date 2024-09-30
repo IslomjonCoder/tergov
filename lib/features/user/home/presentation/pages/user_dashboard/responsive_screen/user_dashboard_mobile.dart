@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:tergov/features/user/home/presentation/pages/user_dashboard/responsive_screen/user_dashboard_desktop.dart';
 import '../../../../../../../utils/constants/sizes.dart';
 import '../widgets/info_card.dart';
 import '../widgets/info_form.dart';
