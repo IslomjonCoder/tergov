@@ -1,8 +1,10 @@
+import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:tergov/utils/constants/sizes.dart';
 
 /// Widget for displaying different layouts based on screen size
 class ResponsiveWidget extends StatelessWidget {
-  const ResponsiveWidget({super.key, required this.desktop, required this.tablet, required this.mobile});
+  const ResponsiveWidget({super.key, required this.desktop, required this.tablet, required this.mobile, this.useLayout = true});
 
   /// Widget for desktop layout
   final Widget desktop;
@@ -13,17 +15,23 @@ class ResponsiveWidget extends StatelessWidget {
   /// Widget for mobile layout
   final Widget mobile;
 
+  final bool useLayout;
+
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (_, constraints) {
-        if (constraints.maxWidth >= 1366) {
-          return desktop;
-        } else if (constraints.maxWidth <= 1366 && constraints.maxWidth >= 768) {
-          return tablet;
-        }
-        return mobile;
-      },
+    return Theme(
+      data: context.theme.copyWith(drawerTheme: DrawerThemeData(width: 304)),
+      child: LayoutBuilder(
+        builder: (_, constraints) {
+          final bodyWidth = constraints.maxWidth + (useLayout == false ? context.width - constraints.maxWidth : 0);
+          if (bodyWidth >= TSizes.desktopScreenSize) {
+            return desktop;
+          } else if (constraints.maxWidth <= TSizes.desktopScreenSize && constraints.maxWidth >= TSizes.tabletScreenSize) {
+            return tablet;
+          }
+          return mobile;
+        },
+      ),
     );
   }
 }

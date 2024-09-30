@@ -10,18 +10,8 @@ import 'package:tergov/utils/routes/route_names.dart';
 
 import '../../../../common/widgets/layouts/sidebars/cubits/sidebar_active_cubit.dart';
 
-class NavigationScreen extends StatefulWidget {
+class NavigationScreen extends StatelessWidget {
   const NavigationScreen({super.key});
-
-  @override
-  State<NavigationScreen> createState() => _NavigationScreenState();
-}
-
-class _NavigationScreenState extends State<NavigationScreen> {
-  final Map<String, Widget> routes = {
-    RouteNames.dashboard: const DashboardScreen(),
-    RouteNames.profile: const ProfileScreen(),
-  };
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +19,7 @@ class _NavigationScreenState extends State<NavigationScreen> {
       body: BlocProvider(
         create: (context) => SideBarActiveCubit(),
         child: const TSiteTemplate(
+
           desktop: NavigationDesktop(),
           mobile: NavigationMobile(),
           tablet: NavigationTablet(),

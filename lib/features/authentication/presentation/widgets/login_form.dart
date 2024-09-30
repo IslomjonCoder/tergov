@@ -78,8 +78,7 @@ class TLoginForm extends StatelessWidget {
             const Gap(TSizes.spaceBtwSections),
             ElevatedButton(
               onPressed: () {
-                // Navigator.pushNamedAndRemoveUntil(
-                //     context, RouteNames.home, (route) => false);
+                Navigator.pushNamedAndRemoveUntil(context, RouteNames.navigation, (route) => false);
               },
               child: const Text(TTexts.signIn),
             ),
@@ -91,7 +90,6 @@ class TLoginForm extends StatelessWidget {
                 TextButton(onPressed: () {}, child: const Text(TTexts.createAccount))
               ],
             )
-
           ],
         ),
       ),
