@@ -18,6 +18,7 @@ class TSiteTemplate extends StatelessWidget {
         desktop: useLayout ? DesktopLayout(body: desktop) : desktop ?? Container(),
         tablet: useLayout ? TabletLayout(body: tablet ?? desktop) : tablet ?? desktop ?? Container(),
         mobile: useLayout ? MobileLayout(body: mobile ?? desktop) : mobile ?? desktop ?? Container(),
+        useLayout: useLayout,
       ),
     );
   }
