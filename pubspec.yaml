@@ -29,6 +29,7 @@ dependencies:
   animations: ^2.0.11
   data_table_2: ^2.5.15
   faker: ^2.2.0
+  supabase_flutter: ^2.7.0
 
 dev_dependencies:
   flutter_test:

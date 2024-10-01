@@ -3,7 +3,7 @@ abstract class AppValidators {
     if (value == null || value.isEmpty) {
       return 'Email cannot be empty';
     }
-    final RegExp emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+    final RegExp emailRegex = RegExp(r'^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$');
 
     if (!emailRegex.hasMatch(value)) {
       return 'Invalid email address';
@@ -17,6 +17,13 @@ abstract class AppValidators {
     }
     if (value.length < 6) {
       return 'Password must be at least 6 characters';
+    }
+    return null;
+  }
+
+  static String? validateEmpty(String? value, {required String fieldName}) {
+    if (value == null || value.isEmpty) {
+      return '$fieldName cannot be empty';
     }
     return null;
   }
