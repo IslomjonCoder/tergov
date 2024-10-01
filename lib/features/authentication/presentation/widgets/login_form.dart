@@ -79,7 +79,7 @@ class TLoginForm extends StatelessWidget {
 
                 /// Forget Password
                 TextButton(
-                    child: Text(S.of(context).forgotPassword))
+                    child: Text(S.of(context).forgotPassword),
                   onPressed: () => Navigator.pushNamed(context, RouteNames.forgetPassword),
                 )
               ],
