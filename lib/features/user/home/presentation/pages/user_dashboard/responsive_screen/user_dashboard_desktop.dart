@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_form_2.dart';
+import 'package:tergov/utils/constants/sizes.dart';
+import '../../../../cubit/info_form_cubit.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import '../widgets/background_image.dart';
 import '../widgets/info_card.dart';
-import '../widgets/info_form.dart';
+import '../widgets/info_form_1.dart';
+import '../widgets/next_form_button.dart';
 import '../widgets/step_part.dart';
 import '../widgets/warning_message.dart';
 
@@ -12,31 +17,43 @@ class UserDashboardDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Stack(
+    return Stack(
       children: [
-        BackgroundImage(),
+        const BackgroundImage(),
         SingleChildScrollView(
           child: Center(
-            child: Column(
-              children: [
-                InfoCard(
-                  child: Padding(
-                    padding: EdgeInsets.all(16.0),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(child: InfoForm()),
-                        Gap(TSizes.lg),
-                        StepPart(),
-                      ],
-                    ),
-                  ),
-                ),
-                Gap(50),
-                WarningMessage(),
-                Gap(50),
-              ],
+            child: BlocProvider(
+              create: (context) => FormCubit(),
+              child: BlocBuilder<FormCubit,bool>(
+                builder: (context, state) {
+                  return Column(
+                    children: [
+                      InfoCard(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Expanded(child: state ? const InfoFormFirst() : const InfoFormSecond()),
+                                  const Gap(TSizes.lg),
+                                  StepPart(step: "Шаг ${state ? "1" : "2"}",),
+                                ],
+                              ),
+                              const Gap(50),
+                              const WarningMessage(
+                                padding: false,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
             ),
           ),
         ),

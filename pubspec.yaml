@@ -18,17 +18,21 @@ dependencies:
   flutter_launcher_icons: ^0.14.1
   rename_app: ^1.6.1
   clay_containers: ^0.3.0
-  intl: ^0.17.0
+  intl: any
   awesome_flutter_extensions: ^1.2.0
   flutter_svg: ^1.1.4
   fl_chart: ^0.69.0
   mask_text_input_formatter:
   dotted_line:
   dotted_border:
+  shared_preferences:
 
   animations: ^2.0.11
   data_table_2: ^2.5.15
   faker: ^2.2.0
+  flutter_localizations:
+    sdk: flutter
+
   supabase_flutter: ^2.7.0
 
 dev_dependencies:
@@ -38,16 +42,19 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true
 
   assets:
     - assets/images/
+    - assets/icons/
 
 flutter_launcher_icons:
   android: true
   ios: true
   macos:
     image_path: "assets/images/logo.png"
-
+flutter_intl:
+  enabled: true
 
 
 

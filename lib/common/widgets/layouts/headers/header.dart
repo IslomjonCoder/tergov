@@ -1,6 +1,7 @@
 // import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tergov/common/widgets/images/t_rounded_image.dart';
@@ -8,6 +9,9 @@ import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/enums.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/device/device_utility.dart';
+
+import '../../../../generated/l10n.dart';
+import '../../../../locale_cubit/locale_cubit.dart';
 
 class THeader extends StatelessWidget implements PreferredSizeWidget {
   const THeader({super.key, this.scaffoldKey});
@@ -40,7 +44,7 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
         /// Actions
         actions: <Widget>[
           if (!TDeviceUtils.isMobileScreen(context)) IconButton(onPressed: () {}, icon: const Icon(Iconsax.notification)),
-          if (!TDeviceUtils.isMobileScreen(context)) IconButton(onPressed: () {}, icon: const Icon(Iconsax.moon)),
+          if (!TDeviceUtils.isMobileScreen(context)) IconButton(onPressed: (){_showLanguageDialog(context);}, icon: const Icon(Iconsax.language_circle)),
           if (!TDeviceUtils.isMobileScreen(context)) IconButton(onPressed: () {}, icon: const Icon(Iconsax.info_circle)),
           const Gap(TSizes.spaceBtwItems / 2),
           Row(
@@ -72,21 +76,23 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
               offset: const Offset(0, TSizes.appBarHeight),
               itemBuilder: (context) {
                 return [
-                  const PopupMenuItem(
+                   PopupMenuItem(
                     child: MoreItem(
-                      itemName: 'Notifications',
+                      itemName: S.of(context).notification,
                       icon: Iconsax.notification,
                     ),
                   ),
-                  const PopupMenuItem(
+                   PopupMenuItem(
+                     onTap: (){_showLanguageDialog(context);},
                     child: MoreItem(
-                      itemName: 'Change theme',
-                      icon: Iconsax.moon,
+                      itemName: S.of(context).language,
+                      icon: Iconsax.language_circle,
+
                     ),
                   ),
-                  const PopupMenuItem(
+                   PopupMenuItem(
                     child: MoreItem(
-                      itemName: 'Information',
+                      itemName: S.of(context).mainInfo,
                       icon: Iconsax.info_circle,
                     ),
                   ),
@@ -102,8 +108,53 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight() + 15);
-}
 
+  void _showLanguageDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text(S.of(context).selectLanguage),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ListTile(
+                title: const Text('English'),
+                onTap: () {
+                  _changeLanguage(context, const Locale('en'));
+                },
+              ),
+              ListTile(
+                title: const Text('Русский'),
+                onTap: () {
+                  _changeLanguage(context, const Locale('ru'));
+                },
+              ),
+              ListTile(
+                title: const Text("O'zbekcha"),
+                onTap: () {
+                  _changeLanguage(context, const Locale('uz'));
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  void _changeLanguage(BuildContext context, Locale locale) {
+    context.read<LocaleCubit>().changeLocale(locale);
+    S.load(locale);
+    Navigator.of(context).pop();
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(S.of(context).languageChanged),
+      ),
+    );
+  }
+}
 class MoreItem extends StatelessWidget {
   const MoreItem({
     super.key,

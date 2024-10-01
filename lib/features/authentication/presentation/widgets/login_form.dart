@@ -10,6 +10,8 @@ import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 import 'package:tergov/utils/validators/validators.dart';
 
+import '../../../../generated/l10n.dart';
+
 class TLoginForm extends StatelessWidget {
   const TLoginForm({
     super.key,
@@ -27,10 +29,10 @@ class TLoginForm extends StatelessWidget {
           children: [
             /// Email
             TextFormField(
+              decoration:  InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: S.of(context).email),
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               controller: context.read<LoginCubit>().emailController,
-              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: TTexts.email),
               validator: AppValidators.validateEmail,
             ),
             const Gap(TSizes.spaceBtwInputFields),
@@ -52,7 +54,7 @@ class TLoginForm extends StatelessWidget {
                       onPressed: context.read<PasswordVisibilityCubit>().toggle,
                       icon: Icon(context.watch<PasswordVisibilityCubit>().state ? Iconsax.eye_slash : Iconsax.eye),
                     ),
-                    labelText: TTexts.password,
+                    labelText: S.of(context).password,
                   ),
                 );
               }),
@@ -71,28 +73,28 @@ class TLoginForm extends StatelessWidget {
                       value: context.watch<RememberCubit>().state,
                       onChanged: context.read<RememberCubit>().toggle,
                     ),
-                    const Text(TTexts.keepMe)
+                     Text(S.of(context).keepMeLoggedIn)
                   ],
                 ),
 
                 /// Forget Password
                 TextButton(
+                    child: Text(S.of(context).forgotPassword))
                   onPressed: () => Navigator.pushNamed(context, RouteNames.forgetPassword),
-                  child: const Text(TTexts.forgetPassword),
                 )
               ],
             ),
             const Gap(TSizes.spaceBtwSections),
             ElevatedButton(
+              child:  Text(S.of(context).signIn),
               onPressed: context.read<LoginCubit>().login,
-              child: const Text(TTexts.signIn),
             ),
             const Gap(20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(TTexts.notRegistered, style: Theme.of(context).textTheme.bodySmall),
-                TextButton(onPressed: () {}, child: const Text(TTexts.createAccount))
+                Text(S.of(context).notRegistered, style: Theme.of(context).textTheme.bodySmall),
+                TextButton(onPressed: () {}, child:  Text(S.of(context).createAccount))
               ],
             )
           ],
