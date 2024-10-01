@@ -5,6 +5,7 @@ import 'package:tergov/features/home/presentation/cubit/date_cubit.dart';
 import 'package:tergov/features/home/presentation/cubit/filter_cubit.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/calendar_icon_button.dart';
 
+import '../../../../../../generated/l10n.dart';
 import '../../../../../../utils/constants/colors.dart';
 
 class CustomFilter extends StatelessWidget {
@@ -34,9 +35,9 @@ class CustomFilter extends StatelessWidget {
                       return Row(
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildFilterButton(context, 0, "День", selectedIndex, isFirst: true),
-                          _buildFilterButton(context, 1, "Неделя", selectedIndex),
-                          _buildFilterButton(context, 2, "Год", selectedIndex, isLast: true),
+                          _buildFilterButton(context, 0, S.of(context).day, selectedIndex, isFirst: true),
+                          _buildFilterButton(context, 1, S.of(context).week, selectedIndex),
+                          _buildFilterButton(context, 2, S.of(context).year, selectedIndex, isLast: true),
                         ],
                       );
                     },
@@ -59,9 +60,9 @@ class CustomFilter extends StatelessWidget {
                       return Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          _buildFilterButton(context, 0, "День", selectedIndex, isFirst: true),
-                          _buildFilterButton(context, 1, "Неделя", selectedIndex),
-                          _buildFilterButton(context, 2, "Год", selectedIndex, isLast: true),
+                          _buildFilterButton(context, 0, S.of(context).day, selectedIndex, isFirst: true),
+                          _buildFilterButton(context, 1, S.of(context).week, selectedIndex),
+                          _buildFilterButton(context, 2, S.of(context).year, selectedIndex, isLast: true),
                         ],
                       );
                     },

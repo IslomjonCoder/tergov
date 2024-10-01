@@ -4,11 +4,13 @@ import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tergov/common/widgets/app_ui/app_constrained_scroll_view.dart';
 import 'package:tergov/common/widgets/layouts/sidebars/menu/menu_item.dart';
+import 'package:tergov/features/home/presentation/pages/dashboard/responsive_screens/dashboard_desktop.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
+import '../../../../generated/l10n.dart';
 import '../log_out_dialog/log_out_dialog.dart';
 
 class TSidebar extends StatelessWidget {
@@ -35,24 +37,24 @@ class TSidebar extends StatelessWidget {
               ),
               const Divider(),
               Padding(
-                padding: const EdgeInsets.all(TSizes.md),
+                padding:  const EdgeInsets.all(TSizes.md),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("MENU", style: Theme.of(context).textTheme.bodySmall?.apply(letterSpacingDelta: 1.2)),
+                    Text(S.of(context).menu, style: Theme.of(context).textTheme.bodySmall?.apply(letterSpacingDelta: 1.2)),
                     const Gap(TSizes.sm),
-                    const TMenuItem(itemName: "Dashboard", route: RouteNames.dashboard, icon: Iconsax.home),
-                    const TMenuItem(itemName: "Profile", route: RouteNames.profile, icon: Iconsax.profile_2user),
-                    const TMenuItem(itemName: "User", route: RouteNames.user, icon: Iconsax.user),
+                    TMenuItem(itemName: S.of(context).dashboard, route: RouteNames.dashboard, icon: Iconsax.home),
+                    TMenuItem(itemName: S.of(context).profile, route: RouteNames.profile, icon: Iconsax.profile_2user),
+                    TMenuItem(itemName: S.of(context).user, route: RouteNames.user, icon: Iconsax.user),
                   ],
                 ),
               ),
               const Spacer(),
 
               Padding(
-                padding: const EdgeInsets.all(TSizes.md),
+                padding:  EdgeInsets.all(TSizes.md),
                 child: TMenuItem(
-                  itemName: "Logout",
+                  itemName: S.of(context).logout,
                   route: RouteNames.login,
                   icon: Iconsax.logout,
                   onTap: () => showAdaptiveLogoutDialog(context)

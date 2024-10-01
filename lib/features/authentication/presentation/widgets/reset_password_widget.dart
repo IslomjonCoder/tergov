@@ -5,6 +5,8 @@ import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
+import '../../../../generated/l10n.dart';
+
 class TResetPasswordWidget extends StatelessWidget {
   const TResetPasswordWidget({
     super.key,
@@ -21,15 +23,15 @@ class TResetPasswordWidget extends StatelessWidget {
             },
             icon: const Icon(Icons.close)),
         const Gap(TSizes.spaceBtwItems),
-        Text(TTexts.changeYourPasswordTitle, style: context.headlineMedium, textAlign: TextAlign.center),
+        Text(S.of(context).changeYourPasswordTitle, style: context.headlineMedium, textAlign: TextAlign.center),
         const Gap(TSizes.spaceBtwItems),
-        Text('example@123', style: context.labelLarge, textAlign: TextAlign.center),
+        Text('example@gmail.com', style: context.labelLarge, textAlign: TextAlign.center),
         const Gap(TSizes.spaceBtwItems),
-        Text(TTexts.changeYourPasswordSubTitle, style: context.labelMedium, textAlign: TextAlign.center),
+        Text(S.of(context).changeYourPasswordSubTitle, style: context.labelMedium, textAlign: TextAlign.center),
         const Gap(TSizes.spaceBtwSections),
-        SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: const Text(TTexts.done))),
+        SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: Text(S.of(context).done))),
         const Gap(TSizes.spaceBtwItems),
-        TextButton(onPressed: () {}, child: const Text(TTexts.resendEmail))
+        TextButton(onPressed: () {}, child: Text(S.of(context).resendEmail))
       ],
     );
   }

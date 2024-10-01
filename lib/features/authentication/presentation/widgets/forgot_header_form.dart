@@ -6,6 +6,8 @@ import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
+import '../../../../generated/l10n.dart';
+
 class ForgotHeaderAndForm extends StatelessWidget {
   const ForgotHeaderAndForm({
     super.key,
@@ -19,17 +21,17 @@ class ForgotHeaderAndForm extends StatelessWidget {
         /// Header
         IconButton(onPressed: () => context.canPop() ? context.pop() : context.pushNamed(RouteNames.login), icon: const Icon(Iconsax.arrow_left)),
         const Gap(TSizes.spaceBtwItems),
-        Text(TTexts.forgetPasswordTitle, style: context.headlineMedium),
+        Text(S.of(context).forgotPassword, style: context.headlineMedium),
         const Gap(TSizes.spaceBtwItems),
-        Text(TTexts.forgetPasswordSubTitle, style: context.labelMedium),
+        Text(S.of(context).forgotPasswordSubTitle, style: context.labelMedium),
         const Gap(TSizes.spaceBtwSections * 2),
 
         /// Form
         Form(
           child: TextFormField(
-            decoration: const InputDecoration(
-              labelText: TTexts.email,
-              prefixIcon: Icon(Iconsax.direct_right),
+            decoration:  InputDecoration(
+              labelText: S.of(context).email,
+              prefixIcon: const Icon(Iconsax.direct_right),
             ),
           ),
         ),
@@ -40,7 +42,7 @@ class ForgotHeaderAndForm extends StatelessWidget {
             onPressed: () {
               context.pushNamed(RouteNames.resetPassword);
             },
-            child: const Text(TTexts.submit),
+            child:  Text(S.of(context).submit),
           ),
         )
       ],

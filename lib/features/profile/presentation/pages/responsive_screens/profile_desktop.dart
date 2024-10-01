@@ -7,6 +7,8 @@ import 'package:iconsax/iconsax.dart';
 import 'package:tergov/features/dashboard/presentation/manager/users_table/users_list_cubit.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/sizes.dart';
+
+import '../../../../../generated/l10n.dart';
 class ProfileDesktop extends StatelessWidget {
   const ProfileDesktop({super.key});
 
@@ -35,9 +37,9 @@ class SearchField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onChanged: (value) => context.read<UsersListCubit>().search(value),
-      decoration: const InputDecoration(
-        prefixIcon: Icon(Iconsax.search_normal),
-        hintText: 'Search',
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Iconsax.search_normal),
+        hintText: S.of(context).search,
       ),
     );
   }
@@ -78,12 +80,12 @@ class UsersDataTable extends StatelessWidget {
         },
         sortColumnIndex: context.watch<UsersListCubit>().state.selectedColumnIndex,
         columns:  [
-          DataColumn2(label: const Text('Name'), size: ColumnSize.L, onSort: context.read<UsersListCubit>().sortById),
-          DataColumn2(label: const Text('Status'), size: ColumnSize.S, onSort: context.read<UsersListCubit>().sortById),
-          const DataColumn2(label: Text('Phone Number')),
-          const DataColumn2(label: Text('Job')),
-          const DataColumn2(label: Text('Address')),
-          const DataColumn2(label: Text('Marital status'), size: ColumnSize.S),
+          DataColumn2(label:  Text(S.of(context).name), size: ColumnSize.L, onSort: context.read<UsersListCubit>().sortById),
+          DataColumn2(label:  Text(S.of(context).status), size: ColumnSize.S, onSort: context.read<UsersListCubit>().sortById),
+           DataColumn2(label: Text(S.of(context).phoneNumber)),
+           DataColumn2(label: Text(S.of(context).job)),
+           DataColumn2(label: Text(S.of(context).address)),
+           DataColumn2(label: Text(S.of(context).maritalStatus), size: ColumnSize.M),
         ],
         source: UsersDataSource(context: context),
       ),
