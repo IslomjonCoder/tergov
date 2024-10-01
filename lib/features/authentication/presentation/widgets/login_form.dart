@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tergov/features/authentication/presentation/manager/login/login_cubit.dart';
 import 'package:tergov/features/authentication/presentation/manager/password/password_visibility_cubit.dart';
 import 'package:tergov/features/authentication/presentation/manager/remember_cubit/remember_cubit.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
+import 'package:tergov/utils/validators/validators.dart';
 
 import '../../../../generated/l10n.dart';
 
@@ -18,6 +20,8 @@ class TLoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Form(
+      key: context.read<LoginCubit>().formKey,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
@@ -26,6 +30,10 @@ class TLoginForm extends StatelessWidget {
             /// Email
             TextFormField(
               decoration:  InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: S.of(context).email),
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
+              controller: context.read<LoginCubit>().emailController,
+              validator: AppValidators.validateEmail,
             ),
             const Gap(TSizes.spaceBtwInputFields),
 
@@ -34,7 +42,12 @@ class TLoginForm extends StatelessWidget {
               create: (_) => PasswordVisibilityCubit(),
               child: Builder(builder: (context) {
                 return TextFormField(
+                  textInputAction: TextInputAction.done,
+                  keyboardType: TextInputType.visiblePassword,
+                  controller: context.read<LoginCubit>().passwordController,
                   obscureText: context.watch<PasswordVisibilityCubit>().state,
+                  validator: AppValidators.validatePassword,
+                  onFieldSubmitted: (value) => context.read<LoginCubit>().login(),
                   decoration: InputDecoration(
                     prefixIcon: const Icon(Iconsax.password_check),
                     suffixIcon: IconButton(
@@ -56,14 +69,9 @@ class TLoginForm extends StatelessWidget {
                 Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    BlocProvider(
-                      create: (context) => RememberCubit(),
-                      child: Builder(builder: (context) {
-                        return Checkbox.adaptive(
-                          value: context.watch<RememberCubit>().state,
-                          onChanged: context.read<RememberCubit>().toggle,
-                        );
-                      }),
+                    Checkbox.adaptive(
+                      value: context.watch<RememberCubit>().state,
+                      onChanged: context.read<RememberCubit>().toggle,
                     ),
                      Text(S.of(context).keepMeLoggedIn)
                   ],
@@ -71,18 +79,15 @@ class TLoginForm extends StatelessWidget {
 
                 /// Forget Password
                 TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, RouteNames.forgetPassword);
-                    },
                     child: Text(S.of(context).forgotPassword))
+                  onPressed: () => Navigator.pushNamed(context, RouteNames.forgetPassword),
+                )
               ],
             ),
             const Gap(TSizes.spaceBtwSections),
             ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(context, RouteNames.navigation, (route) => false);
-              },
               child:  Text(S.of(context).signIn),
+              onPressed: context.read<LoginCubit>().login,
             ),
             const Gap(20),
             Row(

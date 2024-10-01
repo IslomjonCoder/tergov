@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../../../../../utils/constants/colors.dart';
 
@@ -17,10 +16,10 @@ class SmallEarningsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
 
     //TODO: format number should be used
-    String formatNumber(double number) {
-      final formatter = NumberFormat('#,##0.00');
-      return formatter.format(number);
-    }
+    // String formatNumber(double number) {
+    //   final formatter = NumberFormat('#,##0.00');
+    //   return formatter.format(number);
+    // }
 
     return InkWell(
       borderRadius: BorderRadius.circular(20),
