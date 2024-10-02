@@ -15,6 +15,7 @@ class GlobalTextField extends StatefulWidget {
   final bool hasCalendar;
   final bool readOnly;
   final List<String>? options;
+  final String? initialValue;
 
   const GlobalTextField({
     super.key,
@@ -29,6 +30,7 @@ class GlobalTextField extends StatefulWidget {
     this.hasCalendar = false,
     this.readOnly = false,
     this.options,
+    this.initialValue,
   });
 
   @override
@@ -58,8 +60,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
       _filteredOptions.clear();
       if (widget.options != null && widget.options!.isNotEmpty) {
         _filteredOptions.addAll(
-          widget.options!.where((option) =>
-              option.toLowerCase().contains(input.toLowerCase())),
+          widget.options!.where((option) => option.toLowerCase().contains(input.toLowerCase())),
         );
       }
     });
@@ -82,7 +83,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
             ),
           ),
         const SizedBox(height: 5),
-        TextField(
+        TextFormField(
+          initialValue: widget.initialValue,
           readOnly: widget.readOnly,
           controller: _controller,
           onChanged: (value) {
@@ -99,54 +101,52 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           cursorColor: TColors.primary,
           cursorHeight: 25,
           decoration: InputDecoration(
-            hintStyle: const TextStyle(
-                color: TColors.text9F9F,
-                fontSize: 12,
-                fontWeight: FontWeight.w400),
+            hintStyle: const TextStyle(color: TColors.text9F9F, fontSize: 12, fontWeight: FontWeight.w400),
             hintText: widget.hintText,
             prefixIcon: widget.prefixIcon != null
                 ? Icon(
-              widget.prefixIcon,
-              color: Colors.grey,
-            )
+                    widget.prefixIcon,
+                    color: Colors.grey,
+                  )
                 : null,
             suffixIcon: widget.keyboardType == TextInputType.visiblePassword
                 ? IconButton(
-              splashRadius: 1,
-              icon: Icon(
-                _isPasswordVisible
-                    ? Icons.visibility
-                    : Icons.visibility_off,
-                color: Colors.grey,
-              ),
-              onPressed: () {
-                setState(() {
-                  _isPasswordVisible = !_isPasswordVisible;
-                });
-              },
-            )
+                    splashRadius: 1,
+                    icon: Icon(
+                      _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordVisible = !_isPasswordVisible;
+                      });
+                    },
+                  )
                 : widget.hasDropdown
-                ? IconButton(
-              icon: SvgPicture.asset("assets/icons/drop_down.svg"),
-              onPressed: () {
-                if (_filteredOptions.isNotEmpty) {
-                  final RenderBox overlay = Overlay.of(context).context.findRenderObject() as RenderBox;
-                  final Offset buttonPosition = overlay.localToGlobal(Offset.fromDirection(Directionality.of(context) == TextDirection.rtl ? 0 : 1, 0));
-                  _showPopupMenu(context, buttonPosition);
-                }
-              },
-            )
-                : widget.hasCalendar?
-            IconButton(
-              icon: SvgPicture.asset("assets/icons/calendar.svg",height: 30,),
-              onPressed: () {
-                _showCalendar();
-              },
-            ):
-            null,
+                    ? IconButton(
+                        icon: SvgPicture.asset("assets/icons/drop_down.svg"),
+                        onPressed: () {
+                          if (_filteredOptions.isNotEmpty) {
+                            final RenderBox overlay = Overlay.of(context)!.context.findRenderObject() as RenderBox;
+                            final Offset buttonPosition = overlay.localToGlobal(
+                                Offset.fromDirection(Directionality.of(context) == TextDirection.rtl ? 0 : 1, 0));
+                            _showPopupMenu(context, buttonPosition);
+                          }
+                        },
+                      )
+                    : widget.hasCalendar
+                        ? IconButton(
+                            icon: SvgPicture.asset(
+                              "assets/icons/calendar.svg",
+                              height: 30,
+                            ),
+                            onPressed: () {
+                              _showCalendar();
+                            },
+                          )
+                        : null,
             enabledBorder: OutlineInputBorder(
-              borderSide:
-              const BorderSide(color: TColors.colorF5F5, width: 1),
+              borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
               borderRadius: BorderRadius.circular(4),
             ),
             focusedBorder: OutlineInputBorder(
@@ -158,8 +158,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
               borderRadius: BorderRadius.circular(4),
             ),
             border: OutlineInputBorder(
-              borderSide:
-              const BorderSide(color: TColors.colorF5F5, width: 1),
+              borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
               borderRadius: BorderRadius.circular(4),
             ),
             filled: true,
@@ -167,12 +166,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           ),
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
-          inputFormatters: widget.keyboardType == TextInputType.phone
-              ? [_phoneMaskFormatter]
-              : null,
-          obscureText: widget.keyboardType == TextInputType.visiblePassword
-              ? !_isPasswordVisible
-              : false,
+          inputFormatters: widget.keyboardType == TextInputType.phone ? [_phoneMaskFormatter] : null,
+          obscureText: widget.keyboardType == TextInputType.visiblePassword ? !_isPasswordVisible : false,
         ),
       ],
     );
@@ -223,5 +218,4 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
       });
     }
   }
-
 }
