@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tergov/utils/constants/sizes.dart';
-import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
 import '../../../../generated/l10n.dart';

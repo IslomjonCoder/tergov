@@ -4,7 +4,6 @@ import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tergov/common/widgets/app_ui/app_constrained_scroll_view.dart';
 import 'package:tergov/common/widgets/layouts/sidebars/menu/menu_item.dart';
-import 'package:tergov/features/home/presentation/pages/dashboard/responsive_screens/dashboard_desktop.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
@@ -52,7 +51,7 @@ class TSidebar extends StatelessWidget {
               const Spacer(),
 
               Padding(
-                padding:  EdgeInsets.all(TSizes.md),
+                padding:  const EdgeInsets.all(TSizes.md),
                 child: TMenuItem(
                   itemName: S.of(context).logout,
                   route: RouteNames.login,

@@ -4,8 +4,6 @@ import 'package:tergov/features/authentication/presentation/pages/login/login_sc
 import 'package:tergov/features/authentication/presentation/pages/reset_password/reset_password_screen.dart';
 import 'package:tergov/features/navigation/presentation/pages/navigation_screen.dart';
 import 'package:tergov/features/user/home/presentation/pages/home_page.dart';
-import 'package:tergov/features/user/home/presentation/pages/user_dashboard/responsive_screen/user_dashboard_desktop.dart';
-import 'package:tergov/features/user/home/presentation/pages/user_dashboard/user_dashboard.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 
 class AppRouter {

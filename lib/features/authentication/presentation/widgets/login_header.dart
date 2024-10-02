@@ -2,7 +2,6 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/sizes.dart';
-import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
 
 class TLoginHeader extends StatelessWidget {
