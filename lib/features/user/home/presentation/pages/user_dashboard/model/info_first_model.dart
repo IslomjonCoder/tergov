@@ -24,6 +24,11 @@ class InfoFormFirstModel {
     this.interviewStartDate,
     this.interviewEndDate,
   });
+
+  @override
+  String toString() {
+    return 'InfoFormFirstModel{participantFullName: $participantFullName, placeOfResidence: $placeOfResidence, phoneNumber: $phoneNumber, participantStatus: $participantStatus, interviewConducted: $interviewConducted, investigatorFullName: $investigatorFullName, officerFullName: $officerFullName, article211Explanation: $article211Explanation, interviewRecorded: $interviewRecorded, interviewStartDate: $interviewStartDate, interviewEndDate: $interviewEndDate}';
+  }
 }
 
 

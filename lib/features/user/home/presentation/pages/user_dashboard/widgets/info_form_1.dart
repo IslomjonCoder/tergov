@@ -66,13 +66,14 @@ class InfoFormFirst extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: fields.map((field) {
             return GlobalTextField(
+              controller: TextEditingController(),
               hintText: field["hintText"],
               keyboardType: field["keyboardType"] ?? TextInputType.text,
               hasDropdown: field["hasDropdown"] ?? false,
               readOnly: field["readOnly"] ?? false,
               hasCalendar: field["hasCalendar"] ?? false,
               options: field["options"] ?? [],
-              initialValue: field["value"],
+              // initialValue: field["value"],
               onChanged: field["onChanged"],
             );
           }).toList(),
