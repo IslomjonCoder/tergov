@@ -36,29 +36,40 @@ class GlobalTextField extends StatefulWidget {
 }
 
 class _GlobalTextFieldState extends State<GlobalTextField> {
-  bool _isPasswordVisible = false;
   late MaskTextInputFormatter _phoneMaskFormatter;
-  final List<String> _filteredOptions = [];
+  late TextEditingController _internalController;
+  final FocusNode _focusNode = FocusNode();
+  late ValueNotifier<bool> _isPasswordVisibleNotifier;
+  late ValueNotifier<List<String>> _filteredOptionsNotifier;
 
   @override
   void initState() {
     super.initState();
+    _isPasswordVisibleNotifier = ValueNotifier(false);
     _phoneMaskFormatter = MaskTextInputFormatter(
       mask: '+(998) ## ###-##-##',
       filter: {"#": RegExp(r'[0-9]')},
     );
-    _filteredOptions.addAll(widget.options ?? []);
+    _internalController = widget.controller ?? TextEditingController();
+    _filteredOptionsNotifier = ValueNotifier(widget.options ?? []);
+  }
+
+  @override
+  void dispose() {
+    _isPasswordVisibleNotifier.dispose();
+    _filteredOptionsNotifier.dispose();
+    _focusNode.dispose();
+    if (widget.controller == null) {
+      _internalController.dispose();
+    }
+    super.dispose();
   }
 
   void _filterOptions(String input) {
-    setState(() {
-      _filteredOptions.clear();
-      if (widget.options != null && widget.options!.isNotEmpty) {
-        _filteredOptions.addAll(
-          widget.options!.where((option) => option.toLowerCase().contains(input.toLowerCase())),
-        );
-      }
-    });
+    final filteredOptions = widget.options?.where((option) {
+      return option.toLowerCase().contains(input.toLowerCase());
+    }).toList() ?? [];
+    _filteredOptionsNotifier.value = filteredOptions;
   }
 
   @override
@@ -78,85 +89,87 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
             ),
           ),
         const SizedBox(height: 5),
-        TextFormField(
-          readOnly: widget.readOnly,
-          controller: widget.controller,
-          onChanged: (value) {
-            if (widget.hasDropdown) {
-              _filterOptions(value);
-            }
-            if (widget.onChanged != null) {
-              widget.onChanged!(value);
-            }
-          },
-          cursorColor: TColors.primary,
-          decoration: InputDecoration(
-            hintStyle: const TextStyle(color: TColors.text9F9F, fontSize: 12, fontWeight: FontWeight.w400),
-            hintText: widget.hintText,
-            prefixIcon: widget.prefixIcon != null
-                ? Icon(
-              widget.prefixIcon,
-              color: Colors.grey,
-            )
-                : null,
-            suffixIcon: widget.keyboardType == TextInputType.visiblePassword
-                ? IconButton(
-              splashRadius: 1,
-              icon: Icon(
-                _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
-                color: Colors.grey,
-              ),
-              onPressed: () {
-                setState(() {
-                  _isPasswordVisible = !_isPasswordVisible;
-                });
-              },
-            )
-                : widget.hasDropdown
-                ? IconButton(
-              icon: SvgPicture.asset("assets/icons/drop_down.svg"),
-              onPressed: () {
-                if (_filteredOptions.isNotEmpty) {
-                  final RenderBox overlay = Overlay.of(context)!.context.findRenderObject() as RenderBox;
-                  final Offset buttonPosition = overlay.localToGlobal(Offset.zero);
-                  _showPopupMenu(context, buttonPosition);
+        ValueListenableBuilder<bool>(
+          valueListenable: _isPasswordVisibleNotifier,
+          builder: (context, isPasswordVisible, child) {
+            return TextFormField(
+              focusNode: _focusNode,
+              readOnly: widget.readOnly,
+              controller: _internalController,
+              onChanged: (value) {
+                if (widget.hasDropdown) {
+                  _filterOptions(value);
+                }
+                if (widget.onChanged != null) {
+                  widget.onChanged!(value);
                 }
               },
-            )
-                : widget.hasCalendar
-                ? IconButton(
-              icon: SvgPicture.asset(
-                "assets/icons/calendar.svg",
-                height: 30,
+              cursorColor: TColors.primary,
+              decoration: InputDecoration(
+                hintStyle: const TextStyle(color: TColors.text9F9F, fontSize: 12, fontWeight: FontWeight.w400),
+                hintText: widget.hintText,
+                prefixIcon: widget.prefixIcon != null
+                    ? Icon(
+                  widget.prefixIcon,
+                  color: Colors.grey,
+                )
+                    : null,
+                suffixIcon: widget.keyboardType == TextInputType.visiblePassword
+                    ? IconButton(
+                  splashRadius: 1,
+                  icon: Icon(
+                    isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    color: Colors.grey,
+                  ),
+                  onPressed: () {
+                    _isPasswordVisibleNotifier.value = !isPasswordVisible;
+                  },
+                )
+                    : widget.hasDropdown
+                    ? IconButton(
+                  icon: SvgPicture.asset("assets/icons/drop_down.svg"),
+                  onPressed: () {
+                    if (_filteredOptionsNotifier.value.isNotEmpty) {
+                      final RenderBox overlay = Overlay.of(context)!.context.findRenderObject() as RenderBox;
+                      final Offset buttonPosition = overlay.localToGlobal(Offset.zero);
+                      _showPopupMenu(context, buttonPosition);
+                    }
+                  },
+                )
+                    : widget.hasCalendar
+                    ? IconButton(
+                  icon: SvgPicture.asset(
+                    "assets/icons/calendar.svg",
+                    height: 30,
+                  ),
+                  onPressed: _showCalendar,
+                )
+                    : null,
+                enabledBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: TColors.primary, width: 1),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                errorBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: TColors.error, width: 1),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                filled: true,
+                fillColor: TColors.colorF5F5,
               ),
-              onPressed: () {
-                _showCalendar();
-              },
-            )
-                : null,
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            focusedBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: TColors.primary, width: 1),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            errorBorder: OutlineInputBorder(
-              borderSide: const BorderSide(color: TColors.error, width: 1),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            border: OutlineInputBorder(
-              borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
-              borderRadius: BorderRadius.circular(4),
-            ),
-            filled: true,
-            fillColor: TColors.colorF5F5,
-          ),
-          keyboardType: widget.keyboardType,
-          textInputAction: widget.textInputAction,
-          inputFormatters: widget.keyboardType == TextInputType.phone ? [_phoneMaskFormatter] : null,
-          obscureText: widget.keyboardType == TextInputType.visiblePassword ? !_isPasswordVisible : false,
+              keyboardType: widget.keyboardType,
+              textInputAction: widget.textInputAction,
+              inputFormatters: widget.keyboardType == TextInputType.phone ? [_phoneMaskFormatter] : null,
+              obscureText: widget.keyboardType == TextInputType.visiblePassword ? !isPasswordVisible : false,
+            );
+          },
         ),
       ],
     );
@@ -178,7 +191,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
       position: position,
       elevation: 10,
       color: TColors.white,
-      items: _filteredOptions.map((String option) {
+      items: _filteredOptionsNotifier.value.map((String option) {
         return PopupMenuItem<String>(
           value: option,
           child: Text(option),
@@ -186,12 +199,12 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
       }).toList(),
     ).then((String? value) {
       if (value != null) {
-        setState(() {
-          widget.controller?.text = value;
-          if (widget.onChanged != null) {
-            widget.onChanged!(value);
-          }
-        });
+        final cursorPosition = value.length;
+        _internalController.text = value;
+        _internalController.selection = TextSelection.fromPosition(TextPosition(offset: cursorPosition));
+        if (widget.onChanged != null) {
+          widget.onChanged!(value);
+        }
       }
     });
   }
@@ -205,12 +218,14 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
     );
 
     if (selectedDate != null) {
-      setState(() {
-        widget.controller?.text = "${selectedDate.toLocal()}".split(' ')[0];
-        if (widget.onChanged != null) {
-          widget.onChanged!(widget.controller!.text);
-        }
-      });
+      final formattedDate = "${selectedDate.toLocal()}".split(' ')[0];
+      _internalController.text = formattedDate;
+      _internalController.selection = TextSelection.fromPosition(
+        TextPosition(offset: formattedDate.length),
+      );
+      if (widget.onChanged != null) {
+        widget.onChanged!(formattedDate);
+      }
     }
   }
 }
