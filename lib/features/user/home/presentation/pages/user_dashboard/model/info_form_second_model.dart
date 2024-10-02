@@ -19,6 +19,28 @@ class InfoFormSecondModel {
   String toString() {
     return 'InfoFormSecondModel{employeeFacts: $employeeFacts, longWaits: $longWaits, rudeBehavior: $rudeBehavior, psychologicalPressure: $psychologicalPressure, physicalPressure: $physicalPressure, extortion: $extortion}';
   }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'employeeFacts': employeeFacts,
+      'longWaits': longWaits,
+      'rudeBehavior': rudeBehavior,
+      'psychologicalPressure': psychologicalPressure,
+      'physicalPressure': physicalPressure,
+      'extortion': extortion,
+    };
+  }
+
+  factory InfoFormSecondModel.fromMap(Map<String, dynamic> map) {
+    return InfoFormSecondModel(
+      employeeFacts: map['employeeFacts'] as String,
+      longWaits: map['longWaits'] as String,
+      rudeBehavior: map['rudeBehavior'] as String,
+      psychologicalPressure: map['psychologicalPressure'] as String,
+      physicalPressure: map['physicalPressure'] as String,
+      extortion: map['extortion'] as String,
+    );
+  }
 }
 
 extension InfoFormSecondModelCopyWith on InfoFormSecondModel {

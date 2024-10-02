@@ -90,7 +90,7 @@ class InfoFormSecond extends StatelessWidget {
                 controller: TextEditingController(text: field["value"]),
                 onChanged: field["onChanged"],
               );
-            }).toList(),
+            }),
           ],
         );
       },

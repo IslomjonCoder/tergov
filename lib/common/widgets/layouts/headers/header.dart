@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tergov/common/cubits/locale_cubit/locale_cubit.dart';
 import 'package:tergov/common/widgets/images/t_rounded_image.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/enums.dart';
@@ -11,7 +12,6 @@ import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/device/device_utility.dart';
 
 import '../../../../generated/l10n.dart';
-import '../../../../locale_cubit/locale_cubit.dart';
 
 class THeader extends StatelessWidget implements PreferredSizeWidget {
   const THeader({super.key, this.scaffoldKey});
