@@ -130,7 +130,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
               icon: SvgPicture.asset("assets/icons/drop_down.svg"),
               onPressed: () {
                 if (_filteredOptions.isNotEmpty) {
-                  final RenderBox overlay = Overlay.of(context)!.context.findRenderObject() as RenderBox;
+                  final RenderBox overlay = Overlay.of(context).context.findRenderObject() as RenderBox;
                   final Offset buttonPosition = overlay.localToGlobal(Offset.fromDirection(Directionality.of(context) == TextDirection.rtl ? 0 : 1, 0));
                   _showPopupMenu(context, buttonPosition);
                 }

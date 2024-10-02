@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:tergov/common/widgets/layouts/templates/site_layout.dart';
 import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/locale_cubit/locale_cubit.dart';
 import 'package:tergov/utils/routes/app_router.dart';

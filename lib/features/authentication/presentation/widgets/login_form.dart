@@ -5,12 +5,11 @@ import 'package:iconsax/iconsax.dart';
 import 'package:tergov/features/authentication/presentation/manager/login/login_cubit.dart';
 import 'package:tergov/features/authentication/presentation/manager/password/password_visibility_cubit.dart';
 import 'package:tergov/features/authentication/presentation/manager/remember_cubit/remember_cubit.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/sizes.dart';
-import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
 import 'package:tergov/utils/validators/validators.dart';
 
-import '../../../../generated/l10n.dart';
 
 class TLoginForm extends StatelessWidget {
   const TLoginForm({
@@ -29,7 +28,7 @@ class TLoginForm extends StatelessWidget {
           children: [
             /// Email
             TextFormField(
-              decoration:  InputDecoration(prefixIcon: Icon(Iconsax.direct_right), labelText: S.of(context).email),
+              decoration:  InputDecoration(prefixIcon: const Icon(Iconsax.direct_right), labelText: S.of(context).email),
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               controller: context.read<LoginCubit>().emailController,
@@ -86,8 +85,8 @@ class TLoginForm extends StatelessWidget {
             ),
             const Gap(TSizes.spaceBtwSections),
             ElevatedButton(
-              child:  Text(S.of(context).signIn),
               onPressed: context.read<LoginCubit>().login,
+              child:  Text(S.of(context).signIn),
             ),
             const Gap(20),
             Row(

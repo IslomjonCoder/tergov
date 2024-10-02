@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
-import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/warning_message.dart';
 import '../../../../../../../utils/constants/colors.dart';
 import '../../../../cubit/info_form_cubit.dart';
-import 'next_form_button.dart';
 
 class InfoFormFirst extends StatelessWidget {
   const InfoFormFirst({super.key});
@@ -107,7 +105,7 @@ class InfoFormFirst extends StatelessWidget {
                 hasCalendar: field["hasCalendar"] ?? false,
                 options: field["options"] ?? [],
               );
-            }).toList(),
+            }),
 
           ],
         );

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
 import '../../../../../../../utils/constants/colors.dart';
-import 'next_form_button.dart';
 
 class InfoFormSecond extends StatelessWidget {
   const InfoFormSecond({super.key});
@@ -60,7 +59,7 @@ class InfoFormSecond extends StatelessWidget {
             readOnly: field["readOnly"] ?? false,
             options: field["options"] ?? [],
           );
-        }).toList(),
+        }),
       ],
     );
   }
