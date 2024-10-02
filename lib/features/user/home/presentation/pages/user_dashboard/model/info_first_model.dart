@@ -8,8 +8,7 @@ class InfoFormFirstModel {
   String officerFullName;
   String article211Explanation;
   String interviewRecorded;
-  DateTime? interviewStartDate;
-  DateTime? interviewEndDate;
+  String? interviewStartDate;
 
   InfoFormFirstModel({
     this.participantFullName = '',
@@ -21,13 +20,12 @@ class InfoFormFirstModel {
     this.officerFullName = '',
     this.article211Explanation = '',
     this.interviewRecorded = '',
-    this.interviewStartDate,
-    this.interviewEndDate,
+    this.interviewStartDate = '',
   });
 
   @override
   String toString() {
-    return 'InfoFormFirstModel{participantFullName: $participantFullName, placeOfResidence: $placeOfResidence, phoneNumber: $phoneNumber, participantStatus: $participantStatus, interviewConducted: $interviewConducted, investigatorFullName: $investigatorFullName, officerFullName: $officerFullName, article211Explanation: $article211Explanation, interviewRecorded: $interviewRecorded, interviewStartDate: $interviewStartDate, interviewEndDate: $interviewEndDate}';
+    return 'InfoFormFirstModel{participantFullName: $participantFullName, placeOfResidence: $placeOfResidence, phoneNumber: $phoneNumber, participantStatus: $participantStatus, interviewConducted: $interviewConducted, investigatorFullName: $investigatorFullName, officerFullName: $officerFullName, article211Explanation: $article211Explanation, interviewRecorded: $interviewRecorded, interviewStartDate: $interviewStartDate,}';
   }
 }
 
@@ -43,8 +41,7 @@ extension InfoFormModelCopyWith on InfoFormFirstModel {
     String? officerFullName,
     String? article211Explanation,
     String? interviewRecorded,
-    DateTime? interviewStartDate,
-    DateTime? interviewEndDate,
+    String? interviewStartDate,
   }) {
     return InfoFormFirstModel(
       participantFullName: participantFullName ?? this.participantFullName,
@@ -57,7 +54,6 @@ extension InfoFormModelCopyWith on InfoFormFirstModel {
       article211Explanation: article211Explanation ?? this.article211Explanation,
       interviewRecorded: interviewRecorded ?? this.interviewRecorded,
       interviewStartDate: interviewStartDate ?? this.interviewStartDate,
-      interviewEndDate: interviewEndDate ?? this.interviewEndDate,
     );
   }
 }
