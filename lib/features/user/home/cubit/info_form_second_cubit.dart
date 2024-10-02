@@ -26,6 +26,7 @@ class InfoFormSecondCubit extends Cubit<InfoFormSecondModel> {
   }
 
   void updateExtortion(String value) {
+    print(value);
     emit(state.copyWith(extortion: value));
   }
 }

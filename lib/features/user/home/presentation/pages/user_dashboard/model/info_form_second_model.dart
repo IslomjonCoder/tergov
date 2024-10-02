@@ -14,6 +14,11 @@ class InfoFormSecondModel {
     this.physicalPressure = '',
     this.extortion = '',
   });
+
+  @override
+  String toString() {
+    return 'InfoFormSecondModel{employeeFacts: $employeeFacts, longWaits: $longWaits, rudeBehavior: $rudeBehavior, psychologicalPressure: $psychologicalPressure, physicalPressure: $physicalPressure, extortion: $extortion}';
+  }
 }
 
 extension InfoFormSecondModelCopyWith on InfoFormSecondModel {

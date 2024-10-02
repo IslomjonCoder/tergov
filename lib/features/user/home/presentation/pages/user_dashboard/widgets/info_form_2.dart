@@ -85,7 +85,7 @@ class InfoFormSecond extends StatelessWidget {
                 hasDropdown: field["hasDropdown"] ?? false,
                 readOnly: field["readOnly"] ?? false,
                 options: field["options"] ?? [],
-                initialValue: field["value"],
+                // initialValue: field["value"],
                 onChanged: field["onChanged"],
               );
             }).toList(),

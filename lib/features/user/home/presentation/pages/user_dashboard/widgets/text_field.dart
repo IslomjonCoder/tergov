@@ -89,7 +89,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
           controller: _controller,
           onChanged: (value) {
             if (widget.hasDropdown) {
-              _filterOptions(value);
+                _filterOptions(value);
             }
             if (widget.onChanged != null) {
               widget.onChanged!(value);
