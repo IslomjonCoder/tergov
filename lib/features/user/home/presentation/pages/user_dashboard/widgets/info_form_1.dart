@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
+import 'package:tergov/utils/constants/enums.dart';
+import '../../../../../../../generated/l10n.dart';
 import '../../../../cubit/info_form_first_cubit.dart';
 import '../model/info_first_model.dart';
 
@@ -42,13 +44,12 @@ class InfoFormFirst extends StatelessWidget {
           {
             "hintText": "Выберите Статус участника(цы) процесса",
             "hasDropdown": true,
+            "readOnly": true,
             "options": [
-              "Участник",
-              "Собеседник",
-              "Офицер",
-              "Подполковник",
-              "Полковник",
-              "Сержант",
+              "Айбланувчи / Обвиняемый",
+              "Қонуний вакил / Законный представитель",
+              "Қариндош / Родственник",
+              "Бошқа иштирокчи / Другой участник процесса"
             ],
             "value": state.participantStatus,
             "onChanged": (String value) {
@@ -58,9 +59,10 @@ class InfoFormFirst extends StatelessWidget {
           {
             "hintText": "Беседа проведена",
             "hasDropdown": true,
+            "readOnly": true,
             "options": [
-              "Да",
-              "Нет",
+              "Xa/Да",
+              "Yo'q/Нет",
             ],
             "value": state.interviewConducted,
             "onChanged": (String value) {
@@ -84,9 +86,10 @@ class InfoFormFirst extends StatelessWidget {
           {
             "hintText": "В ходе беседы разъяснено содержание статьи 211Уголовного кодекса Республики Узбекистан",
             "hasDropdown": true,
+            "readOnly": true,
             "options": [
-              "Да",
-              "Нет",
+              "Xa/Да",
+              "Yo'q/Нет",
             ],
             "value": state.article211Explanation,
             "onChanged": (String value) {
@@ -96,9 +99,10 @@ class InfoFormFirst extends StatelessWidget {
           {
             "hintText": "Процесс собеседования видеозаписью",
             "hasDropdown": true,
+            "readOnly": true,
             "options": [
-              "Да",
-              "Нет",
+              YesNo.yes.name,
+              YesNo.no.name,
             ],
             "value": state.interviewRecorded,
             "onChanged": (String value) {
@@ -107,6 +111,7 @@ class InfoFormFirst extends StatelessWidget {
           },
           {
             "hintText": "Дата беседы",
+            "readOnly": true,
             "hasCalendar": true,
             "value": state.interviewStartDate,
             "onChanged": (String value) {
@@ -125,7 +130,7 @@ class InfoFormFirst extends StatelessWidget {
               readOnly: field["readOnly"] ?? false,
               hasCalendar: field["hasCalendar"] ?? false,
               options: field["options"] ?? [],
-              controller: TextEditingController(text: field["value"]),
+              controller: TextEditingController(),
               onChanged: field["onChanged"],
             );
           }).toList(),

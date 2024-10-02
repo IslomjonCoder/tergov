@@ -34,6 +34,10 @@ dependencies:
     sdk: flutter
 
   supabase_flutter: ^2.7.0
+  dartz: ^0.10.1
+  pdf: ^3.11.1
+  path_provider: ^2.1.4
+  open_file: ^3.5.7
 
 dev_dependencies:
   flutter_test:
@@ -47,6 +51,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
+    - assets/fonts/times_new_roman/
+    - assets/fonts/Roboto/
 
 flutter_launcher_icons:
   android: true

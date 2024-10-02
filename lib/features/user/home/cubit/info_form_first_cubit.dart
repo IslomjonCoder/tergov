@@ -38,10 +38,16 @@ class InfoFormFirstCubit extends Cubit<InfoFormFirstModel> {
   }
 
   void updateInterviewRecorded(String value) {
-    emit(state.copyWith(interviewRecorded: value));
+    emit(state.copyWith(interviewRecorded: value == 'yes' ? true : false));
   }
 
   void updateInterviewStartDate(String value) {
     emit(state.copyWith(interviewStartDate: value));
+  }
+
+  @override
+  void onChange(Change<InfoFormFirstModel> change) {
+    if (change.currentState == change.nextState) return;
+    super.onChange(change);
   }
 }
