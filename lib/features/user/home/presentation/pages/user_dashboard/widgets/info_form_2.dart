@@ -82,10 +82,12 @@ class InfoFormSecond extends StatelessWidget {
             ...fields.map((field) {
               return GlobalTextField(
                 hintText: field["hintText"],
+                keyboardType: field["keyboardType"] ?? TextInputType.text,
                 hasDropdown: field["hasDropdown"] ?? false,
                 readOnly: field["readOnly"] ?? false,
+                hasCalendar: field["hasCalendar"] ?? false,
                 options: field["options"] ?? [],
-                // initialValue: field["value"],
+                controller: TextEditingController(text: field["value"]),
                 onChanged: field["onChanged"],
               );
             }).toList(),

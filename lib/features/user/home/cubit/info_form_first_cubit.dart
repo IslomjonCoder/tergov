@@ -41,11 +41,7 @@ class InfoFormFirstCubit extends Cubit<InfoFormFirstModel> {
     emit(state.copyWith(interviewRecorded: value));
   }
 
-  void updateInterviewStartDate(DateTime? date) {
-    emit(state.copyWith(interviewStartDate: date));
-  }
-
-  void updateInterviewEndDate(DateTime? date) {
-    emit(state.copyWith(interviewEndDate: date));
+  void updateInterviewStartDate(String value) {
+    emit(state.copyWith(interviewStartDate: value));
   }
 }
