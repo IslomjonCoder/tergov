@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/step_part.dart';
 import 'package:tergov/utils/constants/sizes.dart';
+import '../../../../../../../generated/l10n.dart';
 import '../../../../cubit/info_form_cubit.dart';
 import '../widgets/info_card.dart';
 import '../widgets/info_form_1.dart';
@@ -34,7 +35,7 @@ class UserDashboardTablet extends StatelessWidget {
                             children: [
                               const InfoFormFirst(),
                               const Gap(TSizes.lg),
-                              StepPart(step: "Шаг ${state ? "1" : "2"}",)
+                              StepPart(step: "${S.of(context).step} ${state ? "1" : "2"}",),
 
                             ],
                           ),

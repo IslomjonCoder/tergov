@@ -114,6 +114,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "videoRecording": MessageLookupByLibrary.simpleMessage(
             "Suhbat jarayonining videotasviri"),
         "warning": MessageLookupByLibrary.simpleMessage("Ogohlantirish"),
+        "warning_message_1": MessageLookupByLibrary.simpleMessage(
+            "Menga pora berish, ya\'ni davlat organi, davlat ishtirokidagi tashkilot yoki fuqarolarning o\'zini o\'zi boshqarish organi mansabdor shaxsiga shaxsan yoki vositachi orqali moddiy boyliklar yoki pora bergan shaxsning manfaatlarini ko\'zlab amalga oshirganligi yoki bajarmaganligi uchun mulkiy foyda berish to\'g\'risida bila turib noqonuniy ravishda berilganligi tushuntirildi. mansabdor shaxs o\'z xizmat mavqeidan foydalangan holda qilgan yoki qilgan bo\'lishi mumkin, besh yildan o\'n besh yilgacha ozodlikdan mahrum qilish tarzidagi jinoiy jazoni nazarda tutadi."),
+        "warning_message_2": MessageLookupByLibrary.simpleMessage(
+            "Agar siz ichki ishlar organlarining tergov bo\'linmalari tomonidan o\'tkazilgan tergov tekshiruvi, surishtiruv yoki dastlabki tergovdan qoniqmasangiz, shuningdek murojaatlaringizni o\'z vaqtida ko\'rib chiqmasangiz, to\'g\'ridan-to\'g\'ri Namangan viloyati IIB tergov boshqarmasi va uning hududiy bo\'linmalari rahbarlari bilan quyidagi telefon orqali bog\'lanishingiz mumkin: Namangan viloyati IIB boshlig\'ining o\'rinbosari-Ibodov tergov boshqarmasi boshlig\'i Jahongir Nasullo o\'g\'li: tel: 998 95-318-04-00, 998 69-210-30-04"),
         "wed": MessageLookupByLibrary.simpleMessage("Chor"),
         "week": MessageLookupByLibrary.simpleMessage("Hafta"),
         "year": MessageLookupByLibrary.simpleMessage("Yil"),

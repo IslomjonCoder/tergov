@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
 import 'package:tergov/utils/constants/enums.dart';
 import '../../../../../../../generated/l10n.dart';
+import '../../../../../../../utils/constants/colors.dart';
 import '../../../../cubit/info_form_first_cubit.dart';
 import '../model/info_first_model.dart';
 
@@ -15,7 +17,7 @@ class InfoFormFirst extends StatelessWidget {
       builder: (context, state) {
         final List<Map<String, dynamic>> fields = [
           {
-            "hintText": "Участник(ца) процесса, прошедший(ая) беседу: ФИО",
+            "hintText": S.of(context).processParticipant,
             "keyboardType": TextInputType.text,
             "hasDropdown": false,
             "value": state.participantFullName,
@@ -24,7 +26,7 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Место проживания",
+            "hintText": S.of(context).residence,
             "keyboardType": TextInputType.text,
             "hasDropdown": false,
             "value": state.placeOfResidence,
@@ -33,7 +35,7 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Номер телефона",
+            "hintText": S.of(context).phoneNumber,
             "keyboardType": TextInputType.phone,
             "hasDropdown": false,
             "value": state.phoneNumber,
@@ -42,7 +44,7 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Выберите Статус участника(цы) процесса",
+            "hintText": S.of(context).selectParticipantStatus,
             "hasDropdown": true,
             "readOnly": true,
             "options": [
@@ -57,7 +59,7 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Беседа проведена",
+            "hintText": S.of(context).interviewConducted,
             "hasDropdown": true,
             "readOnly": true,
             "options": [
@@ -70,21 +72,21 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Начальник следственного отделения,проводивший беседу: ФИО",
+            "hintText": S.of(context).chiefInvestigator,
             "value": state.investigatorFullName,
             "onChanged": (String value) {
               context.read<InfoFormFirstCubit>().updateInvestigatorFullName(value);
             },
           },
           {
-            "hintText": "Сотрудник, проводивший доследственную проверку,дознание или расследование: ФИО",
+            "hintText": S.of(context).employeeConductingInquiry,
             "value": state.officerFullName,
             "onChanged": (String value) {
               context.read<InfoFormFirstCubit>().updateOfficerFullName(value);
             },
           },
           {
-            "hintText": "В ходе беседы разъяснено содержание статьи 211Уголовного кодекса Республики Узбекистан",
+            "hintText": S.of(context).articleExplanation,
             "hasDropdown": true,
             "readOnly": true,
             "options": [
@@ -97,7 +99,7 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Процесс собеседования видеозаписью",
+            "hintText": S.of(context).videoRecording,
             "hasDropdown": true,
             "readOnly": true,
             "options": [
@@ -110,7 +112,7 @@ class InfoFormFirst extends StatelessWidget {
             },
           },
           {
-            "hintText": "Дата беседы",
+            "hintText": S.of(context).interviewDate,
             "readOnly": true,
             "hasCalendar": true,
             "value": state.interviewStartDate,
@@ -122,7 +124,17 @@ class InfoFormFirst extends StatelessWidget {
 
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: fields.map((field) {
+          children: [
+            Text(
+              S.of(context).mainInfo,
+              style: const TextStyle(
+                fontSize: 32,
+                color: TColors.text006,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+            const Gap(20),
+            ...fields.map((field) {
             return GlobalTextField(
               hintText: field["hintText"],
               keyboardType: field["keyboardType"] ?? TextInputType.text,
@@ -133,7 +145,7 @@ class InfoFormFirst extends StatelessWidget {
               controller: TextEditingController(),
               onChanged: field["onChanged"],
             );
-          }).toList(),
+          }).toList(),]
         );
       },
     );

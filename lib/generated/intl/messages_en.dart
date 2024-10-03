@@ -115,6 +115,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "videoRecording": MessageLookupByLibrary.simpleMessage(
             "Video recording of the interview process"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
+        "warning_message_1": MessageLookupByLibrary.simpleMessage(
+            "It was explained to me that giving a bribe, that is, knowingly illegal provision to an official of a state body, an organization with state participation or a self-government body of citizens personally or through an intermediary of material values or property benefits for performing or not performing in the interests of the person who gave the bribe a certain action that the official should have or could have performed using his official position, provides for criminal punishment in the form of imprisonment from five to fifteen years."),
+        "warning_message_2": MessageLookupByLibrary.simpleMessage(
+            "If you are not satisfied with the pre-investigation check, inquiry or preliminary investigation conducted by the investigative units of the internal affairs bodies, as well as the untimely consideration of your appeals, you can directly contact the heads of the Investigative Department at the Department of Internal Affairs of the Namangan region and its territorial divisions by the following phone numbers:Deputy Head of the Department of Internal Affairs of Namangan region – Head of the Investigative Department Ibodov Zhaongir Nasullo shgli:Tel: 998 95-318-04-00, 998 69-210-30-04"),
         "wed": MessageLookupByLibrary.simpleMessage("Wed"),
         "week": MessageLookupByLibrary.simpleMessage("Week"),
         "year": MessageLookupByLibrary.simpleMessage("Year"),

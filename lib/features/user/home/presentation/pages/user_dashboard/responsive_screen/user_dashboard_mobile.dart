@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
+import '../../../../../../../generated/l10n.dart';
 import '../../../../../../../utils/constants/sizes.dart';
 import '../widgets/info_card.dart';
 import '../widgets/info_form_1.dart';
@@ -33,7 +34,7 @@ class UserDashboardMobile extends StatelessWidget {
                           children: [
                             const InfoFormFirst(),
                             const Gap(TSizes.lg / 2),
-                            StepPart(step: "Шаг ${state ? "1" : "2"}",)
+                            StepPart(step: "${S.of(context).step} ${state ? "1" : "2"}",),
                           ],
                         ),
                       ),

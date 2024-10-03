@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
+import '../../../../../../../generated/l10n.dart';
 import '../../../../../../../utils/constants/colors.dart';
 import '../../../../cubit/info_form_second_cubit.dart';
 import '../model/info_form_second_model.dart';
@@ -15,7 +16,7 @@ class InfoFormSecond extends StatelessWidget {
       builder: (context, state) {
         final List<Map<String, dynamic>> fields = [
           {
-            "hintText": "Имели ли место со стороны сотрудника следующие факты?",
+            "hintText": S.of(context).misconductOccurred,
             "hasDropdown": true,
             "value": state.employeeFacts,
             "onChanged": (String value) {
@@ -23,7 +24,7 @@ class InfoFormSecond extends StatelessWidget {
             },
           },
           {
-            "hintText": "Длительные беспричинные ожидания",
+            "hintText": S.of(context).longWaiting,
             "hasDropdown": false,
             "value": state.longWaits,
             "onChanged": (String value) {
@@ -31,7 +32,7 @@ class InfoFormSecond extends StatelessWidget {
             },
           },
           {
-            "hintText": "Грубое обращение",
+            "hintText": S.of(context).rudeBehavior,
             "hasDropdown": false,
             "value": state.rudeBehavior,
             "onChanged": (String value) {
@@ -39,7 +40,7 @@ class InfoFormSecond extends StatelessWidget {
             },
           },
           {
-            "hintText": "Психологическое давление",
+            "hintText": S.of(context).psychologicalPressure,
             "hasDropdown": false,
             "value": state.psychologicalPressure,
             "onChanged": (String value) {
@@ -47,7 +48,7 @@ class InfoFormSecond extends StatelessWidget {
             },
           },
           {
-            "hintText": "Физическое давление",
+            "hintText": S.of(context).physicalPressure,
             "hasDropdown": true,
             "readOnly": true,
             "options": ["Да", "Нет"],
@@ -57,7 +58,7 @@ class InfoFormSecond extends StatelessWidget {
             },
           },
           {
-            "hintText": "Вымогательство незаконного вознаграждения",
+            "hintText": S.of(context).bribery,
             "hasDropdown": true,
             "readOnly": true,
             "options": ["Да", "Нет"],
@@ -70,9 +71,9 @@ class InfoFormSecond extends StatelessWidget {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Ваше соглашение",
-              style: TextStyle(
+             Text(
+              S.of(context).yourConsent,
+              style: const TextStyle(
                 fontSize: 32,
                 color: TColors.text006,
                 fontWeight: FontWeight.w600,
