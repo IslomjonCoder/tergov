@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../../utils/constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class SmallEarningsWidget extends StatelessWidget {
   final String title;
@@ -9,13 +9,13 @@ class SmallEarningsWidget extends StatelessWidget {
   final String since;
   final VoidCallback onTap;
   const SmallEarningsWidget({
+
     super.key, required this.title, required this.price, required this.discount, required this.since, required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
 
-    //TODO: format number should be used
     // String formatNumber(double number) {
     //   final formatter = NumberFormat('#,##0.00');
     //   return formatter.format(number);
@@ -35,8 +35,8 @@ class SmallEarningsWidget extends StatelessWidget {
                 color: TColors.grey,
                 blurRadius: 5,
                 offset: Offset(0, 5),
-              )
-            ]),
+              ),
+            ],),
         child:  Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -44,12 +44,12 @@ class SmallEarningsWidget extends StatelessWidget {
                 style: const TextStyle(
                     color: TColors.textA3A,
                     fontSize: 14,
-                    fontWeight: FontWeight.w700)),
+                    fontWeight: FontWeight.w700,),),
             Text(price,
                 style: const TextStyle(
                     color: TColors.text2B3,
                     fontSize: 23,
-                    fontWeight: FontWeight.w700)),
+                    fontWeight: FontWeight.w700,),),
             Text.rich(
               TextSpan(
                 children: [
@@ -58,13 +58,13 @@ class SmallEarningsWidget extends StatelessWidget {
                       style: const TextStyle(
                           color: TColors.text05C,
                           fontSize: 11,
-                          fontWeight: FontWeight.w700)),
+                          fontWeight: FontWeight.w700,),),
                   TextSpan(
                       text: " $since",
                       style: const TextStyle(
                           color: TColors.textA3A,
                           fontSize: 11,
-                          fontWeight: FontWeight.w400)),
+                          fontWeight: FontWeight.w400,),),
                 ],
               ),
             ),

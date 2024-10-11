@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/features/user/home/cubit/info_form_second_cubit.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/model/info_form_second_model.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
-import '../../../../../../../utils/constants/colors.dart';
-import '../../../../cubit/info_form_second_cubit.dart';
-import '../model/info_form_second_model.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class InfoFormSecond extends StatelessWidget {
   const InfoFormSecond({super.key});

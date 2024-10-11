@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/next_form_button.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/warning_container.dart';
-
-import '../../../../cubit/info_form_cubit.dart';
-import 'next_form_button.dart';
 
 class WarningMessage extends StatelessWidget {
   final bool padding;

@@ -72,6 +72,7 @@
   "thu": "Thu",
   "fri": "Fri",
   "sat": "Sat",
-  "sun": "Sun"
-
+  "sun": "Sun",
+  "continueAsUser": "Continue as User",
+  "settings": "Settings"
 }

@@ -2,10 +2,9 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/routes/route_names.dart';
-
-import '../../../../generated/l10n.dart';
 
 class ForgotHeaderAndForm extends StatelessWidget {
   const ForgotHeaderAndForm({
@@ -43,7 +42,7 @@ class ForgotHeaderAndForm extends StatelessWidget {
             },
             child:  Text(S.of(context).submit),
           ),
-        )
+        ),
       ],
     );
   }

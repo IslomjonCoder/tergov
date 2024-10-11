@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import '../../../../../../../utils/constants/colors.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/social_data_elements.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class StepPart extends StatelessWidget {
   final String step;
@@ -19,7 +19,7 @@ class StepPart extends StatelessWidget {
           style: const TextStyle(
               fontSize: 30,
               color: TColors.text006,
-              fontWeight: FontWeight.w600),
+              fontWeight: FontWeight.w600,),
         ),
         const Gap(5.0),
         Image.asset("assets/images/step_icon.png", width: 400),

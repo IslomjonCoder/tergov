@@ -23,14 +23,12 @@ class DesktopLayout extends StatelessWidget {
                 // HEADER
                 const THeader(),
                 // BODY
-                if (body != null) Expanded(child: AppConstrainedScrollView(child: body!))
+                if (body != null) Expanded(child: AppConstrainedScrollView(child: body!)),
               ],
             ),
-          )
+          ),
         ],
       ),
     );
   }
 }
-
-

@@ -2,13 +2,15 @@ import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:tergov/common/cubits/locale_cubit/locale_cubit.dart';
 import 'package:tergov/features/dashboard/presentation/manager/users_table/users_list_cubit.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 
-import '../../../../../generated/l10n.dart';
 class ProfileDesktop extends StatelessWidget {
   const ProfileDesktop({super.key});
 
@@ -28,7 +30,6 @@ class ProfileDesktop extends StatelessWidget {
     );
   }
 }
-
 
 class SearchField extends StatelessWidget {
   const SearchField({super.key});
@@ -52,46 +53,48 @@ class UsersDataTable extends StatelessWidget {
   Widget build(BuildContext context) {
     return Theme(
       data: context.theme.copyWith(cardTheme: const CardTheme(color: TColors.white, elevation: 0)),
-      child: PaginatedDataTable2(
-        columnSpacing: 12,
-        dividerThickness: 0,
-        minWidth: 786,
-        horizontalMargin: 12,
-        dataRowHeight: 56,
-        headingTextStyle: context.titleMedium,
-        headingRowColor: WidgetStateProperty.resolveWith((state) => TColors.primaryBackground),
-        headingRowDecoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(TSizes.borderRadiusMd),
-            topRight: Radius.circular(TSizes.borderRadiusMd),
-          ),
-        ),
-        showCheckboxColumn: true,
-        showFirstLastButtons: true,
-        onPageChanged: (page) {},
-        renderEmptyRowsInTheEnd: false,
-        onRowsPerPageChanged: (int? rowsPerPage) {},
-        sortAscending: true,
-        sortArrowBuilder: (ascending, sorted) {
-          return Icon(
-            sorted ? (ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down) : Iconsax.arrow_3,
-            size: TSizes.iconSm,
+      child: BlocBuilder<UsersListCubit, UsersListState>(
+        builder: (context, state) {
+          if (state.status.isFailure) {
+            return Center(child: Text(state.failure?.message ?? ''));
+          }
+          return PaginatedDataTable2(
+            columnSpacing: 12,
+            dividerThickness: 0,
+            minWidth: 786,
+            horizontalMargin: 12,
+            dataRowHeight: 56,
+            headingTextStyle: context.titleMedium,
+            headingRowColor: WidgetStateProperty.resolveWith((state) => TColors.primaryBackground),
+            headingRowDecoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(TSizes.borderRadiusMd),
+                topRight: Radius.circular(TSizes.borderRadiusMd),
+              ),
+            ),
+            showFirstLastButtons: true,
+            onPageChanged: (page) {},
+            renderEmptyRowsInTheEnd: false,
+            onRowsPerPageChanged: (int? rowsPerPage) {},
+            sortArrowBuilder: (ascending, sorted) {
+              return Icon(
+                sorted ? (ascending ? Iconsax.arrow_up_3 : Iconsax.arrow_down) : Iconsax.arrow_3,
+                size: TSizes.iconSm,
+              );
+            },
+            sortColumnIndex: context.watch<UsersListCubit>().state.selectedColumnIndex,
+            columns: [
+              DataColumn2(label: Text(S.of(context).name), size: ColumnSize.L, onSort: context.read<UsersListCubit>().sortById),
+              DataColumn2(label: Text(S.of(context).status), size: ColumnSize.S, onSort: context.read<UsersListCubit>().sortById),
+              DataColumn2(label: Text(S.of(context).phoneNumber)),
+              DataColumn2(label: Text(S.of(context).address)),
+            ],
+            source: UsersDataSource(context: context),
           );
         },
-        sortColumnIndex: context.watch<UsersListCubit>().state.selectedColumnIndex,
-        columns:  [
-          DataColumn2(label:  Text(S.of(context).name), size: ColumnSize.L, onSort: context.read<UsersListCubit>().sortById),
-          DataColumn2(label:  Text(S.of(context).status), size: ColumnSize.S, onSort: context.read<UsersListCubit>().sortById),
-           DataColumn2(label: Text(S.of(context).phoneNumber)),
-           DataColumn2(label: Text(S.of(context).job)),
-           DataColumn2(label: Text(S.of(context).address)),
-           DataColumn2(label: Text(S.of(context).maritalStatus), size: ColumnSize.M),
-        ],
-        source: UsersDataSource(context: context),
       ),
     );
   }
-
 }
 
 class UsersDataSource extends DataTableSource {
@@ -104,23 +107,18 @@ class UsersDataSource extends DataTableSource {
     final usersListCubit = context.watch<UsersListCubit>();
     final user = usersListCubit.state.filteredUsers[index];
     return DataRow2(
-      selected: false,
       onSelectChanged: (bool? value) {},
       cells: [
         DataCell(
-          Row(
-            children: [
-              ClipOval(child: Image.network(user.image, width: 40, height: 40, fit: BoxFit.cover)),
-              const Gap(TSizes.md),
-              Expanded(child: Text(user.name).boldSubString(context.watch<UsersListCubit>().state.searchQuery)),
-            ],
-          ),
+          Text(user.participantFullName).boldSubString(context.watch<UsersListCubit>().state.searchQuery),
         ),
-        DataCell(Text(user.status)),
+        DataCell(BlocBuilder<LocaleCubit, Locale>(
+          builder: (context, state) {
+            return Text(user.participantRole.translations.isEmpty ? user.participantRole.roleName : user.participantRole.translations.first.getTranslatedRoleName(state.languageCode));
+          },
+        )),
         DataCell(Text(user.phoneNumber)),
-        DataCell(Text(user.job)),
-        DataCell(Text(user.address)),
-        DataCell(Text(user.maritalStatus)),
+        DataCell(Text(user.placeOfResidence)),
       ],
     );
   }
@@ -153,8 +151,7 @@ extension BoldSubString on Text {
       textSpans.add(
         TextSpan(
           text: matchedText,
-          style:  TextStyle(fontWeight: FontWeight.bold,background: Paint()..color = Colors.lightGreenAccent),
-
+          style: TextStyle(fontWeight: FontWeight.bold, background: Paint()..color = Colors.lightGreenAccent),
         ),
       );
 

@@ -71,6 +71,7 @@
   "thu": "Pay",
   "fri": "Juma",
   "sat": "Shanba",
-  "sun": "Yakshanba"
-
+  "sun": "Yakshanba",
+  "continueAsUser": "Foydalanuvchi kabi davom etish",
+  "settings": "Settings"
 }

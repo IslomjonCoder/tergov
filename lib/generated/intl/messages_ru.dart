@@ -27,15 +27,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Адресс"),
         "appName": MessageLookupByLibrary.simpleMessage("Tergov"),
         "articleExplanation": MessageLookupByLibrary.simpleMessage(
-            "В ходе беседы разъяснено содержание статьи 211 Уголовного кодекса Республики Узбекистан"),
+            "В ходе беседы разъяснено содержание статьи 211 Уголовного кодекса Республики Узбекистан",),
         "bribery": MessageLookupByLibrary.simpleMessage(
-            "Вымогательство незаконного вознаграждения"),
+            "Вымогательство незаконного вознаграждения",),
         "changeYourPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
-            "Безопасность вашего аккаунта – наш приоритет! Мы отправили вам безопасную ссылку для смены пароля и защиты вашего аккаунта."),
+            "Безопасность вашего аккаунта – наш приоритет! Мы отправили вам безопасную ссылку для смены пароля и защиты вашего аккаунта.",),
         "changeYourPasswordTitle": MessageLookupByLibrary.simpleMessage(
-            "Ссылка для сброса пароля отправлена"),
+            "Ссылка для сброса пароля отправлена",),
         "chiefInvestigator": MessageLookupByLibrary.simpleMessage(
-            "Начальник следственного отделения, проводивший беседу: ФИО"),
+            "Начальник следственного отделения, проводивший беседу: ФИО",),
+        "continueAsUser":
+            MessageLookupByLibrary.simpleMessage("Продолжить как пользователь"),
         "createAccount":
             MessageLookupByLibrary.simpleMessage("Создать аккаунт"),
         "dashboard": MessageLookupByLibrary.simpleMessage("Панель управления"),
@@ -43,13 +45,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "done": MessageLookupByLibrary.simpleMessage("Готово"),
         "email": MessageLookupByLibrary.simpleMessage("Эл. почта"),
         "employeeConductingInquiry": MessageLookupByLibrary.simpleMessage(
-            "Сотрудник, проводивший доследственную проверку, дознание или расследование: ФИО"),
+            "Сотрудник, проводивший доследственную проверку, дознание или расследование: ФИО",),
         "enterYourEmail": MessageLookupByLibrary.simpleMessage(
-            "Введите введите вашу электронную почту и пароль для входа в систему"),
+            "Введите введите вашу электронную почту и пароль для входа в систему",),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Забыли пароль?"),
         "forgotPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
-            "Введите введите вашу электронную почту и мы отправим вам пароль для входа в систему"),
+            "Введите введите вашу электронную почту и мы отправим вам пароль для входа в систему",),
         "fri": MessageLookupByLibrary.simpleMessage("Пт"),
         "fullName": MessageLookupByLibrary.simpleMessage("Фио лица"),
         "interviewConducted":
@@ -64,13 +66,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Законный представитель"),
         "logout": MessageLookupByLibrary.simpleMessage("Выход"),
         "longWaiting": MessageLookupByLibrary.simpleMessage(
-            "Длительные беспричинные ожидания"),
+            "Длительные беспричинные ожидания",),
         "mainInfo": MessageLookupByLibrary.simpleMessage("Основная информация"),
         "maritalStatus":
             MessageLookupByLibrary.simpleMessage("Семейное положение"),
         "menu": MessageLookupByLibrary.simpleMessage("Меню"),
         "misconductOccurred": MessageLookupByLibrary.simpleMessage(
-            "Имели ли место со стороны сотрудника следующие факты?"),
+            "Имели ли место со стороны сотрудника следующие факты?",),
         "mon": MessageLookupByLibrary.simpleMessage("Пн"),
         "name": MessageLookupByLibrary.simpleMessage("Имя"),
         "next": MessageLookupByLibrary.simpleMessage("Далее"),
@@ -81,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "physicalPressure":
             MessageLookupByLibrary.simpleMessage("Физическое давление"),
         "processParticipant": MessageLookupByLibrary.simpleMessage(
-            "Участник(ца) процесса, прошедший(ая) беседу: ФИО"),
+            "Участник(ца) процесса, прошедший(ая) беседу: ФИО",),
         "profession": MessageLookupByLibrary.simpleMessage("Профессия"),
         "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
         "psychologicalPressure":
@@ -95,13 +97,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Поиск"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Выберите язык"),
         "selectParticipantStatus": MessageLookupByLibrary.simpleMessage(
-            "Выберите Статус участника(цы) процесса"),
+            "Выберите Статус участника(цы) процесса",),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Выберите статус"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "status": MessageLookupByLibrary.simpleMessage("Статус"),
         "step": MessageLookupByLibrary.simpleMessage("Шаг"),
         "submissionSuccessful": MessageLookupByLibrary.simpleMessage(
-            "Заявление успешно отправлено"),
+            "Заявление успешно отправлено",),
         "submit": MessageLookupByLibrary.simpleMessage("Отправить"),
         "sun": MessageLookupByLibrary.simpleMessage("Вс"),
         "suspect": MessageLookupByLibrary.simpleMessage("Подозреваемый"),
@@ -113,11 +116,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "user": MessageLookupByLibrary.simpleMessage("Пользователь"),
         "victim": MessageLookupByLibrary.simpleMessage("Потерпевший"),
         "videoRecording": MessageLookupByLibrary.simpleMessage(
-            "Процесс собеседования видеозаписью"),
+            "Процесс собеседования видеозаписью",),
         "warning": MessageLookupByLibrary.simpleMessage("Предупреждение"),
         "wed": MessageLookupByLibrary.simpleMessage("Ср"),
         "week": MessageLookupByLibrary.simpleMessage("Неделя"),
         "year": MessageLookupByLibrary.simpleMessage("Год"),
-        "yourConsent": MessageLookupByLibrary.simpleMessage("Ваше согласие")
+        "yourConsent": MessageLookupByLibrary.simpleMessage("Ваше согласие"),
       };
 }

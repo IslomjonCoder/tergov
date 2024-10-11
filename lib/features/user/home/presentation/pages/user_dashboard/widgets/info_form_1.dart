@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tergov/features/dashboard/data/models/participant_roles.dart';
+import 'package:tergov/features/user/home/cubit/info_form_first_cubit.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/model/info_first_model.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/text_field.dart';
 import 'package:tergov/utils/constants/enums.dart';
-import '../../../../../../../generated/l10n.dart';
-import '../../../../cubit/info_form_first_cubit.dart';
-import '../model/info_first_model.dart';
 
 class InfoFormFirst extends StatelessWidget {
   const InfoFormFirst({super.key});
 
   @override
+
   Widget build(BuildContext context) {
     return BlocBuilder<InfoFormFirstCubit, InfoFormFirstModel>(
       builder: (context, state) {
@@ -49,10 +50,10 @@ class InfoFormFirst extends StatelessWidget {
               "Айбланувчи / Обвиняемый",
               "Қонуний вакил / Законный представитель",
               "Қариндош / Родственник",
-              "Бошқа иштирокчи / Другой участник процесса"
+              "Бошқа иштирокчи / Другой участник процесса",
             ],
-            "value": state.participantStatus,
-            "onChanged": (String value) {
+            "value": state.participantRole?.roleName,
+            "onChanged": (ParticipantRole value) {
               context.read<InfoFormFirstCubit>().updateParticipantStatus(value);
             },
           },

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import '../../../../../../../utils/constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class GlobalTextField extends StatefulWidget {
   final String hintText;
@@ -48,7 +48,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
     _isPasswordVisibleNotifier = ValueNotifier(false);
     _phoneMaskFormatter = MaskTextInputFormatter(
       mask: '+(998) ## ###-##-##',
-      filter: {"#": RegExp(r'[0-9]')},
+      filter: {"#": RegExp('[0-9]')},
     );
     _internalController = widget.controller ?? TextEditingController();
     _filteredOptionsNotifier = ValueNotifier(widget.options ?? []);
@@ -101,6 +101,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
                   _filterOptions(value);
                 }
                 if (widget.onChanged != null) {
+
                   widget.onChanged!(value);
                 }
               },
@@ -130,7 +131,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
                   icon: SvgPicture.asset("assets/icons/drop_down.svg"),
                   onPressed: () {
                     if (_filteredOptionsNotifier.value.isNotEmpty) {
-                      final RenderBox overlay = Overlay.of(context).context.findRenderObject() as RenderBox;
+                      final RenderBox overlay = Overlay.of(context).context.findRenderObject()! as RenderBox;
                       final Offset buttonPosition = overlay.localToGlobal(Offset.zero);
                       _showPopupMenu(context, buttonPosition);
                     }
@@ -146,19 +147,19 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
                 )
                     : null,
                 enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
+                  borderSide: const BorderSide(color: TColors.colorF5F5),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: TColors.primary, width: 1),
+                  borderSide: const BorderSide(color: TColors.primary),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 errorBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: TColors.error, width: 1),
+                  borderSide: const BorderSide(color: TColors.error),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 border: OutlineInputBorder(
-                  borderSide: const BorderSide(color: TColors.colorF5F5, width: 1),
+                  borderSide: const BorderSide(color: TColors.colorF5F5),
                   borderRadius: BorderRadius.circular(4),
                 ),
                 filled: true,
@@ -176,10 +177,10 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
   }
 
   void _showPopupMenu(BuildContext context, Offset offset) {
-    RenderBox renderBox = context.findRenderObject() as RenderBox;
-    Offset textFieldPosition = renderBox.localToGlobal(Offset.zero);
+    final RenderBox renderBox = context.findRenderObject()! as RenderBox;
+    final Offset textFieldPosition = renderBox.localToGlobal(Offset.zero);
 
-    RelativeRect position = RelativeRect.fromLTRB(
+    final RelativeRect position = RelativeRect.fromLTRB(
       textFieldPosition.dx + renderBox.size.width,
       textFieldPosition.dy,
       MediaQuery.of(context).size.width - textFieldPosition.dx,
@@ -200,8 +201,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
     ).then((String? value) {
       if (value != null) {
         final cursorPosition = value.length;
-        _internalController.text = value;
-        _internalController.selection = TextSelection.fromPosition(TextPosition(offset: cursorPosition));
+        _internalController..text = value
+        ..selection = TextSelection.fromPosition(TextPosition(offset: cursorPosition));
         if (widget.onChanged != null) {
           widget.onChanged!(value);
         }
@@ -209,7 +210,7 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
     });
   }
 
-  void _showCalendar() async {
+  Future<void> _showCalendar() async {
     final DateTime? selectedDate = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
@@ -219,8 +220,8 @@ class _GlobalTextFieldState extends State<GlobalTextField> {
 
     if (selectedDate != null) {
       final formattedDate = "${selectedDate.toLocal()}".split(' ')[0];
-      _internalController.text = formattedDate;
-      _internalController.selection = TextSelection.fromPosition(
+      _internalController..text = formattedDate
+      ..selection = TextSelection.fromPosition(
         TextPosition(offset: formattedDate.length),
       );
       if (widget.onChanged != null) {

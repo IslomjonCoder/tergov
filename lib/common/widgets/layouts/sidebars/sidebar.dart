@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tergov/common/widgets/app_ui/app_constrained_scroll_view.dart';
+import 'package:tergov/common/widgets/layouts/log_out_dialog/log_out_dialog.dart';
 import 'package:tergov/common/widgets/layouts/sidebars/menu/menu_item.dart';
+import 'package:tergov/generated/l10n.dart';
+import 'package:tergov/main.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/sizes.dart';
+import 'package:tergov/utils/constants/store_keys.dart';
 import 'package:tergov/utils/constants/text_strings.dart';
 import 'package:tergov/utils/routes/route_names.dart';
-
-import '../../../../generated/l10n.dart';
-import '../log_out_dialog/log_out_dialog.dart';
 
 class TSidebar extends StatelessWidget {
   const TSidebar({super.key});
@@ -19,7 +20,7 @@ class TSidebar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       shape: const BeveledRectangleBorder(),
-      child: Container(
+      child: DecoratedBox(
         decoration: const BoxDecoration(
           color: TColors.white,
           border: Border(right: BorderSide(color: TColors.grey)),
@@ -36,7 +37,7 @@ class TSidebar extends StatelessWidget {
               ),
               const Divider(),
               Padding(
-                padding:  const EdgeInsets.all(TSizes.md),
+                padding: const EdgeInsets.all(TSizes.md),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -44,19 +45,27 @@ class TSidebar extends StatelessWidget {
                     const Gap(TSizes.sm),
                     TMenuItem(itemName: S.of(context).dashboard, route: RouteNames.dashboard, icon: Iconsax.home),
                     TMenuItem(itemName: S.of(context).profile, route: RouteNames.profile, icon: Iconsax.profile_2user),
-                    TMenuItem(itemName: S.of(context).user, route: RouteNames.user, icon: Iconsax.user),
                   ],
                 ),
               ),
               const Spacer(),
-
               Padding(
-                padding:  const EdgeInsets.all(TSizes.md),
-                child: TMenuItem(
-                  itemName: S.of(context).logout,
-                  route: RouteNames.login,
-                  icon: Iconsax.logout,
-                  onTap: () => showAdaptiveLogoutDialog(context)
+                padding: const EdgeInsets.all(TSizes.md),
+                child: Column(
+                  children: [
+                    if (supabase.auth.currentUser!.userMetadata?[StoreKeys.role] == StoreKeys.superAdmin)
+                      TMenuItem(
+                        itemName: S.of(context).settings,
+                        route: RouteNames.settings,
+                        icon: Iconsax.setting_2,
+                      ),
+                    TMenuItem(
+                      itemName: S.of(context).logout,
+                      route: RouteNames.login,
+                      icon: Iconsax.logout,
+                      onTap: () async => showAdaptiveLogoutDialog(context),
+                    ),
+                  ],
                 ),
               ),
             ],

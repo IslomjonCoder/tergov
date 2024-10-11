@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/background_image.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_card.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_form_1.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_form_2.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/step_part.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/warning_message.dart';
 import 'package:tergov/utils/constants/sizes.dart';
-import '../../../../cubit/info_form_cubit.dart';
-import '../widgets/background_image.dart';
-import '../widgets/info_card.dart';
-import '../widgets/info_form_1.dart';
-import '../widgets/step_part.dart';
-import '../widgets/warning_message.dart';
 
 class UserDashboardDesktop extends StatelessWidget {
   const UserDashboardDesktop({super.key});
@@ -26,6 +26,8 @@ class UserDashboardDesktop extends StatelessWidget {
                 builder: (context, state) {
                   return Column(
                     children: [
+                      TextButton(onPressed: (){
+                      }, child: const Text("Помощь"),),
                       InfoCard(
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
@@ -59,10 +61,3 @@ class UserDashboardDesktop extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-

@@ -6,12 +6,12 @@ import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:tergov/common/cubits/locale_cubit/locale_cubit.dart';
 import 'package:tergov/common/widgets/images/t_rounded_image.dart';
+import 'package:tergov/generated/l10n.dart';
+import 'package:tergov/main.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/constants/enums.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/device/device_utility.dart';
-
-import '../../../../generated/l10n.dart';
 
 class THeader extends StatelessWidget implements PreferredSizeWidget {
   const THeader({super.key, this.scaffoldKey});
@@ -65,9 +65,9 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text('Coding with T', style: Theme.of(context).textTheme.titleLarge),
-                    Text('support@CodingWithT.com', style: Theme.of(context).textTheme.labelMedium),
+                    Text(supabase.auth.currentUser?.email??'', style: Theme.of(context).textTheme.labelMedium),
                   ],
-                )
+                ),
             ],
           ),
           if (TDeviceUtils.isMobileScreen(context))
@@ -99,14 +99,13 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
                 ];
               },
               icon: Icon(Icons.adaptive.more),
-            )
+            ),
         ],
       ),
     );
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight() + 15);
 
   void _showLanguageDialog(BuildContext context) {

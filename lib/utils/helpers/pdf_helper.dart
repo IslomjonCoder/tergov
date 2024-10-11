@@ -2,15 +2,14 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:intl/intl.dart';
-import 'package:tergov/features/dashboard/data/models/participant_model.dart';
-import 'package:tergov/utils/constants/enums.dart';
-import 'package:pdf/widgets.dart' as pw;
 import 'package:path_provider/path_provider.dart';
+import 'package:pdf/widgets.dart' as pw;
+import 'package:tergov/features/dashboard/data/models/participant_model.dart';
 
 class PdfHelper {
   PdfHelper._();
 
-  static Future<File> generatePdf(final Participant participant) async {
+  static Future<File> generatePdf( Participant participant) async {
     final pdf = pw.Document();
     final fontMedium = await rootBundle.load('assets/fonts/Roboto/Roboto-Medium.ttf');
     final fontRegular = await rootBundle.load('assets/fonts/Roboto/Roboto-Regular.ttf');
@@ -18,8 +17,8 @@ class PdfHelper {
     final ttfRegular = pw.Font.ttf(fontRegular);
     final img = await rootBundle.load('assets/images/images-Photoroom.png');
     final imageBytes = img.buffer.asUint8List();
-    pw.Image image1 = pw.Image(pw.MemoryImage(imageBytes), height: 60, width: 60, fit: pw.BoxFit.scaleDown);
-    pdf.addPage(
+    final pw.Image image1 = pw.Image(pw.MemoryImage(imageBytes), height: 60, width: 60, fit: pw.BoxFit.scaleDown);
+    pdf..addPage(
       pw.Page(
         margin: const pw.EdgeInsets.only(left: 30, right: 15, top: 20, bottom: 20),
         build: (pw.Context context) {
@@ -58,8 +57,8 @@ class PdfHelper {
                   ),
                   pw.SizedBox(width: 10),
                   RichTextContentWidget(
-                    mainText: participant.participantStatus.split('/').first,
-                    subText: '/ ${participant.participantStatus.split(' / ').last}',
+                    mainText: participant.participantRole.translations.isEmpty ? participant.participantRole.roleName : participant.participantRole.translations.first.uzbekTranslation,
+                    subText: '/ ${participant.participantRole.translations.isEmpty ? participant.participantRole.roleName : participant.participantRole.translations.first.russianTranslation}',
                     ttfMedium: ttfMedium,
                     ttfRegular: ttfRegular,
                   ),
@@ -107,7 +106,7 @@ class PdfHelper {
                     style: pw.TextStyle(fontSize: 10, font: ttfMedium),
                   ),
                   pw.SizedBox(width: 10),
-                  image1
+                  image1,
                 ],
               ),
               pw.SizedBox(height: 16),
@@ -171,7 +170,7 @@ class PdfHelper {
                 image1,
                 pw.SizedBox(width: 16),
                 pw.Text(participant.officerFullName, style: pw.TextStyle(font: ttfMedium, fontSize: 10)),
-              ]),
+              ],),
               pw.SizedBox(height: 16),
               pw.Row(
                 children: [
@@ -238,8 +237,8 @@ class PdfHelper {
           );
         },
       ),
-    );
-    pdf.addPage(
+    )
+    ..addPage(
       pw.Page(
         margin: const pw.EdgeInsets.only(left: 30, right: 15, top: 20, bottom: 20),
         build: (pw.Context context) {
@@ -253,7 +252,6 @@ class PdfHelper {
                 ttfRegular: ttfRegular,
               ),
               pw.SizedBox(height: 16),
-              // TODO: Other facts
               PdfContentWidget(
                 ttfMedium: ttfMedium,
                 ttfRegular: ttfRegular,
@@ -299,7 +297,7 @@ class PdfHelper {
                     pw.TextSpan(
                       text: 'Ибодов Жаҳонгир Насулло ўғли:',
                       style: pw.TextStyle(font: ttfMedium, fontSize: 10),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -407,7 +405,7 @@ class PdfHelper {
                     pw.TextSpan(
                       text: 'Ибодов Жаҳонгир Насулло ўғли:',
                       style: pw.TextStyle(font: ttfMedium, fontSize: 10),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -517,7 +515,7 @@ class PdfHelper {
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           );
         },

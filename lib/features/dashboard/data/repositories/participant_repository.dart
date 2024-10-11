@@ -14,7 +14,9 @@ class ParticipantRepository {
       final participant = await _participantDataSource.getParticipantById(id);
       return Right(participant);
     } on PostgrestException catch (e) {
+
       return Left(Failure(e.message));
+
     } catch (e) {
       return Left(Failure(e.toString()));
     }
@@ -27,6 +29,8 @@ class ParticipantRepository {
     } on PostgrestException catch (e) {
       return Left(Failure(e.message));
     } catch (e) {
+      print(e);
+      print(e.runtimeType);
       return Left(Failure(e.toString()));
     }
   }

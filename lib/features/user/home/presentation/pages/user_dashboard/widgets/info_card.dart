@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'info_card_template.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_card_template.dart';
 
 class InfoCard extends StatelessWidget {
   const InfoCard({super.key, required this.child, this.padding = true});

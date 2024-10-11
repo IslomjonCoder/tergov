@@ -5,12 +5,13 @@ class ParticipantDataSource {
   Future<void> uploadParticipant(Participant participant) async {}
 
   Future<Participant> getParticipantById(int id) async {
-    final response = await supabase.from('participants').select().eq('id', id).single();
+    final response = await supabase.from('participants').select('*, participant_roles(*, translations(*))').eq('id', id).single();
     return Participant.fromJson(response);
   }
 
   Future<List<Participant>> getAllParticipants() async {
-    final response = await supabase.from('participants').select();
+    final response = await supabase.from('participants').select('*, participant_roles(*, translations(*))');
+    print(response);
     return (response as List).map((e) => Participant.fromJson(e)).toList();
   }
 }

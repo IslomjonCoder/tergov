@@ -43,6 +43,7 @@ class InfoFormSecondModel {
   }
 }
 
+
 extension InfoFormSecondModelCopyWith on InfoFormSecondModel {
   InfoFormSecondModel copyWith({
     String? employeeFacts,

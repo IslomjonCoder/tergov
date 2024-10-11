@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tergov/common/widgets/layouts/sidebars/cubits/sidebar_active_cubit.dart';
 import 'package:tergov/common/widgets/layouts/templates/site_layout.dart';
 import 'package:tergov/features/navigation/presentation/pages/responsive_screens/navigation_desktop.dart';
 import 'package:tergov/features/navigation/presentation/pages/responsive_screens/navigation_mobile.dart';
 import 'package:tergov/features/navigation/presentation/pages/responsive_screens/navigation_tablet.dart';
-
-import '../../../../common/widgets/layouts/sidebars/cubits/sidebar_active_cubit.dart';
 
 class NavigationScreen extends StatelessWidget {
   const NavigationScreen({super.key});

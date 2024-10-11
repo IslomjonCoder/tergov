@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tergov/features/dashboard/data/models/participant_roles.dart';
 
-import '../presentation/pages/user_dashboard/model/info_first_model.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/model/info_first_model.dart';
 
 class InfoFormFirstCubit extends Cubit<InfoFormFirstModel> {
   InfoFormFirstCubit() : super(InfoFormFirstModel());
@@ -17,8 +18,8 @@ class InfoFormFirstCubit extends Cubit<InfoFormFirstModel> {
     emit(state.copyWith(phoneNumber: value));
   }
 
-  void updateParticipantStatus(String value) {
-    emit(state.copyWith(participantStatus: value));
+  void updateParticipantStatus(ParticipantRole value) {
+    emit(state.copyWith(participantRole: value));
   }
 
   void updateInterviewConducted(String value) {
@@ -38,7 +39,7 @@ class InfoFormFirstCubit extends Cubit<InfoFormFirstModel> {
   }
 
   void updateInterviewRecorded(String value) {
-    emit(state.copyWith(interviewRecorded: value == 'yes' ? true : false));
+    emit(state.copyWith(interviewRecorded: value == 'yes'));
   }
 
   void updateInterviewStartDate(String value) {
@@ -47,6 +48,7 @@ class InfoFormFirstCubit extends Cubit<InfoFormFirstModel> {
 
   @override
   void onChange(Change<InfoFormFirstModel> change) {
+
     if (change.currentState == change.nextState) return;
     super.onChange(change);
   }

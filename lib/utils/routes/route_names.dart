@@ -9,5 +9,6 @@ class RouteNames {
   static const String profile = '/profile';
   static const String navigation = '/navigation';
   static const String user = '/user';
+  static const String settings = '/settings';
 
 }

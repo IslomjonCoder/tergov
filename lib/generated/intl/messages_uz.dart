@@ -27,28 +27,30 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Manzil"),
         "appName": MessageLookupByLibrary.simpleMessage("Tergov"),
         "articleExplanation": MessageLookupByLibrary.simpleMessage(
-            "O‘zbekiston Respublikasi Jinoyat Kodeksining 211-moddasi mazmuni tushuntirildi"),
+            "O‘zbekiston Respublikasi Jinoyat Kodeksining 211-moddasi mazmuni tushuntirildi",),
         "bribery": MessageLookupByLibrary.simpleMessage(
-            "Noqonuniy mukofot talab qilish"),
+            "Noqonuniy mukofot talab qilish",),
         "changeYourPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
-            "Hisobingiz xavfsizligi biz uchun muhim! Parolingizni xavfsiz tarzda o\'zgartirish uchun sizga xavfsiz havola yubordik."),
+            "Hisobingiz xavfsizligi biz uchun muhim! Parolingizni xavfsiz tarzda o\'zgartirish uchun sizga xavfsiz havola yubordik.",),
         "changeYourPasswordTitle": MessageLookupByLibrary.simpleMessage(
-            "Parolni tiklash havolasi yuborildi"),
+            "Parolni tiklash havolasi yuborildi",),
         "chiefInvestigator": MessageLookupByLibrary.simpleMessage(
-            "Suhbatni olib borgan tergov bo‘limi boshlig‘i: F.I.Sh"),
+            "Suhbatni olib borgan tergov bo‘limi boshlig‘i: F.I.Sh",),
+        "continueAsUser": MessageLookupByLibrary.simpleMessage(
+            "Foydalanuvchi kabi davom etish",),
         "createAccount": MessageLookupByLibrary.simpleMessage("Hisob yaratish"),
         "dashboard": MessageLookupByLibrary.simpleMessage("Boshqaruv paneli"),
         "day": MessageLookupByLibrary.simpleMessage("Kun"),
         "done": MessageLookupByLibrary.simpleMessage("Tayyor"),
         "email": MessageLookupByLibrary.simpleMessage("Elektron pochta"),
         "employeeConductingInquiry": MessageLookupByLibrary.simpleMessage(
-            "Dastlabki tergov yoki surishtiruv olib borgan xodim: F.I.Sh"),
+            "Dastlabki tergov yoki surishtiruv olib borgan xodim: F.I.Sh",),
         "enterYourEmail": MessageLookupByLibrary.simpleMessage(
-            "Email hamda parolingizni kiriting"),
+            "Email hamda parolingizni kiriting",),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Parolni unutdingizmi?"),
         "forgotPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
-            "Elektron pochta manzilini kiriting va biz sizga parolingizni tiklash uchun link yuboramiz."),
+            "Elektron pochta manzilini kiriting va biz sizga parolingizni tiklash uchun link yuboramiz.",),
         "fri": MessageLookupByLibrary.simpleMessage("Juma"),
         "fullName": MessageLookupByLibrary.simpleMessage("F.I.Sh"),
         "interviewConducted":
@@ -69,7 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "maritalStatus": MessageLookupByLibrary.simpleMessage("Oilaviy holat"),
         "menu": MessageLookupByLibrary.simpleMessage("Menyu"),
         "misconductOccurred": MessageLookupByLibrary.simpleMessage(
-            "Xodim tomonidan quyidagi holatlar yuz berganmi?"),
+            "Xodim tomonidan quyidagi holatlar yuz berganmi?",),
         "mon": MessageLookupByLibrary.simpleMessage("Dush"),
         "name": MessageLookupByLibrary.simpleMessage("Isim"),
         "next": MessageLookupByLibrary.simpleMessage("Keyingi"),
@@ -81,7 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "physicalPressure":
             MessageLookupByLibrary.simpleMessage("Jismoniy bosim"),
         "processParticipant": MessageLookupByLibrary.simpleMessage(
-            "Jarayon ishtirokchisi, suhbatdan o\'tgan: F.I.Sh"),
+            "Jarayon ishtirokchisi, suhbatdan o\'tgan: F.I.Sh",),
         "profession": MessageLookupByLibrary.simpleMessage("Kasb"),
         "profile": MessageLookupByLibrary.simpleMessage("Profil"),
         "psychologicalPressure":
@@ -95,13 +97,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("Qidirish"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Tilni tanlang"),
         "selectParticipantStatus": MessageLookupByLibrary.simpleMessage(
-            "Ishtirokchi maqomini tanlang"),
+            "Ishtirokchi maqomini tanlang",),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Holatni tanlang"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Kirish"),
         "status": MessageLookupByLibrary.simpleMessage("Holat"),
         "step": MessageLookupByLibrary.simpleMessage("Qadam"),
         "submissionSuccessful": MessageLookupByLibrary.simpleMessage(
-            "Ariza muvaffaqiyatli yuborildi"),
+            "Ariza muvaffaqiyatli yuborildi",),
         "submit": MessageLookupByLibrary.simpleMessage("Yuborish"),
         "sun": MessageLookupByLibrary.simpleMessage("Yakshanba"),
         "suspect": MessageLookupByLibrary.simpleMessage("Gumondor"),
@@ -112,11 +115,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "user": MessageLookupByLibrary.simpleMessage("Foydalanuvchi"),
         "victim": MessageLookupByLibrary.simpleMessage("Jabrlanuvchi"),
         "videoRecording": MessageLookupByLibrary.simpleMessage(
-            "Suhbat jarayonining videotasviri"),
+            "Suhbat jarayonining videotasviri",),
         "warning": MessageLookupByLibrary.simpleMessage("Ogohlantirish"),
         "wed": MessageLookupByLibrary.simpleMessage("Chor"),
         "week": MessageLookupByLibrary.simpleMessage("Hafta"),
         "year": MessageLookupByLibrary.simpleMessage("Yil"),
-        "yourConsent": MessageLookupByLibrary.simpleMessage("Roziligingiz")
+        "yourConsent": MessageLookupByLibrary.simpleMessage("Roziligingiz"),
       };
 }

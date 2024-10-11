@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../presentation/pages/user_dashboard/model/info_form_second_model.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/model/info_form_second_model.dart';
 
 class InfoFormSecondCubit extends Cubit<InfoFormSecondModel> {
   InfoFormSecondCubit() : super(InfoFormSecondModel());

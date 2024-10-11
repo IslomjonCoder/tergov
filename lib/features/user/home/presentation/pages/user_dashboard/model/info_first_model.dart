@@ -1,9 +1,11 @@
 
+import 'package:tergov/features/dashboard/data/models/participant_roles.dart';
+
 class InfoFormFirstModel {
   String participantFullName;
   String placeOfResidence;
   String phoneNumber;
-  String participantStatus;
+  ParticipantRole? participantRole;
   String interviewConducted;
   String investigatorFullName;
   String officerFullName;
@@ -11,11 +13,11 @@ class InfoFormFirstModel {
   bool interviewRecorded;
   String? interviewStartDate;
 
-  InfoFormFirstModel({
+   InfoFormFirstModel({
     this.participantFullName = '',
     this.placeOfResidence = '',
     this.phoneNumber = '',
-    this.participantStatus = '',
+    this.participantRole,
     this.interviewConducted = '',
     this.investigatorFullName = '',
     this.officerFullName = '',
@@ -26,7 +28,7 @@ class InfoFormFirstModel {
 
   @override
   String toString() {
-    return 'InfoFormFirstModel{participantFullName: $participantFullName, placeOfResidence: $placeOfResidence, phoneNumber: $phoneNumber, participantStatus: $participantStatus, interviewConducted: $interviewConducted, investigatorFullName: $investigatorFullName, officerFullName: $officerFullName, article211Explanation: $article211Explanation, interviewRecorded: $interviewRecorded, interviewStartDate: $interviewStartDate,}';
+    return 'InfoFormFirstModel{participantFullName: $participantFullName, placeOfResidence: $placeOfResidence, phoneNumber: $phoneNumber, participantRole: $participantRole, interviewConducted: $interviewConducted, investigatorFullName: $investigatorFullName, officerFullName: $officerFullName, article211Explanation: $article211Explanation, interviewRecorded: $interviewRecorded, interviewStartDate: $interviewStartDate,}';
   }
 
   Map<String, dynamic> toMap() {
@@ -34,7 +36,7 @@ class InfoFormFirstModel {
       'participantFullName': participantFullName,
       'placeOfResidence': placeOfResidence,
       'phoneNumber': phoneNumber,
-      'participantStatus': participantStatus,
+      'participant_roles': participantRole,
       'interviewConducted': interviewConducted,
       'investigatorFullName': investigatorFullName,
       'officerFullName': officerFullName,
@@ -49,7 +51,7 @@ class InfoFormFirstModel {
       participantFullName: map['participantFullName'] as String,
       placeOfResidence: map['placeOfResidence'] as String,
       phoneNumber: map['phoneNumber'] as String,
-      participantStatus: map['participantStatus'] as String,
+      participantRole: ParticipantRole.fromJson(map['participant_roles'] as Map<String, dynamic>),
       interviewConducted: map['interviewConducted'] as String,
       investigatorFullName: map['investigatorFullName'] as String,
       officerFullName: map['officerFullName'] as String,
@@ -67,7 +69,7 @@ class InfoFormFirstModel {
           participantFullName == other.participantFullName &&
           placeOfResidence == other.placeOfResidence &&
           phoneNumber == other.phoneNumber &&
-          participantStatus == other.participantStatus &&
+          participantRole == other.participantRole &&
           interviewConducted == other.interviewConducted &&
           investigatorFullName == other.investigatorFullName &&
           officerFullName == other.officerFullName &&
@@ -76,11 +78,12 @@ class InfoFormFirstModel {
           interviewStartDate == other.interviewStartDate;
 
   @override
+
   int get hashCode =>
       participantFullName.hashCode ^
       placeOfResidence.hashCode ^
       phoneNumber.hashCode ^
-      participantStatus.hashCode ^
+      participantRole.hashCode ^
       interviewConducted.hashCode ^
       investigatorFullName.hashCode ^
       officerFullName.hashCode ^
@@ -94,7 +97,7 @@ extension InfoFormModelCopyWith on InfoFormFirstModel {
     String? participantFullName,
     String? placeOfResidence,
     String? phoneNumber,
-    String? participantStatus,
+    ParticipantRole? participantRole,
     String? interviewConducted,
     String? investigatorFullName,
     String? officerFullName,
@@ -106,7 +109,7 @@ extension InfoFormModelCopyWith on InfoFormFirstModel {
       participantFullName: participantFullName ?? this.participantFullName,
       placeOfResidence: placeOfResidence ?? this.placeOfResidence,
       phoneNumber: phoneNumber ?? this.phoneNumber,
-      participantStatus: participantStatus ?? this.participantStatus,
+      participantRole: participantRole ?? this.participantRole,
       interviewConducted: interviewConducted ?? this.interviewConducted,
       investigatorFullName: investigatorFullName ?? this.investigatorFullName,
       officerFullName: officerFullName ?? this.officerFullName,
@@ -116,4 +119,3 @@ extension InfoFormModelCopyWith on InfoFormFirstModel {
     );
   }
 }
-
