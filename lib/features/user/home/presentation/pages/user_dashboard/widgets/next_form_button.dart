@@ -9,12 +9,7 @@ import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/helpers/pdf_helper.dart';
 
 class NextFormButton extends StatelessWidget {
-  final String title;
-
-  const NextFormButton({
-    super.key,
-    required this.title,
-  });
+  const NextFormButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +25,23 @@ class NextFormButton extends StatelessWidget {
             ),
             onPressed: () async {
               if (state) {
-                context.read<FormCubit>().toggleForm();
+                if (context.read<InfoFormFirstCubit>().formKey.currentState!.validate()) {
+                  context.read<FormCubit>().toggleForm();
+                }
               } else {
-                final participant = Participant.fromInfoForms(
-                  firstModel: context.read<InfoFormFirstCubit>().state,
-                  secondModel: context.read<InfoFormSecondCubit>().state,
-                  interviewStartDate: DateTime.now(),
-                );
-                final pdfFile = await PdfHelper.generatePdf(participant);
-                await OpenFile.open(pdfFile.path);
+                if (context.read<InfoFormSecondCubit>().formKey.currentState!.validate()) {
+                  final participant = Participant.fromInfoForms(
+                    firstModel: context.read<InfoFormFirstCubit>().build(),
+                    secondModel: context.read<InfoFormSecondCubit>().build(),
+                    interviewStartDate: DateTime.now(),
+                  );
+                  final pdfFile = await PdfHelper.generatePdf(participant);
+                  await OpenFile.open(pdfFile.path);
+                }
               }
             },
             child: Text(
-              title,
+              context.watch<FormCubit>().state ? 'Далее' : "Отправить",
               style: const TextStyle(fontSize: 18),
             ),
           );

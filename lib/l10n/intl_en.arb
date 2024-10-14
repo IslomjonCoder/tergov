@@ -74,5 +74,56 @@
   "sat": "Sat",
   "sun": "Sun",
   "continueAsUser": "Continue as User",
-  "settings": "Settings"
+  "settings": "Settings",
+  "email_empty": "Email cannot be empty",
+  "invalid_email": "Invalid email address",
+  "password_empty": "Password cannot be empty",
+  "password_min_length": "Password must be at least 6 characters",
+  "field_empty": "{fieldName} cannot be empty",
+  "@field_empty": {
+    "description": "Error message when a specified field is empty",
+    "placeholders": {
+      "fieldName": {
+        "type": "String",
+        "example": "Username"
+      }
+    }
+  },
+  "full_name_hint": "Participant who has had an interview: Full Name",
+  "residence_hint": "Place of Residence",
+  "phone_number_hint": "Phone Number",
+  "participant_status_hint": "Select Participant Status",
+  "interview_conducted_hint": "Interview Conducted",
+  "investigator_full_name_hint": "Investigator's Full Name",
+  "officer_full_name_hint": "Officer's Full Name",
+  "article_211_explanation_hint": "Article 211 Explanation",
+  "interview_recorded_hint": "Interview Recorded",
+  "interview_start_date_hint": "Interview Date",
+
+  "full_name_field": "Full Name",
+  "residence_field": "Place of Residence",
+  "phone_number_field": "Phone Number",
+  "participant_status_field": "Participant Status",
+  "interview_conducted_field": "Interview Conducted",
+  "investigator_full_name_field": "Investigator's Full Name",
+  "officer_full_name_field": "Officer's Full Name",
+  "article_211_explanation_field": "Article 211 Explanation",
+  "interview_recorded_field": "Interview Recorded",
+  "interview_start_date_field": "Interview Date",
+  "yes": "Yes",
+  "no": "No",
+  "fixed": "Fixed",
+  "notFixed": "Not fixed",
+  "employee_facts_hint": "Did the employee exhibit the following facts?",
+  "long_waits_hint": "Unjustified long waits",
+  "rude_behavior_hint": "Rude behavior",
+  "psychological_pressure_hint": "Psychological pressure",
+  "physical_pressure_hint": "Physical pressure",
+  "extortion_hint": "Extortion of illegal rewards",
+  "employee_facts_field": "Employee facts",
+  "long_waits_field": "Long waits",
+  "rude_behavior_field": "Rude behavior",
+  "psychological_pressure_field": "Psychological pressure",
+  "physical_pressure_field": "Physical pressure",
+  "extortion_field": "Extortion"
 }

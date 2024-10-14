@@ -25,7 +25,6 @@ class SettingsScreen extends StatelessWidget {
             );
           }
           if (state.status.isFailure) {
-            print(state.failure?.message);
             Navigator.pop(context);
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text('Error adding admin: ${state.failure?.message}')),

@@ -116,7 +116,7 @@ class UsersDataSource extends DataTableSource {
           builder: (context, state) {
             return Text(user.participantRole.translations.isEmpty ? user.participantRole.roleName : user.participantRole.translations.first.getTranslatedRoleName(state.languageCode));
           },
-        )),
+        ),),
         DataCell(Text(user.phoneNumber)),
         DataCell(Text(user.placeOfResidence)),
       ],

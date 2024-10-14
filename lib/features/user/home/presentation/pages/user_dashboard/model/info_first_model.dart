@@ -1,29 +1,29 @@
-
 import 'package:tergov/features/dashboard/data/models/participant_roles.dart';
+import 'package:tergov/utils/constants/enums.dart';
 
 class InfoFormFirstModel {
-  String participantFullName;
-  String placeOfResidence;
-  String phoneNumber;
-  ParticipantRole? participantRole;
-  String interviewConducted;
-  String investigatorFullName;
-  String officerFullName;
-  String article211Explanation;
-  bool interviewRecorded;
-  String? interviewStartDate;
+ final String participantFullName;
+ final String placeOfResidence;
+ final String phoneNumber;
+ final ParticipantRole? participantRole;
+ final YesNo interviewConducted;
+ final String investigatorFullName;
+ final String officerFullName;
+ final YesNo article211Explanation;
+ final RecordType interviewRecorded;
+ final DateTime? interviewStartDate;
 
-   InfoFormFirstModel({
+ const  InfoFormFirstModel({
     this.participantFullName = '',
     this.placeOfResidence = '',
     this.phoneNumber = '',
     this.participantRole,
-    this.interviewConducted = '',
+    this.interviewConducted = YesNo.yes,
     this.investigatorFullName = '',
     this.officerFullName = '',
-    this.article211Explanation = '',
-    this.interviewRecorded = false,
-    this.interviewStartDate = '',
+    this.article211Explanation = YesNo.yes,
+    this.interviewRecorded = RecordType.recorded,
+    this.interviewStartDate ,
   });
 
   @override
@@ -52,12 +52,12 @@ class InfoFormFirstModel {
       placeOfResidence: map['placeOfResidence'] as String,
       phoneNumber: map['phoneNumber'] as String,
       participantRole: ParticipantRole.fromJson(map['participant_roles'] as Map<String, dynamic>),
-      interviewConducted: map['interviewConducted'] as String,
+      interviewConducted: (map['interviewConducted'] as String) == "yes" ? YesNo.yes : YesNo.no,
       investigatorFullName: map['investigatorFullName'] as String,
       officerFullName: map['officerFullName'] as String,
-      article211Explanation: map['article211Explanation'] as String,
-      interviewRecorded: map['interviewRecorded'] as bool,
-      interviewStartDate: map['interviewStartDate'] as String,
+      article211Explanation: (map['article211Explanation'] as String) == "yes" ? YesNo.yes : YesNo.no,
+      interviewRecorded: (map['interviewRecorded'] as String) == "yes" ? RecordType.recorded : RecordType.notRecorded,
+      interviewStartDate: DateTime.parse(map['interviewStartDate'] as String),
     );
   }
 
@@ -78,7 +78,6 @@ class InfoFormFirstModel {
           interviewStartDate == other.interviewStartDate;
 
   @override
-
   int get hashCode =>
       participantFullName.hashCode ^
       placeOfResidence.hashCode ^
@@ -98,12 +97,12 @@ extension InfoFormModelCopyWith on InfoFormFirstModel {
     String? placeOfResidence,
     String? phoneNumber,
     ParticipantRole? participantRole,
-    String? interviewConducted,
+    YesNo? interviewConducted,
     String? investigatorFullName,
     String? officerFullName,
-    String? article211Explanation,
-    bool? interviewRecorded,
-    String? interviewStartDate,
+    YesNo? article211Explanation,
+    RecordType? interviewRecorded,
+    DateTime? interviewStartDate,
   }) {
     return InfoFormFirstModel(
       participantFullName: participantFullName ?? this.participantFullName,

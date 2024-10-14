@@ -19,7 +19,6 @@ class App extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider(create: (context) => ParticipantDataSource()),
-
         RepositoryProvider(create: (context) => ParticipantRepository(context.read<ParticipantDataSource>())),
         RepositoryProvider(create: (context) => AuthDataSource()),
         RepositoryProvider(create: (context) => AuthRepository(context.read<AuthDataSource>())),

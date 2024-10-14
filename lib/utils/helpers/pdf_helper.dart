@@ -180,7 +180,7 @@ class PdfHelper {
                     title: '10. Суҳбат жараёни видеоёзув орқали: ',
                     subtitle: 'Процесс собеседования видеозаписью: ',
                   ),
-                  if (participant.interviewRecorded) pw.SizedBox(width: 16),
+                  if ( participant.interviewRecorded) pw.SizedBox(width: 16),
                   if (participant.interviewRecorded)
                     PdfContentWidget(
                       ttfMedium: ttfMedium,

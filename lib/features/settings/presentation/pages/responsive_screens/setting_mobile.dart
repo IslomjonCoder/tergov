@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:tergov/features/dashboard/data/models/participant_roles.dart';
 import 'package:tergov/features/settings/presentation/pages/responsive_screens/settings_desktop.dart';
-import 'package:tergov/main.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 
 class SettingsMobile extends StatelessWidget {
@@ -13,14 +11,6 @@ class SettingsMobile extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          final response = await supabase.from('participant_roles').select('*,translations(*)');
-          final roles = response.map( ParticipantRole.fromJson).toList();
-          print(roles);
-
-        },
-      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: DecoratedBox(

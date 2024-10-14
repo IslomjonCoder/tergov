@@ -22,12 +22,10 @@ class UserDashboardDesktop extends StatelessWidget {
           child: Center(
             child: BlocProvider(
               create: (context) => FormCubit(),
-              child: BlocBuilder<FormCubit,bool>(
+              child: BlocBuilder<FormCubit, bool>(
                 builder: (context, state) {
                   return Column(
                     children: [
-                      TextButton(onPressed: (){
-                      }, child: const Text("Помощь"),),
                       InfoCard(
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
@@ -39,7 +37,9 @@ class UserDashboardDesktop extends StatelessWidget {
                                 children: [
                                   Expanded(child: state ? const InfoFormFirst() : const InfoFormSecond()),
                                   const Gap(TSizes.lg),
-                                  StepPart(step: "Шаг ${state ? "1" : "2"}",),
+                                  StepPart(
+                                    step: "Шаг ${state ? "1" : "2"}",
+                                  ),
                                 ],
                               ),
                               const Gap(50),

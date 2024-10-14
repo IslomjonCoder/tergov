@@ -54,19 +54,22 @@ class Participant {
       participantFullName: firstModel.participantFullName,
       placeOfResidence: firstModel.placeOfResidence,
       phoneNumber: firstModel.phoneNumber,
-      participantRole: firstModel.participantRole ?? ParticipantRole(id: 0, roleName: '', translations: [Translation(id: 0, uzbekTranslation: '', russianTranslation: '', englishTranslation: '', roleId: 0)]),
-      interviewConducted: firstModel.interviewConducted,
+      participantRole: firstModel.participantRole ??
+          ParticipantRole(id: 0, roleName: '', translations: [
+            Translation(id: 0, uzbekTranslation: '', russianTranslation: '', englishTranslation: '', roleId: 0),
+          ],),
+      interviewConducted: firstModel.interviewConducted == YesNo.yes ? 'yes' : 'no',
       investigatorFullName: firstModel.investigatorFullName,
       officerFullName: firstModel.officerFullName,
-      article211Explanation: firstModel.article211Explanation,
-      interviewRecorded: firstModel.interviewRecorded,
+      article211Explanation: firstModel.article211Explanation == YesNo.yes ? 'yes' : 'no',
+      interviewRecorded: firstModel.interviewRecorded.isRecorded,
       interviewStartDate: interviewStartDate,
       employeeFacts: secondModel.employeeFacts,
       longWaits: secondModel.longWaits,
       rudeBehavior: secondModel.rudeBehavior,
       psychologicalPressure: secondModel.psychologicalPressure,
-      physicalPressure: secondModel.physicalPressure == 'yes' ? YesNo.yes : YesNo.no,
-      extortion: secondModel.extortion == 'yes' ? YesNo.yes : YesNo.no,
+      physicalPressure: secondModel.physicalPressure,
+      extortion: secondModel.extortion,
     );
   }
 

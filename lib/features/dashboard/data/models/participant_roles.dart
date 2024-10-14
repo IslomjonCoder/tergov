@@ -14,7 +14,7 @@ class ParticipantRole {
     return ParticipantRole(
       id: json['id'],
       roleName: json['role_name'],
-      translations: List<Translation>.from(json['translations'].map((x) => Translation.fromJson(x))),
+      translations: List.from(json['translations']).map((e) => Translation.fromJson(e)).toList(),
     );
   }
 
@@ -53,7 +53,7 @@ class Translation {
     );
   }
 
-  String getTranslatedRoleName(String locale) {
+  String getTranslatedRoleName(locale) {
     switch (locale) {
       case 'uz':
         return uzbekTranslation;

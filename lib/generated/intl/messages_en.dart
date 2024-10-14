@@ -20,6 +20,8 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(fieldName) => "${fieldName} cannot be empty";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
@@ -28,14 +30,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "address": MessageLookupByLibrary.simpleMessage("Address"),
         "appName": MessageLookupByLibrary.simpleMessage("Tergov"),
         "articleExplanation": MessageLookupByLibrary.simpleMessage(
-            "Explained content of Article 211 of the Criminal Code of the Republic of Uzbekistan",),
+            "Explained content of Article 211 of the Criminal Code of the Republic of Uzbekistan"),
+        "article_211_explanation_field":
+            MessageLookupByLibrary.simpleMessage("Article 211 Explanation"),
+        "article_211_explanation_hint":
+            MessageLookupByLibrary.simpleMessage("Article 211 Explanation"),
         "bribery": MessageLookupByLibrary.simpleMessage("Bribery or extortion"),
         "changeYourPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
-            "Your Account Security is Our Priority! We\'ve Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected.",),
+            "Your Account Security is Our Priority! We\'ve Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected."),
         "changeYourPasswordTitle":
             MessageLookupByLibrary.simpleMessage("Password reset link sent"),
         "chiefInvestigator": MessageLookupByLibrary.simpleMessage(
-            "Chief investigator conducting the interview: Full name",),
+            "Chief investigator conducting the interview: Full name"),
         "continueAsUser":
             MessageLookupByLibrary.simpleMessage("Continue as User"),
         "createAccount":
@@ -44,19 +50,51 @@ class MessageLookup extends MessageLookupByLibrary {
         "day": MessageLookupByLibrary.simpleMessage("Day"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "email_empty":
+            MessageLookupByLibrary.simpleMessage("Email cannot be empty"),
         "employeeConductingInquiry": MessageLookupByLibrary.simpleMessage(
-            "Employee conducting inquiry or investigation: Full name",),
+            "Employee conducting inquiry or investigation: Full name"),
+        "employee_facts_field":
+            MessageLookupByLibrary.simpleMessage("Employee facts"),
+        "employee_facts_hint": MessageLookupByLibrary.simpleMessage(
+            "Did the employee exhibit the following facts?"),
         "enterYourEmail": MessageLookupByLibrary.simpleMessage(
-            "Enter your email and password to sign in",),
+            "Enter your email and password to sign in"),
+        "extortion_field": MessageLookupByLibrary.simpleMessage("Extortion"),
+        "extortion_hint": MessageLookupByLibrary.simpleMessage(
+            "Extortion of illegal rewards"),
+        "field_empty": m0,
+        "fixed": MessageLookupByLibrary.simpleMessage("Fixed"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
         "forgotPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
-            "Don\'t worry sometimes people can forget too,enter your email and we will send you a link to reset your password.",),
+            "Don\'t worry sometimes people can forget too,enter your email and we will send you a link to reset your password."),
         "fri": MessageLookupByLibrary.simpleMessage("Fri"),
         "fullName": MessageLookupByLibrary.simpleMessage("Full name"),
+        "full_name_field": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "full_name_hint": MessageLookupByLibrary.simpleMessage(
+            "Participant who has had an interview: Full Name"),
         "interviewConducted":
             MessageLookupByLibrary.simpleMessage("Interview conducted"),
         "interviewDate": MessageLookupByLibrary.simpleMessage("Interview date"),
+        "interview_conducted_field":
+            MessageLookupByLibrary.simpleMessage("Interview Conducted"),
+        "interview_conducted_hint":
+            MessageLookupByLibrary.simpleMessage("Interview Conducted"),
+        "interview_recorded_field":
+            MessageLookupByLibrary.simpleMessage("Interview Recorded"),
+        "interview_recorded_hint":
+            MessageLookupByLibrary.simpleMessage("Interview Recorded"),
+        "interview_start_date_field":
+            MessageLookupByLibrary.simpleMessage("Interview Date"),
+        "interview_start_date_hint":
+            MessageLookupByLibrary.simpleMessage("Interview Date"),
+        "invalid_email":
+            MessageLookupByLibrary.simpleMessage("Invalid email address"),
+        "investigator_full_name_field":
+            MessageLookupByLibrary.simpleMessage("Investigator\'s Full Name"),
+        "investigator_full_name_hint":
+            MessageLookupByLibrary.simpleMessage("Investigator\'s Full Name"),
         "job": MessageLookupByLibrary.simpleMessage("Job"),
         "keepMeLoggedIn":
             MessageLookupByLibrary.simpleMessage("Keep me logged in"),
@@ -68,30 +106,67 @@ class MessageLookup extends MessageLookupByLibrary {
         "logout": MessageLookupByLibrary.simpleMessage("Logout"),
         "longWaiting":
             MessageLookupByLibrary.simpleMessage("Long, unjustified waiting"),
+        "long_waits_field": MessageLookupByLibrary.simpleMessage("Long waits"),
+        "long_waits_hint":
+            MessageLookupByLibrary.simpleMessage("Unjustified long waits"),
         "mainInfo": MessageLookupByLibrary.simpleMessage("Main Information"),
         "maritalStatus": MessageLookupByLibrary.simpleMessage("Marital status"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
         "misconductOccurred": MessageLookupByLibrary.simpleMessage(
-            "Did the employee exhibit the following behaviors?",),
+            "Did the employee exhibit the following behaviors?"),
         "mon": MessageLookupByLibrary.simpleMessage("Mon"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
+        "no": MessageLookupByLibrary.simpleMessage("No"),
+        "notFixed": MessageLookupByLibrary.simpleMessage("Not fixed"),
         "notRegistered":
             MessageLookupByLibrary.simpleMessage("Not registered yet?"),
         "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+        "officer_full_name_field":
+            MessageLookupByLibrary.simpleMessage("Officer\'s Full Name"),
+        "officer_full_name_hint":
+            MessageLookupByLibrary.simpleMessage("Officer\'s Full Name"),
+        "participant_status_field":
+            MessageLookupByLibrary.simpleMessage("Participant Status"),
+        "participant_status_hint":
+            MessageLookupByLibrary.simpleMessage("Select Participant Status"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "password_empty":
+            MessageLookupByLibrary.simpleMessage("Password cannot be empty"),
+        "password_min_length": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 6 characters"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "phone_number_field":
+            MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phone_number_hint":
+            MessageLookupByLibrary.simpleMessage("Phone Number"),
         "physicalPressure":
             MessageLookupByLibrary.simpleMessage("Physical pressure"),
+        "physical_pressure_field":
+            MessageLookupByLibrary.simpleMessage("Physical pressure"),
+        "physical_pressure_hint":
+            MessageLookupByLibrary.simpleMessage("Physical pressure"),
         "processParticipant": MessageLookupByLibrary.simpleMessage(
-            "Process participant, interviewed: Full name",),
+            "Process participant, interviewed: Full name"),
         "profession": MessageLookupByLibrary.simpleMessage("Profession"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "psychologicalPressure":
             MessageLookupByLibrary.simpleMessage("Psychological pressure"),
+        "psychological_pressure_field":
+            MessageLookupByLibrary.simpleMessage("Psychological pressure"),
+        "psychological_pressure_hint":
+            MessageLookupByLibrary.simpleMessage("Psychological pressure"),
         "resendEmail": MessageLookupByLibrary.simpleMessage("Resend to Email"),
         "residence": MessageLookupByLibrary.simpleMessage("Residence"),
+        "residence_field":
+            MessageLookupByLibrary.simpleMessage("Place of Residence"),
+        "residence_hint":
+            MessageLookupByLibrary.simpleMessage("Place of Residence"),
         "rudeBehavior": MessageLookupByLibrary.simpleMessage("Rude behavior"),
+        "rude_behavior_field":
+            MessageLookupByLibrary.simpleMessage("Rude behavior"),
+        "rude_behavior_hint":
+            MessageLookupByLibrary.simpleMessage("Rude behavior"),
         "sat": MessageLookupByLibrary.simpleMessage("Sat"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "selectLanguage":
@@ -104,7 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "status": MessageLookupByLibrary.simpleMessage("Status"),
         "step": MessageLookupByLibrary.simpleMessage("Step"),
         "submissionSuccessful": MessageLookupByLibrary.simpleMessage(
-            "Application successfully submitted",),
+            "Application successfully submitted"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "sun": MessageLookupByLibrary.simpleMessage("Sun"),
         "suspect": MessageLookupByLibrary.simpleMessage("Suspect"),
@@ -116,11 +191,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "user": MessageLookupByLibrary.simpleMessage("User"),
         "victim": MessageLookupByLibrary.simpleMessage("Victim"),
         "videoRecording": MessageLookupByLibrary.simpleMessage(
-            "Video recording of the interview process",),
+            "Video recording of the interview process"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
         "wed": MessageLookupByLibrary.simpleMessage("Wed"),
         "week": MessageLookupByLibrary.simpleMessage("Week"),
         "year": MessageLookupByLibrary.simpleMessage("Year"),
-        "yourConsent": MessageLookupByLibrary.simpleMessage("Your consent"),
+        "yes": MessageLookupByLibrary.simpleMessage("Yes"),
+        "yourConsent": MessageLookupByLibrary.simpleMessage("Your consent")
       };
 }

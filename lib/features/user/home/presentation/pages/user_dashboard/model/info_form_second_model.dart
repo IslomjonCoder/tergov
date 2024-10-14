@@ -1,18 +1,20 @@
+import 'package:tergov/utils/constants/enums.dart';
+
 class InfoFormSecondModel {
   String employeeFacts;
   String longWaits;
   String rudeBehavior;
   String psychologicalPressure;
-  String physicalPressure;
-  String extortion;
+  YesNo physicalPressure;
+  YesNo extortion;
 
   InfoFormSecondModel({
     this.employeeFacts = '',
     this.longWaits = '',
     this.rudeBehavior = '',
     this.psychologicalPressure = '',
-    this.physicalPressure = '',
-    this.extortion = '',
+    this.physicalPressure = YesNo.yes,
+    this.extortion = YesNo.yes,
   });
 
   @override
@@ -26,8 +28,8 @@ class InfoFormSecondModel {
       'longWaits': longWaits,
       'rudeBehavior': rudeBehavior,
       'psychologicalPressure': psychologicalPressure,
-      'physicalPressure': physicalPressure,
-      'extortion': extortion,
+      'physicalPressure': physicalPressure.name,
+      'extortion': extortion.name,
     };
   }
 
@@ -37,8 +39,8 @@ class InfoFormSecondModel {
       longWaits: map['longWaits'] as String,
       rudeBehavior: map['rudeBehavior'] as String,
       psychologicalPressure: map['psychologicalPressure'] as String,
-      physicalPressure: map['physicalPressure'] as String,
-      extortion: map['extortion'] as String,
+      physicalPressure: YesNo.values.firstWhere((e) => e.name == map['physicalPressure'] as String, orElse: () => YesNo.yes),
+      extortion: YesNo.values.firstWhere((e) => e.name == map['extortion'] as String, orElse: () => YesNo.yes),
     );
   }
 }
@@ -50,8 +52,8 @@ extension InfoFormSecondModelCopyWith on InfoFormSecondModel {
     String? longWaits,
     String? rudeBehavior,
     String? psychologicalPressure,
-    String? physicalPressure,
-    String? extortion,
+    YesNo? physicalPressure,
+    YesNo? extortion,
   }) {
     return InfoFormSecondModel(
       employeeFacts: employeeFacts ?? this.employeeFacts,
