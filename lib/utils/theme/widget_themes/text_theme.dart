@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 /// Custom Class for Light & Dark Text Themes
 class TTextTheme {

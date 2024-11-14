@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import '../../../../../../generated/l10n.dart';
-import 'data_point.dart';
-import 'line_chart.dart';
+import 'package:tergov/features/home/presentation/pages/dashboard/widgets/data_point.dart';
+import 'package:tergov/features/home/presentation/pages/dashboard/widgets/line_chart.dart';
+import 'package:tergov/generated/l10n.dart';
 
 class Chart extends StatelessWidget {
   const Chart({

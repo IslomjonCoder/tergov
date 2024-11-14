@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tergov/features/dashboard/data/repositories/participant_repository.dart';
 import 'package:tergov/features/user/home/cubit/info_form_first_cubit.dart';
 import 'package:tergov/features/user/home/cubit/info_form_second_cubit.dart';
+import 'package:tergov/features/user/home/cubit/participant_status/participant_status_list_cubit.dart';
 import 'package:tergov/features/user/home/presentation/manager/participant_upload_cubit.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/user_dashboard.dart';
 import 'package:tergov/utils/constants/colors.dart';
@@ -15,6 +16,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: MultiBlocProvider(
         providers: [
+          BlocProvider<ParticipantStatusListCubit>(create: (context) => ParticipantStatusListCubit(context.read<ParticipantRepository>())..fetchParticipantRoles(),lazy:false,),
           BlocProvider(create: (context) => ParticipantUploadCubit(context.read<ParticipantRepository>())),
           BlocProvider(create: (context) => InfoFormSecondCubit()),
           BlocProvider(create: (context) => InfoFormFirstCubit()),

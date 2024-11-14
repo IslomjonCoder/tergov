@@ -22,7 +22,6 @@ dependencies:
   awesome_flutter_extensions: ^1.2.0
   flutter_svg: ^1.1.4
   fl_chart: ^0.69.0
-  mask_text_input_formatter:
   dotted_line:
   dotted_border:
   shared_preferences:
@@ -38,6 +37,10 @@ dependencies:
   pdf: ^3.11.1
   path_provider: ^2.1.4
   open_file: ^3.5.7
+  formz: ^0.7.0
+  hydrated_bloc: ^9.1.5
+  mask_text_input_formatter: ^2.9.0
+  flag: ^6.0.0
 
 dev_dependencies:
   flutter_test:

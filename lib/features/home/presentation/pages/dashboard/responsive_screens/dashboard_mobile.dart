@@ -5,9 +5,8 @@ import 'package:tergov/features/home/presentation/cubit/filter_cubit.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/chart.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/custom_filter.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/small_earnings_widget.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/colors.dart';
-
-import '../../../../../../generated/l10n.dart';
 
 
 class DashboardMobile extends StatelessWidget {
@@ -23,31 +22,31 @@ class DashboardMobile extends StatelessWidget {
           children: [
             SmallEarningsWidget(
                 title: S.of(context).victim,
-                price: '\$40000',
+                price: r'$40000',
                 discount: '%23',
                 since: 'since last month',
-                onTap: () {}),
+                onTap: () {},),
             const Gap(10),
             SmallEarningsWidget(
                 title: S.of(context).accused,
-                price: '\$57434',
+                price: r'$57434',
                 discount: '%20',
                 since: 'since last year',
-                onTap: () {}),
+                onTap: () {},),
             const Gap(10),
             SmallEarningsWidget(
                 title: S.of(context).suspect,
-                price: '\$67700',
+                price: r'$67700',
                 discount: '%36',
                 since: 'since last weak',
-                onTap: () {}),
+                onTap: () {},),
             const Gap(10),
             SmallEarningsWidget(
                 title: S.of(context).legalRepresentative,
-                price: '\$87600',
+                price: r'$87600',
                 discount: '%27',
                 since: 'since last year',
-                onTap: () {}),
+                onTap: () {},),
             const Gap(30),
             BlocProvider(
               create: (context) => FilterCubit(),
@@ -65,10 +64,10 @@ class DashboardMobile extends StatelessWidget {
                     style: const TextStyle(
                         fontWeight: FontWeight.w700,
                         fontSize: 22,
-                        color: TColors.text2B3)),
-                const Chart()
+                        color: TColors.text2B3,),),
+                const Chart(),
               ],
-            )
+            ),
           ],
         ),
       ),

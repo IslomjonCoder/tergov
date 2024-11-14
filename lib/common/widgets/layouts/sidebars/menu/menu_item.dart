@@ -17,6 +17,7 @@ class TMenuItem extends StatelessWidget {
     this.onTap,
   });
 
+
   final String itemName, route;
   final IconData icon;
   final VoidCallback? onTap;
@@ -40,7 +41,7 @@ class TMenuItem extends StatelessWidget {
                 onHover: context.read<SidebarHoverCubit>().changeHover,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: TSizes.xs),
-                  child: Container(
+                  child: DecoratedBox(
                     decoration: BoxDecoration(
                       color: hoverState || activeState == route ? TColors.white : Colors.transparent,
                       borderRadius: BorderRadius.circular(TSizes.cardRadiusMd),
@@ -76,7 +77,7 @@ class TMenuItem extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(TSizes.borderRadiusFull),
                               ),
                             ),
-                          )
+                          ),
                         ],
                       ),
                     ),

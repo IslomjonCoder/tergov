@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import '../../../../../../../utils/constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class InfoCardTemplate extends StatelessWidget {
   final bool padding;
@@ -34,4 +34,5 @@ class InfoCardTemplate extends StatelessWidget {
       child: child,
     );
   }
+
 }

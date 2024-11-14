@@ -55,16 +55,12 @@ class TRoundedImage extends StatelessWidget {
     switch (imageType) {
       case ImageType.network:
         imageWidget = _buildNetworkImage();
-        break;
       case ImageType.asset:
         imageWidget = _buildAssetImage();
-        break;
       case ImageType.file:
         imageWidget = _buildFileImage();
-        break;
       case ImageType.memory:
         imageWidget = _buildMemoryImage();
-        break;
     }
 
     return ClipRRect(
@@ -80,7 +76,7 @@ class TRoundedImage extends StatelessWidget {
     return Container();
   }
 
-  _buildNetworkImage() {
+  Widget _buildNetworkImage() {
     if (image != null) {
       return Image.network(image!, fit: fit, color: overlayColor);
     }

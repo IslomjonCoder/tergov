@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_card.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_form_1.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/step_part.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/warning_message.dart';
 import 'package:tergov/utils/constants/sizes.dart';
-import '../../../../cubit/info_form_cubit.dart';
-import '../widgets/info_card.dart';
-import '../widgets/info_form_1.dart';
-import '../widgets/warning_message.dart';
 
 class UserDashboardTablet extends StatelessWidget {
   const UserDashboardTablet({super.key});
@@ -34,7 +34,7 @@ class UserDashboardTablet extends StatelessWidget {
                             children: [
                               const InfoFormFirst(),
                               const Gap(TSizes.lg),
-                              StepPart(step: "Шаг ${state ? "1" : "2"}",)
+                              StepPart(step: "Шаг ${state ? "1" : "2"}",),
 
                             ],
                           ),

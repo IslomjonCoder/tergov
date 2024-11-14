@@ -1,10 +1,9 @@
 import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/routes/route_names.dart';
-
-import '../../../../generated/l10n.dart';
 
 class TResetPasswordWidget extends StatelessWidget {
   const TResetPasswordWidget({
@@ -20,7 +19,7 @@ class TResetPasswordWidget extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(context, RouteNames.login, (route) => false);
             },
-            icon: const Icon(Icons.close)),
+            icon: const Icon(Icons.close),),
         const Gap(TSizes.spaceBtwItems),
         Text(S.of(context).changeYourPasswordTitle, style: context.headlineMedium, textAlign: TextAlign.center),
         const Gap(TSizes.spaceBtwItems),
@@ -30,7 +29,7 @@ class TResetPasswordWidget extends StatelessWidget {
         const Gap(TSizes.spaceBtwSections),
         SizedBox(width: double.infinity, child: ElevatedButton(onPressed: () {}, child: Text(S.of(context).done))),
         const Gap(TSizes.spaceBtwItems),
-        TextButton(onPressed: () {}, child: Text(S.of(context).resendEmail))
+        TextButton(onPressed: () {}, child: Text(S.of(context).resendEmail)),
       ],
     );
   }

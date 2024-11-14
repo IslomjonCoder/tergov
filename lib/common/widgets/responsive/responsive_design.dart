@@ -21,7 +21,7 @@ class ResponsiveWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (_, constraints) {
-        final bodyWidth = constraints.maxWidth + (useLayout == false ? context.width - constraints.maxWidth : 0);
+        final bodyWidth = constraints.maxWidth + (!useLayout ? context.width - constraints.maxWidth : 0);
         if (bodyWidth >= TSizes.desktopScreenSize) {
           return desktop;
         } else if (constraints.maxWidth <= TSizes.desktopScreenSize && constraints.maxWidth >= TSizes.tabletScreenSize) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../../utils/constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class SocialDataElements extends StatelessWidget {
   final String title;
@@ -28,7 +28,7 @@ class SocialDataElements extends StatelessWidget {
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: TColors.text006, width: 1)),
+                  border: Border.all(color: TColors.text006),),
               child: SvgPicture.asset(icon),
             ),
           ),
@@ -36,7 +36,7 @@ class SocialDataElements extends StatelessWidget {
           Text(
             title,
             style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),
-          )
+          ),
         ],
       ),
     );

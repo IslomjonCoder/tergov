@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-
-import '../../../../../../utils/constants/colors.dart';
+import 'package:flutter/material.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class LineChartGraphWidget extends StatelessWidget {
   final List<FlSpot> dataPoints;
@@ -25,7 +24,7 @@ class LineChartGraphWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: LineChart(
         LineChartData(
-          gridData: const FlGridData(show: true, drawVerticalLine: false),
+          gridData: const FlGridData(drawVerticalLine: false),
           titlesData: FlTitlesData(
             leftTitles: AxisTitles(
               sideTitles: SideTitles(
@@ -59,7 +58,7 @@ class LineChartGraphWidget extends StatelessWidget {
                   const style = TextStyle(
                     color: TColors.text2B3,
                     fontWeight: FontWeight.bold,
-                    fontSize: 16
+                    fontSize: 16,
                   );
                   if (value.toInt() >= 0 && value.toInt() < xLabels.length) {
                     return SideTitleWidget(
@@ -77,7 +76,7 @@ class LineChartGraphWidget extends StatelessWidget {
             ),
           ),
           borderData: FlBorderData(
-            border: Border.all(color: TColors.grey, width: 1),
+            border: Border.all(color: TColors.grey),
             show: false,
           ),
           minX: 0,

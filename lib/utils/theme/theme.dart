@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/theme/widget_themes/appbar_theme.dart';
 import 'package:tergov/utils/theme/widget_themes/bottom_sheet_theme.dart';
 import 'package:tergov/utils/theme/widget_themes/checkbox_theme.dart';
@@ -7,9 +8,6 @@ import 'package:tergov/utils/theme/widget_themes/elevated_button_theme.dart';
 import 'package:tergov/utils/theme/widget_themes/outlined_button_theme.dart';
 import 'package:tergov/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:tergov/utils/theme/widget_themes/text_theme.dart';
-
-
-import '../constants/colors.dart';
 
 class TAppTheme {
   TAppTheme._();
@@ -29,6 +27,7 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
+    canvasColor: Colors.white,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -46,5 +45,6 @@ class TAppTheme {
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
     outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
+    canvasColor: Colors.white,
   );
 }

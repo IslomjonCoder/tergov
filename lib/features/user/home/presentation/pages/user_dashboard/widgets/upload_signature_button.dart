@@ -2,7 +2,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../../utils/constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class DottedUploadBox extends StatelessWidget {
   const DottedUploadBox({super.key});

@@ -5,11 +5,13 @@ import 'package:tergov/features/home/presentation/cubit/date_cubit.dart';
 import 'package:tergov/features/home/presentation/cubit/filter_cubit.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/calendar_icon_button.dart';
 
-import '../../../../../../generated/l10n.dart';
-import '../../../../../../utils/constants/colors.dart';
+import 'package:tergov/generated/l10n.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class CustomFilter extends StatelessWidget {
+
   final bool isMobile;
+
 
   const CustomFilter({super.key, this.isMobile = false});
 
@@ -68,12 +70,12 @@ class CustomFilter extends StatelessWidget {
                     },
                   ),
                 ],
-              ));
+              ),);
   }
 
   Widget _buildFilterButton(BuildContext context, int index, String title, int selectedIndex,
-      {bool isFirst = false, bool isLast = false}) {
-    bool isSelected = index == selectedIndex;
+      {bool isFirst = false, bool isLast = false,}) {
+    final bool isSelected = index == selectedIndex;
 
     return GestureDetector(
       onTap: () {
@@ -88,8 +90,8 @@ class CustomFilter extends StatelessWidget {
             right: isLast ? const Radius.circular(10.0) : Radius.zero,
           ),
           border: Border(
-            left: isFirst ? BorderSide.none : BorderSide(color: Colors.grey.shade300, width: 1),
-            right: isLast ? BorderSide.none : BorderSide(color: Colors.grey.shade300, width: 1),
+            left: isFirst ? BorderSide.none : BorderSide(color: Colors.grey.shade300),
+            right: isLast ? BorderSide.none : BorderSide(color: Colors.grey.shade300),
           ),
           boxShadow: [
             BoxShadow(
@@ -97,7 +99,7 @@ class CustomFilter extends StatelessWidget {
               blurRadius: 3,
               spreadRadius: 1,
               offset: const Offset(0, 3),
-            )
+            ),
           ],
         ),
         child: Text(

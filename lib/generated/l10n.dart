@@ -779,6 +779,526 @@ class S {
       args: [],
     );
   }
+
+  /// `Continue as User`
+  String get continueAsUser {
+    return Intl.message(
+      'Continue as User',
+      name: 'continueAsUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message(
+      'Settings',
+      name: 'settings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email cannot be empty`
+  String get email_empty {
+    return Intl.message(
+      'Email cannot be empty',
+      name: 'email_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid email address`
+  String get invalid_email {
+    return Intl.message(
+      'Invalid email address',
+      name: 'invalid_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password cannot be empty`
+  String get password_empty {
+    return Intl.message(
+      'Password cannot be empty',
+      name: 'password_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 6 characters`
+  String get password_min_length {
+    return Intl.message(
+      'Password must be at least 6 characters',
+      name: 'password_min_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{fieldName} cannot be empty`
+  String field_empty(String fieldName) {
+    return Intl.message(
+      '$fieldName cannot be empty',
+      name: 'field_empty',
+      desc: 'Error message when a specified field is empty',
+      args: [fieldName],
+    );
+  }
+
+  /// `Participant who has had an interview: Full Name`
+  String get full_name_hint {
+    return Intl.message(
+      'Participant who has had an interview: Full Name',
+      name: 'full_name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place of Residence`
+  String get residence_hint {
+    return Intl.message(
+      'Place of Residence',
+      name: 'residence_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number_hint {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Participant Status`
+  String get participant_status_hint {
+    return Intl.message(
+      'Select Participant Status',
+      name: 'participant_status_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview Conducted`
+  String get interview_conducted_hint {
+    return Intl.message(
+      'Interview Conducted',
+      name: 'interview_conducted_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Investigator's Full Name`
+  String get investigator_full_name_hint {
+    return Intl.message(
+      'Investigator\'s Full Name',
+      name: 'investigator_full_name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Officer's Full Name`
+  String get officer_full_name_hint {
+    return Intl.message(
+      'Officer\'s Full Name',
+      name: 'officer_full_name_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Article 211 Explanation`
+  String get article_211_explanation_hint {
+    return Intl.message(
+      'Article 211 Explanation',
+      name: 'article_211_explanation_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview Recorded`
+  String get interview_recorded_hint {
+    return Intl.message(
+      'Interview Recorded',
+      name: 'interview_recorded_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview Date`
+  String get interview_start_date_hint {
+    return Intl.message(
+      'Interview Date',
+      name: 'interview_start_date_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full Name`
+  String get full_name_field {
+    return Intl.message(
+      'Full Name',
+      name: 'full_name_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place of Residence`
+  String get residence_field {
+    return Intl.message(
+      'Place of Residence',
+      name: 'residence_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number_field {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Participant Status`
+  String get participant_status_field {
+    return Intl.message(
+      'Participant Status',
+      name: 'participant_status_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview Conducted`
+  String get interview_conducted_field {
+    return Intl.message(
+      'Interview Conducted',
+      name: 'interview_conducted_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Investigator's Full Name`
+  String get investigator_full_name_field {
+    return Intl.message(
+      'Investigator\'s Full Name',
+      name: 'investigator_full_name_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Officer's Full Name`
+  String get officer_full_name_field {
+    return Intl.message(
+      'Officer\'s Full Name',
+      name: 'officer_full_name_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Article 211 Explanation`
+  String get article_211_explanation_field {
+    return Intl.message(
+      'Article 211 Explanation',
+      name: 'article_211_explanation_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview Recorded`
+  String get interview_recorded_field {
+    return Intl.message(
+      'Interview Recorded',
+      name: 'interview_recorded_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interview Date`
+  String get interview_start_date_field {
+    return Intl.message(
+      'Interview Date',
+      name: 'interview_start_date_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yes`
+  String get yes {
+    return Intl.message(
+      'Yes',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No`
+  String get no {
+    return Intl.message(
+      'No',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fixed`
+  String get fixed {
+    return Intl.message(
+      'Fixed',
+      name: 'fixed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not fixed`
+  String get notFixed {
+    return Intl.message(
+      'Not fixed',
+      name: 'notFixed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Did the employee exhibit the following facts?`
+  String get employee_facts_hint {
+    return Intl.message(
+      'Did the employee exhibit the following facts?',
+      name: 'employee_facts_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unjustified long waits`
+  String get long_waits_hint {
+    return Intl.message(
+      'Unjustified long waits',
+      name: 'long_waits_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rude behavior`
+  String get rude_behavior_hint {
+    return Intl.message(
+      'Rude behavior',
+      name: 'rude_behavior_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Psychological pressure`
+  String get psychological_pressure_hint {
+    return Intl.message(
+      'Psychological pressure',
+      name: 'psychological_pressure_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Physical pressure`
+  String get physical_pressure_hint {
+    return Intl.message(
+      'Physical pressure',
+      name: 'physical_pressure_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Extortion of illegal rewards`
+  String get extortion_hint {
+    return Intl.message(
+      'Extortion of illegal rewards',
+      name: 'extortion_hint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Employee facts`
+  String get employee_facts_field {
+    return Intl.message(
+      'Employee facts',
+      name: 'employee_facts_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Long waits`
+  String get long_waits_field {
+    return Intl.message(
+      'Long waits',
+      name: 'long_waits_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Rude behavior`
+  String get rude_behavior_field {
+    return Intl.message(
+      'Rude behavior',
+      name: 'rude_behavior_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Psychological pressure`
+  String get psychological_pressure_field {
+    return Intl.message(
+      'Psychological pressure',
+      name: 'psychological_pressure_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Physical pressure`
+  String get physical_pressure_field {
+    return Intl.message(
+      'Physical pressure',
+      name: 'physical_pressure_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Extortion`
+  String get extortion_field {
+    return Intl.message(
+      'Extortion',
+      name: 'extortion_field',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to log out?`
+  String get areYouSureYouWantToLogOut {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'areYouSureYouWantToLogOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main Dashboard`
+  String get mainDashboard {
+    return Intl.message(
+      'Main Dashboard',
+      name: 'mainDashboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Admin`
+  String get addAdmin {
+    return Intl.message(
+      'Add Admin',
+      name: 'addAdmin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Role`
+  String get selectRole {
+    return Intl.message(
+      'Select Role',
+      name: 'selectRole',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin role`
+  String get adminRole {
+    return Intl.message(
+      'Admin role',
+      name: 'adminRole',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin Email`
+  String get adminEmail {
+    return Intl.message(
+      'Admin Email',
+      name: 'adminEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Simple Admin`
+  String get simpleAdmin {
+    return Intl.message(
+      'Simple Admin',
+      name: 'simpleAdmin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Super Admin`
+  String get superAdmin {
+    return Intl.message(
+      'Super Admin',
+      name: 'superAdmin',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

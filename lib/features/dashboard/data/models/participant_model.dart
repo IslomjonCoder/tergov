@@ -1,3 +1,4 @@
+import 'package:tergov/features/dashboard/data/models/participant_roles.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/model/info_first_model.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/model/info_form_second_model.dart';
 import 'package:tergov/utils/constants/enums.dart';
@@ -7,7 +8,7 @@ class Participant {
   final String participantFullName;
   final String placeOfResidence;
   final String phoneNumber;
-  final String participantStatus;
+  final ParticipantRole participantRole;
   final String interviewConducted;
   final String investigatorFullName;
   final String officerFullName;
@@ -26,7 +27,7 @@ class Participant {
     required this.participantFullName,
     required this.placeOfResidence,
     required this.phoneNumber,
-    required this.participantStatus,
+    required this.participantRole,
     required this.interviewConducted,
     required this.investigatorFullName,
     required this.officerFullName,
@@ -53,19 +54,22 @@ class Participant {
       participantFullName: firstModel.participantFullName,
       placeOfResidence: firstModel.placeOfResidence,
       phoneNumber: firstModel.phoneNumber,
-      participantStatus: firstModel.participantStatus,
-      interviewConducted: firstModel.interviewConducted,
+      participantRole: firstModel.participantRole ??
+          ParticipantRole(id: 0, roleName: '', translations: [
+            Translation(id: 0, uzbekTranslation: '', russianTranslation: '', englishTranslation: '', roleId: 0),
+          ],),
+      interviewConducted: firstModel.interviewConducted == YesNo.yes ? 'yes' : 'no',
       investigatorFullName: firstModel.investigatorFullName,
       officerFullName: firstModel.officerFullName,
-      article211Explanation: firstModel.article211Explanation,
-      interviewRecorded: firstModel.interviewRecorded,
+      article211Explanation: firstModel.article211Explanation == YesNo.yes ? 'yes' : 'no',
+      interviewRecorded: firstModel.interviewRecorded.isRecorded,
       interviewStartDate: interviewStartDate,
       employeeFacts: secondModel.employeeFacts,
       longWaits: secondModel.longWaits,
       rudeBehavior: secondModel.rudeBehavior,
       psychologicalPressure: secondModel.psychologicalPressure,
-      physicalPressure: secondModel.physicalPressure == 'yes' ? YesNo.yes : YesNo.no,
-      extortion: secondModel.extortion == 'yes' ? YesNo.yes : YesNo.no,
+      physicalPressure: secondModel.physicalPressure,
+      extortion: secondModel.extortion,
     );
   }
 
@@ -76,7 +80,7 @@ class Participant {
       participantFullName: json['participant_full_name'] as String,
       placeOfResidence: json['place_of_residence'] as String,
       phoneNumber: json['phone_number'] as String,
-      participantStatus: json['participant_status'] as String,
+      participantRole: ParticipantRole.fromJson(json['participant_roles'] as Map<String, dynamic>),
       interviewConducted: json['interview_conducted'] as String,
       investigatorFullName: json['investigator_full_name'] as String,
       officerFullName: json['officer_full_name'] as String,
@@ -99,7 +103,7 @@ class Participant {
       'participant_full_name': participantFullName,
       'place_of_residence': placeOfResidence,
       'phone_number': phoneNumber,
-      'participant_status': participantStatus,
+      'participant_roles': participantRole,
       'interview_conducted': interviewConducted,
       'investigator_full_name': investigatorFullName,
       'officer_full_name': officerFullName,
@@ -116,4 +120,12 @@ class Participant {
   }
 
   Map<String, dynamic> toUploadJson() => toJson()..remove('id');
+
+  //   List get fields => [name, status, phoneNumber, job, address, maritalStatus];
+  List get fields => [
+        participantFullName,
+        participantRole,
+        phoneNumber,
+        placeOfResidence,
+      ];
 }

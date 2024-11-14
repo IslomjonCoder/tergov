@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../../../utils/constants/colors.dart';
+import 'package:tergov/utils/constants/colors.dart';
 
 class WarningContainer extends StatelessWidget {
   final String title;
@@ -23,7 +23,7 @@ class WarningContainer extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
           border: Border.all(color: TColors.error, width: 2),
-          color: TColors.white),
+          color: TColors.white,),
       child: Column(
         children: [
           Text(

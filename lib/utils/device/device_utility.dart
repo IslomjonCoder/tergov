@@ -1,9 +1,9 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 // import 'package:awesome_extensions/awesome_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/foundation.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 
 // import 'package:get/get.dart';
@@ -32,7 +32,9 @@ class TDeviceUtils {
     return viewInsets.bottom != 0;
   }
 
+
   static void setFullScreen(bool enable) {
+
     SystemChrome.setEnabledSystemUIMode(enable ? SystemUiMode.immersiveSticky : SystemUiMode.edgeToEdge);
   }
 
@@ -76,7 +78,7 @@ class TDeviceUtils {
 
   static void vibrate(Duration duration) {
     HapticFeedback.vibrate();
-    Future.delayed(duration, () => HapticFeedback.vibrate());
+    Future.delayed(duration, HapticFeedback.vibrate);
   }
 
   static Future<void> setPreferredOrientations(List<DeviceOrientation> orientations) async {

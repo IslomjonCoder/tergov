@@ -4,7 +4,7 @@ import 'package:tergov/common/widgets/layouts/templates/login_template.dart';
 import 'package:tergov/features/authentication/presentation/widgets/login_form.dart';
 import 'package:tergov/features/authentication/presentation/widgets/login_header.dart';
 
-import '../../../../../../utils/constants/sizes.dart';
+import 'package:tergov/utils/constants/sizes.dart';
 
 class LoginDesktopTablet extends StatelessWidget {
   const LoginDesktopTablet({super.key});
@@ -34,7 +34,7 @@ class LoginDesktopTablet extends StatelessWidget {
               child: Image.asset(
             "assets/images/login.png",
             fit: BoxFit.fill,
-          )),
+          ),),
         ],
       ),
     );

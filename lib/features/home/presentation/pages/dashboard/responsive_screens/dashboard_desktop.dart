@@ -6,9 +6,8 @@ import 'package:tergov/features/home/presentation/cubit/filter_cubit.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/chart.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/custom_filter.dart';
 import 'package:tergov/features/home/presentation/pages/dashboard/widgets/small_earnings_widget.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/colors.dart';
-
-import '../../../../../../generated/l10n.dart';
 
 class DashboardDesktop extends StatelessWidget {
   const DashboardDesktop({super.key});
@@ -25,18 +24,18 @@ class DashboardDesktop extends StatelessWidget {
               children: [
                 Expanded(
                   child: SmallEarningsWidget(
-                      title: S.of(context).victim, price: '\$40000', discount: '%23', since: 'since last month', onTap: () {}),
+                      title: S.of(context).victim, price: r'40000', discount: '%23', since: 'since last month', onTap: () {},),
                 ),
                 Expanded(
                     child: SmallEarningsWidget(
-                        title: S.of(context).accused, price: '\$57434', discount: '%20', since: 'since last year', onTap: () {})),
+                        title: S.of(context).accused, price: r'57434', discount: '%20', since: 'since last year', onTap: () {},),),
                 Expanded(
                   child: SmallEarningsWidget(
-                      title: S.of(context).suspect, price: '\$67700', discount: '%36', since: 'since last weak', onTap: () {}),
+                      title: S.of(context).suspect, price: r'67700', discount: '%36', since: 'since last weak', onTap: () {},),
                 ),
                 Expanded(
                   child: SmallEarningsWidget(
-                      title: S.of(context).legalRepresentative, price: '\$87600', discount: '%27', since: 'since last year', onTap: () {}),
+                      title: S.of(context).legalRepresentative, price: r'$87600', discount: '%27', since: 'since last year', onTap: () {},),
                 ),
               ].separatedBy(const Gap(20)),
             ),
@@ -50,9 +49,9 @@ class DashboardDesktop extends StatelessWidget {
               children: [
                 Text(S.of(context).totalStats, style: const TextStyle(fontWeight: FontWeight.w700, fontSize: 44, color: TColors.text2B3)),
                 const Gap(10),
-                const Chart()
+                const Chart(),
               ],
-            )
+            ),
           ],
         ),
       ),
