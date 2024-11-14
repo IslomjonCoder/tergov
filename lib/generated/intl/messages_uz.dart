@@ -26,8 +26,15 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accused": MessageLookupByLibrary.simpleMessage("Ayblanuvchi"),
         "add": MessageLookupByLibrary.simpleMessage("Qo\'shish"),
+        "addAdmin":
+            MessageLookupByLibrary.simpleMessage("Administrator qo\'shish"),
         "address": MessageLookupByLibrary.simpleMessage("Manzil"),
+        "adminEmail":
+            MessageLookupByLibrary.simpleMessage("Email Administrator"),
+        "adminRole": MessageLookupByLibrary.simpleMessage("Administrator roli"),
         "appName": MessageLookupByLibrary.simpleMessage("Tergov"),
+        "areYouSureYouWantToLogOut": MessageLookupByLibrary.simpleMessage(
+            "Chiqmoqchi ekanligingizga ishonchingiz komilmi?"),
         "articleExplanation": MessageLookupByLibrary.simpleMessage(
             "O‘zbekiston Respublikasi Jinoyat Kodeksining 211-moddasi mazmuni tushuntirildi"),
         "article_211_explanation_field":
@@ -36,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "В ходе беседы разъяснено содержание статьи 211 Уголовного кодекса Республики Узбекистан"),
         "bribery": MessageLookupByLibrary.simpleMessage(
             "Noqonuniy mukofot talab qilish"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Bekor qilish"),
         "changeYourPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
             "Hisobingiz xavfsizligi biz uchun muhim! Parolingizni xavfsiz tarzda o\'zgartirish uchun sizga xavfsiz havola yubordik."),
         "changeYourPasswordTitle": MessageLookupByLibrary.simpleMessage(
@@ -109,13 +117,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "long_waits_field": MessageLookupByLibrary.simpleMessage("Uzoq kutish"),
         "long_waits_hint":
             MessageLookupByLibrary.simpleMessage("Beshak sababli uzoq kutish"),
+        "mainDashboard": MessageLookupByLibrary.simpleMessage("Bosh sahifa"),
         "mainInfo": MessageLookupByLibrary.simpleMessage("Asosiy ma\'lumotlar"),
         "maritalStatus": MessageLookupByLibrary.simpleMessage("Oilaviy holat"),
         "menu": MessageLookupByLibrary.simpleMessage("Menyu"),
         "misconductOccurred": MessageLookupByLibrary.simpleMessage(
             "Xodim tomonidan quyidagi holatlar yuz berganmi?"),
         "mon": MessageLookupByLibrary.simpleMessage("Dush"),
-        "name": MessageLookupByLibrary.simpleMessage("Isim"),
+        "name": MessageLookupByLibrary.simpleMessage("Ism"),
         "next": MessageLookupByLibrary.simpleMessage("Keyingi"),
         "no": MessageLookupByLibrary.simpleMessage("Yo`q"),
         "notFixed": MessageLookupByLibrary.simpleMessage("Yozib olinmadi"),
@@ -173,15 +182,19 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Tilni tanlang"),
         "selectParticipantStatus": MessageLookupByLibrary.simpleMessage(
             "Ishtirokchi maqomini tanlang"),
+        "selectRole": MessageLookupByLibrary.simpleMessage("Rol tanlash"),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Holatni tanlang"),
         "settings": MessageLookupByLibrary.simpleMessage("Sozlamalar"),
         "signIn": MessageLookupByLibrary.simpleMessage("Kirish"),
+        "simpleAdmin": MessageLookupByLibrary.simpleMessage("Administrator"),
         "status": MessageLookupByLibrary.simpleMessage("Holat"),
         "step": MessageLookupByLibrary.simpleMessage("Qadam"),
         "submissionSuccessful": MessageLookupByLibrary.simpleMessage(
             "Ariza muvaffaqiyatli yuborildi"),
         "submit": MessageLookupByLibrary.simpleMessage("Yuborish"),
         "sun": MessageLookupByLibrary.simpleMessage("Yakshanba"),
+        "superAdmin":
+            MessageLookupByLibrary.simpleMessage("Super administrator"),
         "suspect": MessageLookupByLibrary.simpleMessage("Gumondor"),
         "thu": MessageLookupByLibrary.simpleMessage("Pay"),
         "totalStats": MessageLookupByLibrary.simpleMessage("Umumiy statistika"),

@@ -124,5 +124,14 @@
   "rude_behavior_field": "Грубое обращение",
   "psychological_pressure_field": "Психологическое давление",
   "physical_pressure_field": "Физическое давление",
-  "extortion_field": "Вымогательство"
+  "extortion_field": "Вымогательство",
+  "areYouSureYouWantToLogOut": "Вы уверены, что хотите выйти?",
+  "cancel": "Отмена",
+  "mainDashboard": "Главная",
+  "addAdmin": "Добавить администратора",
+  "selectRole": "Выберите роль",
+  "adminRole": "Администратор роли",
+  "adminEmail": "Email администратора",
+  "simpleAdmin": "Простой администратор",
+  "superAdmin": "Суперадминистратор"
 }

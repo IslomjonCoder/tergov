@@ -27,8 +27,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "Profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "accused": MessageLookupByLibrary.simpleMessage("Accused"),
         "add": MessageLookupByLibrary.simpleMessage("Add"),
+        "addAdmin": MessageLookupByLibrary.simpleMessage("Add Admin"),
         "address": MessageLookupByLibrary.simpleMessage("Address"),
+        "adminEmail": MessageLookupByLibrary.simpleMessage("Admin Email"),
+        "adminRole": MessageLookupByLibrary.simpleMessage("Admin role"),
         "appName": MessageLookupByLibrary.simpleMessage("Tergov"),
+        "areYouSureYouWantToLogOut": MessageLookupByLibrary.simpleMessage(
+            "Are you sure you want to log out?"),
         "articleExplanation": MessageLookupByLibrary.simpleMessage(
             "Explained content of Article 211 of the Criminal Code of the Republic of Uzbekistan"),
         "article_211_explanation_field":
@@ -36,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "article_211_explanation_hint":
             MessageLookupByLibrary.simpleMessage("Article 211 Explanation"),
         "bribery": MessageLookupByLibrary.simpleMessage("Bribery or extortion"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeYourPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
             "Your Account Security is Our Priority! We\'ve Sent You a Secure Link to Safely Change Your Password and Keep Your Account Protected."),
         "changeYourPasswordTitle":
@@ -109,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "long_waits_field": MessageLookupByLibrary.simpleMessage("Long waits"),
         "long_waits_hint":
             MessageLookupByLibrary.simpleMessage("Unjustified long waits"),
+        "mainDashboard": MessageLookupByLibrary.simpleMessage("Main Dashboard"),
         "mainInfo": MessageLookupByLibrary.simpleMessage("Main Information"),
         "maritalStatus": MessageLookupByLibrary.simpleMessage("Marital status"),
         "menu": MessageLookupByLibrary.simpleMessage("Menu"),
@@ -173,15 +180,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select language"),
         "selectParticipantStatus":
             MessageLookupByLibrary.simpleMessage("Select participant status"),
+        "selectRole": MessageLookupByLibrary.simpleMessage("Select Role"),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Select status"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
+        "simpleAdmin": MessageLookupByLibrary.simpleMessage("Simple Admin"),
         "status": MessageLookupByLibrary.simpleMessage("Status"),
         "step": MessageLookupByLibrary.simpleMessage("Step"),
         "submissionSuccessful": MessageLookupByLibrary.simpleMessage(
             "Application successfully submitted"),
         "submit": MessageLookupByLibrary.simpleMessage("Submit"),
         "sun": MessageLookupByLibrary.simpleMessage("Sun"),
+        "superAdmin": MessageLookupByLibrary.simpleMessage("Super Admin"),
         "suspect": MessageLookupByLibrary.simpleMessage("Suspect"),
         "thu": MessageLookupByLibrary.simpleMessage("Thu"),
         "totalStats": MessageLookupByLibrary.simpleMessage("Total statistics"),

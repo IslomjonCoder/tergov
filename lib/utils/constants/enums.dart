@@ -3,7 +3,9 @@
       They cannot be created inside a class.
 -- */
 
+import 'package:flutter/material.dart';
 import 'package:tergov/common/widgets/images/t_rounded_image.dart';
+import 'package:tergov/generated/l10n.dart';
 
 /// [ImageType] is used in [TRoundedImage]
 enum ImageType { network, asset, file, memory }
@@ -15,13 +17,26 @@ enum YesNo { yes, no }
 enum RecordType { recorded, notRecorded }
 
 enum AdminType {
-  simpleAdmin("simple_admin", 'Simple Admin'),
-  superAdmin("super_admin", 'Super Admin');
+  simpleAdmin("simple_admin"),
+  superAdmin("super_admin");
 
-  const AdminType(this.roleName, this.name);
+  const AdminType(this.roleName);
 
   final String roleName;
-  final String name;
+
+
+}
+
+extension StatusExtension on AdminType {
+  String get localizedName {
+    switch (this) {
+      case AdminType.simpleAdmin:
+        return S.current.simpleAdmin;
+      case AdminType.superAdmin:
+        return S.current.superAdmin;
+
+    }
+  }
 }
 
 extension YesNoExtension on YesNo {
@@ -34,7 +49,6 @@ extension YesNoExtension on YesNo {
   }
 
   String toJson() => name;
-
 }
 
 extension RecordTypeExtension on RecordType {
@@ -51,6 +65,7 @@ extension RecordTypeExtension on RecordType {
       return "no";
     }
   }
+
   static RecordType fromJson(String json) {
     switch (json) {
       case 'yes':

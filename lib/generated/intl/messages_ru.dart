@@ -26,8 +26,15 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accused": MessageLookupByLibrary.simpleMessage("Обвиняемый"),
         "add": MessageLookupByLibrary.simpleMessage("Добавить"),
+        "addAdmin":
+            MessageLookupByLibrary.simpleMessage("Добавить администратора"),
         "address": MessageLookupByLibrary.simpleMessage("Адресс"),
+        "adminEmail":
+            MessageLookupByLibrary.simpleMessage("Email администратора"),
+        "adminRole": MessageLookupByLibrary.simpleMessage("Администратор роли"),
         "appName": MessageLookupByLibrary.simpleMessage("Tergov"),
+        "areYouSureYouWantToLogOut": MessageLookupByLibrary.simpleMessage(
+            "Вы уверены, что хотите выйти?"),
         "articleExplanation": MessageLookupByLibrary.simpleMessage(
             "В ходе беседы разъяснено содержание статьи 211 Уголовного кодекса Республики Узбекистан"),
         "article_211_explanation_field":
@@ -36,6 +43,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "В ходе беседы разъяснено содержание статьи 211 Уголовного кодекса Республики Узбекистан"),
         "bribery": MessageLookupByLibrary.simpleMessage(
             "Вымогательство незаконного вознаграждения"),
+        "cancel": MessageLookupByLibrary.simpleMessage("Отмена"),
         "changeYourPasswordSubTitle": MessageLookupByLibrary.simpleMessage(
             "Безопасность вашего аккаунта – наш приоритет! Мы отправили вам безопасную ссылку для смены пароля и защиты вашего аккаунта."),
         "changeYourPasswordTitle": MessageLookupByLibrary.simpleMessage(
@@ -109,6 +117,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Долгие ожидания"),
         "long_waits_hint": MessageLookupByLibrary.simpleMessage(
             "Длительные беспричинные ожидания"),
+        "mainDashboard": MessageLookupByLibrary.simpleMessage("Главная"),
         "mainInfo": MessageLookupByLibrary.simpleMessage("Основная информация"),
         "maritalStatus":
             MessageLookupByLibrary.simpleMessage("Семейное положение"),
@@ -174,15 +183,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLanguage": MessageLookupByLibrary.simpleMessage("Выберите язык"),
         "selectParticipantStatus": MessageLookupByLibrary.simpleMessage(
             "Выберите Статус участника(цы) процесса"),
+        "selectRole": MessageLookupByLibrary.simpleMessage("Выберите роль"),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Выберите статус"),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
+        "simpleAdmin":
+            MessageLookupByLibrary.simpleMessage("Простой администратор"),
         "status": MessageLookupByLibrary.simpleMessage("Статус"),
         "step": MessageLookupByLibrary.simpleMessage("Шаг"),
         "submissionSuccessful": MessageLookupByLibrary.simpleMessage(
             "Заявление успешно отправлено"),
         "submit": MessageLookupByLibrary.simpleMessage("Отправить"),
         "sun": MessageLookupByLibrary.simpleMessage("Вс"),
+        "superAdmin":
+            MessageLookupByLibrary.simpleMessage("Суперадминистратор"),
         "suspect": MessageLookupByLibrary.simpleMessage("Подозреваемый"),
         "thu": MessageLookupByLibrary.simpleMessage("Чт"),
         "totalStats": MessageLookupByLibrary.simpleMessage("Общая статистика"),

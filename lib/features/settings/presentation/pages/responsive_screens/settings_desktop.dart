@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:tergov/features/authentication/presentation/manager/password/password_visibility_cubit.dart';
 import 'package:tergov/features/settings/presentation/manager/add_admin/add_admin_cubit.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/enums.dart';
 import 'package:tergov/utils/constants/sizes.dart';
 import 'package:tergov/utils/validators/validators.dart';
@@ -27,7 +28,7 @@ class SettingsDesktop extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Add Admin', style: Theme.of(context).textTheme.headlineMedium),
+              Text(S.of(context).addAdmin, style: Theme.of(context).textTheme.headlineMedium),
               const Gap(TSizes.spaceBtwItems),
               Form(
                 key: formKey,
@@ -74,7 +75,7 @@ class AdminEmailField extends StatelessWidget {
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
       controller: context.read<AddAdminCubit>().emailController,
-      decoration: const InputDecoration(labelText: 'Admin Email'),
+      decoration:  InputDecoration(labelText: S.of(context).adminEmail),
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.next,
       validator: AppValidators.validateEmail,
@@ -95,7 +96,7 @@ class AdminPasswordField extends StatelessWidget {
             autovalidateMode: AutovalidateMode.onUserInteraction,
             controller: context.read<AddAdminCubit>().passwordController,
             decoration: InputDecoration(
-              labelText: 'Password',
+              labelText: S.of(context).password,
               suffixIcon: IconButton(
                 onPressed: context.read<PasswordVisibilityCubit>().toggle,
                 icon: Icon(state ? Icons.visibility : Icons.visibility_off),
@@ -118,12 +119,12 @@ class AdminRoleDropdown extends StatelessWidget {
     return DropdownButtonFormField<AdminType>(
       autovalidateMode: AutovalidateMode.onUserInteraction,
       value: context.watch<AddAdminCubit>().state.role,
-      decoration: const InputDecoration(labelText: 'Select Role'),
+      decoration:  InputDecoration(labelText: S.of(context).selectRole),
       isExpanded: true,
-      validator: (value) => AppValidators.validateEmpty(value?.name, fieldName: 'Admin role'),
+      validator: (value) => AppValidators.validateEmpty(value?.name, fieldName: S.of(context).adminRole),
       onChanged: context.read<AddAdminCubit>().changeRole,
       items: AdminType.values
-          .map((role) => DropdownMenuItem<AdminType>(value: role, child: Text(role.name)))
+          .map((role) => DropdownMenuItem<AdminType>(value: role, child: Text(role.localizedName)))
           .toList(),
     );
   }
@@ -142,9 +143,9 @@ class AddAdminButton extends StatelessWidget {
           context.read<AddAdminCubit>().addAdmin();
         }
       },
-      child: const Padding(
+      child:  Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.0),
-        child: Text('Add Admin'),
+        child: Text(S.of(context).add),
       ),
     );
   }

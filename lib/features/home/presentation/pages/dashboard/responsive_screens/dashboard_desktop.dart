@@ -24,14 +24,14 @@ class DashboardDesktop extends StatelessWidget {
               children: [
                 Expanded(
                   child: SmallEarningsWidget(
-                      title: S.of(context).victim, price: r'$40000', discount: '%23', since: 'since last month', onTap: () {},),
+                      title: S.of(context).victim, price: r'40000', discount: '%23', since: 'since last month', onTap: () {},),
                 ),
                 Expanded(
                     child: SmallEarningsWidget(
-                        title: S.of(context).accused, price: r'$57434', discount: '%20', since: 'since last year', onTap: () {},),),
+                        title: S.of(context).accused, price: r'57434', discount: '%20', since: 'since last year', onTap: () {},),),
                 Expanded(
                   child: SmallEarningsWidget(
-                      title: S.of(context).suspect, price: r'$67700', discount: '%36', since: 'since last weak', onTap: () {},),
+                      title: S.of(context).suspect, price: r'67700', discount: '%36', since: 'since last weak', onTap: () {},),
                 ),
                 Expanded(
                   child: SmallEarningsWidget(

@@ -7,6 +7,7 @@ import 'package:tergov/features/authentication/presentation/manager/login/login_
 import 'package:tergov/features/authentication/presentation/manager/remember_cubit/remember_cubit.dart';
 import 'package:tergov/features/authentication/presentation/pages/login/responsive_screens/login_desktop_tablet.dart';
 import 'package:tergov/features/authentication/presentation/pages/login/responsive_screens/login_mobile.dart';
+import 'package:tergov/features/redirect/manager/user_status.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -30,6 +31,7 @@ class LoginScreen extends StatelessWidget {
           }
 
           if (state is LoginSuccess) {
+            context.read<UserStatusCubit>().setAdminStatus();
             Navigator.pop(context);
           }
 

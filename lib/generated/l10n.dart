@@ -1209,6 +1209,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Are you sure you want to log out?`
+  String get areYouSureYouWantToLogOut {
+    return Intl.message(
+      'Are you sure you want to log out?',
+      name: 'areYouSureYouWantToLogOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Main Dashboard`
+  String get mainDashboard {
+    return Intl.message(
+      'Main Dashboard',
+      name: 'mainDashboard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Admin`
+  String get addAdmin {
+    return Intl.message(
+      'Add Admin',
+      name: 'addAdmin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Role`
+  String get selectRole {
+    return Intl.message(
+      'Select Role',
+      name: 'selectRole',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin role`
+  String get adminRole {
+    return Intl.message(
+      'Admin role',
+      name: 'adminRole',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Admin Email`
+  String get adminEmail {
+    return Intl.message(
+      'Admin Email',
+      name: 'adminEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Simple Admin`
+  String get simpleAdmin {
+    return Intl.message(
+      'Simple Admin',
+      name: 'simpleAdmin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Super Admin`
+  String get superAdmin {
+    return Intl.message(
+      'Super Admin',
+      name: 'superAdmin',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

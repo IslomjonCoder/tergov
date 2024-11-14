@@ -36,8 +36,8 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            if (TDeviceUtils.isDesktopScreen(context)) Text('Pages/Dashboard', style: context.bodySmall),
-            Text('Main Dashboard', style: TDeviceUtils.isDesktopScreen(context) ? context.headlineMedium : context.headlineSmall),
+            // if (TDeviceUtils.isDesktopScreen(context)) Text('Pages/Dashboard', style: context.bodySmall),
+            Text(S.of(context).mainDashboard, style: TDeviceUtils.isDesktopScreen(context) ? context.headlineMedium : context.headlineSmall),
           ],
         ),
 
@@ -47,29 +47,29 @@ class THeader extends StatelessWidget implements PreferredSizeWidget {
           if (!TDeviceUtils.isMobileScreen(context)) IconButton(onPressed: (){_showLanguageDialog(context);}, icon: const Icon(Iconsax.language_circle)),
           if (!TDeviceUtils.isMobileScreen(context)) IconButton(onPressed: () {}, icon: const Icon(Iconsax.info_circle)),
           const Gap(TSizes.spaceBtwItems / 2),
-          Row(
-            children: [
-              const TRoundedImage(
-                imageType: ImageType.network,
-                image:
-                    'https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww',
-                width: 40,
-                height: 40,
-                padding: 2,
-                fit: BoxFit.cover,
-              ),
-              const Gap(TSizes.sm),
-              if (!TDeviceUtils.isMobileScreen(context))
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text('Coding with T', style: Theme.of(context).textTheme.titleLarge),
-                    Text(supabase.auth.currentUser?.email??'', style: Theme.of(context).textTheme.labelMedium),
-                  ],
-                ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     const TRoundedImage(
+          //       imageType: ImageType.network,
+          //       image:
+          //           'https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fHww',
+          //       width: 40,
+          //       height: 40,
+          //       padding: 2,
+          //       fit: BoxFit.cover,
+          //     ),
+          //     const Gap(TSizes.sm),
+          //     if (!TDeviceUtils.isMobileScreen(context))
+          //       Column(
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         mainAxisSize: MainAxisSize.min,
+          //         children: [
+          //           Text('Coding with T', style: Theme.of(context).textTheme.titleLarge),
+          //           Text(supabase.auth.currentUser?.email??'', style: Theme.of(context).textTheme.labelMedium),
+          //         ],
+          //       ),
+          //   ],
+          // ),
           if (TDeviceUtils.isMobileScreen(context))
             PopupMenuButton(
               color: TColors.white,

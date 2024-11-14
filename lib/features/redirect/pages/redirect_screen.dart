@@ -14,6 +14,7 @@ class RedirectScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<UserStatusCubit, bool?>(
       builder: (context, state) {
+        // context.read<UserStatusCubit>().removeUser();
         if (state == null) {
           return const LoginScreen();
         }

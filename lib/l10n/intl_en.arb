@@ -125,5 +125,14 @@
   "rude_behavior_field": "Rude behavior",
   "psychological_pressure_field": "Psychological pressure",
   "physical_pressure_field": "Physical pressure",
-  "extortion_field": "Extortion"
+  "extortion_field": "Extortion",
+  "areYouSureYouWantToLogOut": "Are you sure you want to log out?",
+  "cancel": "Cancel",
+  "mainDashboard": "Main Dashboard",
+  "addAdmin": "Add Admin",
+  "selectRole": "Select Role",
+  "adminRole": "Admin role",
+  "adminEmail": "Admin Email",
+  "simpleAdmin": "Simple Admin",
+  "superAdmin": "Super Admin"
 }

@@ -62,7 +62,7 @@
   "selectLanguage": "Tilni tanlang",
   "languageChanged": "Til o'zgartirildi",
   "job": "Kasbi",
-  "name": "Isim",
+  "name": "Ism",
   "menu": "Menyu",
   "user": "Foydalanuvchi",
   "mon": "Dush",
@@ -123,5 +123,14 @@
   "rude_behavior_field": "Noto'g'ri muomala",
   "psychological_pressure_field": "Psixologik bosim",
   "physical_pressure_field": "Jismoniy bosim",
-  "extortion_field": "Vymogatel'stvo"
+  "extortion_field": "Vymogatel'stvo",
+  "areYouSureYouWantToLogOut": "Chiqmoqchi ekanligingizga ishonchingiz komilmi?",
+  "cancel": "Bekor qilish",
+  "mainDashboard": "Bosh sahifa",
+  "addAdmin": "Administrator qo'shish",
+  "selectRole": "Rol tanlash",
+  "adminRole": "Administrator roli",
+  "adminEmail": "Email Administrator",
+  "simpleAdmin": "Administrator",
+  "superAdmin": "Super administrator"
 }

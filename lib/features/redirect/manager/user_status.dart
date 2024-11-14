@@ -7,6 +7,8 @@ class UserStatusCubit extends HydratedCubit<bool?> {
 
   void setAdminStatus() => emit(false);
 
+  void removeUser() => emit(null);
+
   void setUser() => emit(true);
 
   @override

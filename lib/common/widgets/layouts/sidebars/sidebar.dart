@@ -28,14 +28,14 @@ class TSidebar extends StatelessWidget {
         child: AppConstrainedScrollView(
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 48),
-                child: Text(
-                  TTexts.appName,
-                  style: context.headlineMedium,
-                ),
-              ),
-              const Divider(),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(vertical: 48),
+              //   child: Text(
+              //     TTexts.appName,
+              //     style: context.headlineMedium,
+              //   ),
+              // ),
+              // const Divider(),
               Padding(
                 padding: const EdgeInsets.all(TSizes.md),
                 child: Column(
