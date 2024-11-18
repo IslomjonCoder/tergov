@@ -73,6 +73,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "extortion_hint": MessageLookupByLibrary.simpleMessage(
             "Вымогательство незаконного вознаграждения"),
         "field_empty": m0,
+        "finish": MessageLookupByLibrary.simpleMessage("Завершить"),
         "fixed": MessageLookupByLibrary.simpleMessage("Зафиксирован"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Забыли пароль?"),
@@ -185,6 +186,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Выберите Статус участника(цы) процесса"),
         "selectRole": MessageLookupByLibrary.simpleMessage("Выберите роль"),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Выберите статус"),
+        "send": MessageLookupByLibrary.simpleMessage("Отправить"),
         "settings": MessageLookupByLibrary.simpleMessage("Настройки"),
         "signIn": MessageLookupByLibrary.simpleMessage("Войти"),
         "simpleAdmin":
@@ -208,6 +210,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "videoRecording": MessageLookupByLibrary.simpleMessage(
             "Процесс собеседования видеозаписью"),
         "warning": MessageLookupByLibrary.simpleMessage("Предупреждение"),
+        "warning_message_first": MessageLookupByLibrary.simpleMessage(
+            "Мне разъяснено о том, что дача взятки, то есть заведомо незаконное предоставление должностному лицу государственного органа, организации с государственным участием или органа самоуправления граждан лично или через посредника материальных ценностей или имущественной выгоды за выполнение или невыполнение в интересах давшего взятку определенного действия, которое должностное лицо должно было или могло совершить с использованием своего служебного положения, предусматривает уголовное наказание в виде лишения свободы от пяти до пятнадцати лет."),
+        "warning_message_second": MessageLookupByLibrary.simpleMessage(
+            "Если Вас не устраивают доследственная проверка, дознание или предварительное следствие проведенных следственными подразделениями органов внутренних дел, а также несвоевременное рассмотрение Ваших обращений, Вы можете напрямую связаться с руководителями Следственного управления при УВД Наманганской области и его территориальных подразделений по следующим телефонам:Заместитель начальника УВД Наманганской области – начальник Следственного управления Ибодов Жаҳонгир Насулло ўғли:Тел: 998 95-318-04-00, 998 69-210-30-04"),
         "wed": MessageLookupByLibrary.simpleMessage("Ср"),
         "week": MessageLookupByLibrary.simpleMessage("Неделя"),
         "year": MessageLookupByLibrary.simpleMessage("Год"),

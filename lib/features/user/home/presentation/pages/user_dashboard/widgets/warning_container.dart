@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:tergov/generated/l10n.dart';
 
 import 'package:tergov/utils/constants/colors.dart';
 
@@ -26,8 +27,9 @@ class WarningContainer extends StatelessWidget {
           color: TColors.white,),
       child: Column(
         children: [
+
           Text(
-            "Предупреждение",
+            S.of(context).warning,
             style: TextStyle(
                 fontSize:margin? 30 : 15,
                 fontWeight: FontWeight.w700,

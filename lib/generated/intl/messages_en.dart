@@ -70,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "extortion_hint": MessageLookupByLibrary.simpleMessage(
             "Extortion of illegal rewards"),
         "field_empty": m0,
+        "finish": MessageLookupByLibrary.simpleMessage("Finish"),
         "fixed": MessageLookupByLibrary.simpleMessage("Fixed"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot password?"),
@@ -182,6 +183,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select participant status"),
         "selectRole": MessageLookupByLibrary.simpleMessage("Select Role"),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Select status"),
+        "send": MessageLookupByLibrary.simpleMessage("Send"),
         "settings": MessageLookupByLibrary.simpleMessage("Settings"),
         "signIn": MessageLookupByLibrary.simpleMessage("Sign In"),
         "simpleAdmin": MessageLookupByLibrary.simpleMessage("Simple Admin"),
@@ -203,6 +205,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "videoRecording": MessageLookupByLibrary.simpleMessage(
             "Video recording of the interview process"),
         "warning": MessageLookupByLibrary.simpleMessage("Warning"),
+        "warning_message_first": MessageLookupByLibrary.simpleMessage(
+            "I have been informed that giving a bribe, which is the knowingly illegal provision of material values or property benefits to an official of a state body, an organization with state participation, or a self-governing body, either personally or through an intermediary, for performing or not performing a certain action in the interests of the bribe-giver that the official should or could perform using their official position, entails criminal liability in the form of imprisonment for a term of five to fifteen years."),
+        "warning_message_second": MessageLookupByLibrary.simpleMessage(
+            "If you are dissatisfied with the pre-investigation check, inquiry, or preliminary investigation conducted by the investigative units of the internal affairs bodies, as well as the untimely consideration of your appeals, you can directly contact the heads of the Investigative Department under the Department of Internal Affairs of the Namangan Region and its territorial divisions at the following phone numbers: Deputy Head of the Namangan Region Department of Internal Affairs – Head of the Investigative Department Jahongir Nasullo og\'li Ibodov: Phone: +998 95-318-04-00, +998 69-210-30-04."),
         "wed": MessageLookupByLibrary.simpleMessage("Wed"),
         "week": MessageLookupByLibrary.simpleMessage("Week"),
         "year": MessageLookupByLibrary.simpleMessage("Year"),

@@ -18,104 +18,104 @@ class InfoFormFirst extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<InfoFormFirstCubit, InfoFormFirstModel>(
       builder: (context, state) {
-        final List<Map<String, dynamic>> fields = [
-          {
-            "hintText": "Участник(ца) процесса, прошедший(ая) беседу: ФИО",
-            "keyboardType": TextInputType.text,
-            "hasDropdown": false,
-            "value": state.participantFullName,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Место проживания",
-            "keyboardType": TextInputType.text,
-            "hasDropdown": false,
-            "value": state.placeOfResidence,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Номер телефона",
-            "keyboardType": TextInputType.phone,
-            "hasDropdown": false,
-            "value": state.phoneNumber,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Выберите Статус участника(цы) процесса",
-            "hasDropdown": true,
-            "readOnly": true,
-            "options": [
-              "Айбланувчи / Обвиняемый",
-              "Қонуний вакил / Законный представитель",
-              "Қариндош / Родственник",
-              "Бошқа иштирокчи / Другой участник процесса",
-            ],
-            "value": state.participantRole?.roleName,
-            "onChanged": (ParticipantRole value) {
-              context.read<InfoFormFirstCubit>().updateParticipantStatus(value);
-            },
-          },
-          {
-            "hintText": "Беседа проведена",
-            "hasDropdown": true,
-            "readOnly": true,
-            "options": [
-              "Xa/Да",
-              "Yo'q/Нет",
-            ],
-            "value": state.interviewConducted,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Начальник следственного отделения,проводивший беседу: ФИО",
-            "value": state.investigatorFullName,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Сотрудник, проводивший доследственную проверку,дознание или расследование: ФИО",
-            "value": state.officerFullName,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "В ходе беседы разъяснено содержание статьи 211Уголовного кодекса Республики Узбекистан",
-            "hasDropdown": true,
-            "readOnly": true,
-            "options": [
-              "Xa/Да",
-              "Yo'q/Нет",
-            ],
-            "value": state.article211Explanation,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Процесс собеседования видеозаписью",
-            "hasDropdown": true,
-            "readOnly": true,
-            "options": [
-              YesNo.yes.name,
-              YesNo.no.name,
-            ],
-            "value": state.interviewRecorded,
-            "onChanged": (String value) {
-            },
-          },
-          {
-            "hintText": "Дата беседы",
-            "readOnly": true,
-            "hasCalendar": true,
-            "value": state.interviewStartDate,
-            "onChanged": (String value) {
-              // context.read<InfoFormFirstCubit>().updateInterviewStartDate(value);
-            },
-          },
-        ];
+        // final List<Map<String, dynamic>> fields = [
+        //   {
+        //     "hintText": "Участник(ца) процесса, прошедший(ая) беседу: ФИО",
+        //     "keyboardType": TextInputType.text,
+        //     "hasDropdown": false,
+        //     "value": state.participantFullName,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Место проживания",
+        //     "keyboardType": TextInputType.text,
+        //     "hasDropdown": false,
+        //     "value": state.placeOfResidence,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Номер телефона",
+        //     "keyboardType": TextInputType.phone,
+        //     "hasDropdown": false,
+        //     "value": state.phoneNumber,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Выберите Статус участника(цы) процесса",
+        //     "hasDropdown": true,
+        //     "readOnly": true,
+        //     "options": [
+        //       "Айбланувчи / Обвиняемый",
+        //       "Қонуний вакил / Законный представитель",
+        //       "Қариндош / Родственник",
+        //       "Бошқа иштирокчи / Другой участник процесса",
+        //     ],
+        //     "value": state.participantRole?.roleName,
+        //     "onChanged": (ParticipantRole value) {
+        //       context.read<InfoFormFirstCubit>().updateParticipantStatus(value);
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Беседа проведена",
+        //     "hasDropdown": true,
+        //     "readOnly": true,
+        //     "options": [
+        //       "Xa/Да",
+        //       "Yo'q/Нет",
+        //     ],
+        //     "value": state.interviewConducted,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Начальник следственного отделения,проводивший беседу: ФИО",
+        //     "value": state.investigatorFullName,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Сотрудник, проводивший доследственную проверку,дознание или расследование: ФИО",
+        //     "value": state.officerFullName,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "В ходе беседы разъяснено содержание статьи 211Уголовного кодекса Республики Узбекистан",
+        //     "hasDropdown": true,
+        //     "readOnly": true,
+        //     "options": [
+        //       "Xa/Да",
+        //       "Yo'q/Нет",
+        //     ],
+        //     "value": state.article211Explanation,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Процесс собеседования видеозаписью",
+        //     "hasDropdown": true,
+        //     "readOnly": true,
+        //     "options": [
+        //       YesNo.yes.name,
+        //       YesNo.no.name,
+        //     ],
+        //     "value": state.interviewRecorded,
+        //     "onChanged": (String value) {
+        //     },
+        //   },
+        //   {
+        //     "hintText": "Дата беседы",
+        //     "readOnly": true,
+        //     "hasCalendar": true,
+        //     "value": state.interviewStartDate,
+        //     "onChanged": (String value) {
+        //       // context.read<InfoFormFirstCubit>().updateInterviewStartDate(value);
+        //     },
+        //   },
+        // ];
         final infoFormFirstCubit = context.read<InfoFormFirstCubit>();
         return Form(
           key: infoFormFirstCubit.formKey,
@@ -175,6 +175,7 @@ class InfoFormFirst extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: S.of(context).interview_conducted_hint,
                 ),
+                // hint: context.watch<ParticipantStatusListCubit>().state is ParticipantStatusListError ?Text((context.watch<ParticipantStatusListCubit>().state as ParticipantStatusListError).failure.message):null,
                 // validator: (value) => AppValidators.validateEmpty(value?.roleName, fieldName: S.of(context).participant_status_field),
                 validator: (value) =>
                     AppValidators.validateType<ParticipantRole>(value, fieldName: S.of(context).interview_conducted_field),

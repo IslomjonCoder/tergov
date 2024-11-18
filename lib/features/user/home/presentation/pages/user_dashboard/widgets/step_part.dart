@@ -27,17 +27,17 @@ class StepPart extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SocialDataElements(
-              title: '838 Cantt Sialkot, pakistan',
+              title: 'O`zbekiston RespublikasiToshkent shahri, Y.Rajabiy ko`chasi',
               icon: "assets/icons/location.svg",
               onTap: () {},
             ),
             SocialDataElements(
-              title: '979-988-89787',
+              title: '(71) 233-65-34',
               icon: "assets/icons/phone.svg",
               onTap: () {},
             ),
             SocialDataElements(
-              title: 'abcd123@gmail.com',
+              title: 'tergov.uz@gmail.com',
               icon: "assets/icons/email.svg",
               onTap: () {},
             ),

@@ -1299,6 +1299,46 @@ class S {
       args: [],
     );
   }
+
+  /// `I have been informed that giving a bribe, which is the knowingly illegal provision of material values or property benefits to an official of a state body, an organization with state participation, or a self-governing body, either personally or through an intermediary, for performing or not performing a certain action in the interests of the bribe-giver that the official should or could perform using their official position, entails criminal liability in the form of imprisonment for a term of five to fifteen years.`
+  String get warning_message_first {
+    return Intl.message(
+      'I have been informed that giving a bribe, which is the knowingly illegal provision of material values or property benefits to an official of a state body, an organization with state participation, or a self-governing body, either personally or through an intermediary, for performing or not performing a certain action in the interests of the bribe-giver that the official should or could perform using their official position, entails criminal liability in the form of imprisonment for a term of five to fifteen years.',
+      name: 'warning_message_first',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `If you are dissatisfied with the pre-investigation check, inquiry, or preliminary investigation conducted by the investigative units of the internal affairs bodies, as well as the untimely consideration of your appeals, you can directly contact the heads of the Investigative Department under the Department of Internal Affairs of the Namangan Region and its territorial divisions at the following phone numbers: Deputy Head of the Namangan Region Department of Internal Affairs – Head of the Investigative Department Jahongir Nasullo og'li Ibodov: Phone: +998 95-318-04-00, +998 69-210-30-04.`
+  String get warning_message_second {
+    return Intl.message(
+      'If you are dissatisfied with the pre-investigation check, inquiry, or preliminary investigation conducted by the investigative units of the internal affairs bodies, as well as the untimely consideration of your appeals, you can directly contact the heads of the Investigative Department under the Department of Internal Affairs of the Namangan Region and its territorial divisions at the following phone numbers: Deputy Head of the Namangan Region Department of Internal Affairs – Head of the Investigative Department Jahongir Nasullo og\'li Ibodov: Phone: +998 95-318-04-00, +998 69-210-30-04.',
+      name: 'warning_message_second',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message(
+      'Send',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish`
+  String get finish {
+    return Intl.message(
+      'Finish',
+      name: 'finish',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

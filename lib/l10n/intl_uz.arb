@@ -132,5 +132,9 @@
   "adminRole": "Administrator roli",
   "adminEmail": "Email Administrator",
   "simpleAdmin": "Administrator",
-  "superAdmin": "Super administrator"
+  "superAdmin": "Super administrator",
+  "warning_message_first": "Menga tushuntirildiki, pora berish, ya'ni davlat organi, davlat ishtirokidagi tashkilot yoki fuqarolar o‘zini o‘zi boshqarish organi mansabdor shaxsiga yoki vositachi orqali moddiy boyliklar yoki mol-mulk foydasini qasddan noqonuniy taqdim etish, pora beruvchining manfaatlari yo‘lida mansabdor shaxs o‘z xizmat mavqeidan foydalangan holda bajarishi yoki bajarishi mumkin bo‘lgan muayyan harakatni amalga oshirishi yoki amalga oshirmasligi uchun beriladigan pora, 5 yildan 15 yilgacha ozodlikdan mahrum qilish bilan bog‘liq jinoiy javobgarlikka sabab bo‘ladi.",
+  "warning_message_second": "Agar siz ichki ishlar organlarining tergov bo‘linmalari tomonidan o‘tkazilgan tergovga qadar tekshiruv, surishtiruv yoki dastlabki tergovdan, shuningdek, murojaatlaringizning o‘z vaqtida ko‘rib chiqilmasligidan norozi bo‘lsangiz, Namangan viloyati IIB huzuridagi Tergov boshqarmasi va uning hududiy bo‘linmalari rahbarlariga quyidagi telefonlar orqali to‘g‘ridan-to‘g‘ri murojaat qilishingiz mumkin: Namangan viloyati IIB boshlig‘ining o‘rinbosari – Tergov boshqarmasi boshlig‘i Jahongir Nasullo o‘g‘li Ibodov: Tel: +998 95-318-04-00, +998 69-210-30-04.",
+  "send": "Yuborish",
+  "finish": "Yakunlash"
 }

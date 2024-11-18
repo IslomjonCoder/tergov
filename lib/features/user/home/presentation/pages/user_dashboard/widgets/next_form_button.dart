@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_file/open_file.dart';
 import 'package:tergov/features/dashboard/data/models/participant_model.dart';
+import 'package:tergov/features/success/presentation/pages/success_screen.dart';
 import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
 import 'package:tergov/features/user/home/cubit/info_form_first_cubit.dart';
 import 'package:tergov/features/user/home/cubit/info_form_second_cubit.dart';
+import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/helpers/pdf_helper.dart';
 
@@ -36,12 +38,16 @@ class NextFormButton extends StatelessWidget {
                     interviewStartDate: DateTime.now(),
                   );
                   final pdfFile = await PdfHelper.generatePdf(participant);
-                  await OpenFile.open(pdfFile.path);
+                  // await OpenFile.open(pdfFile.path);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SuccessScreen()),
+                  );
                 }
               }
             },
             child: Text(
-              context.watch<FormCubit>().state ? 'Далее' : "Отправить",
+              context.watch<FormCubit>().state ? S.of(context).next : S.of(context).send,
               style: const TextStyle(fontSize: 18),
             ),
           );
