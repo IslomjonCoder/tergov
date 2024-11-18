@@ -40,7 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "article_211_explanation_field":
             MessageLookupByLibrary.simpleMessage("211-modda tushuntirishi"),
         "article_211_explanation_hint": MessageLookupByLibrary.simpleMessage(
-            "В ходе беседы разъяснено содержание статьи 211 Уголовного кодекса Республики Узбекистан"),
+            "Suhbat davomida O‘zbekiston Respublikasi Jinoyat kodeksining 211-moddasi mazmuni tushuntirildi"),
         "bribery": MessageLookupByLibrary.simpleMessage(
             "Noqonuniy mukofot talab qilish"),
         "cancel": MessageLookupByLibrary.simpleMessage("Bekor qilish"),
@@ -81,28 +81,28 @@ class MessageLookup extends MessageLookupByLibrary {
         "fullName": MessageLookupByLibrary.simpleMessage("F.I.Sh"),
         "full_name_field": MessageLookupByLibrary.simpleMessage("FIO"),
         "full_name_hint": MessageLookupByLibrary.simpleMessage(
-            "Участник(ца) процесса, прошедший(ая) беседу: ФИО"),
+            "Jarayon ishtirokchisi, suhbatdan o\'tgan shaxs: F.I.O"),
         "interviewConducted":
             MessageLookupByLibrary.simpleMessage("Suhbat o‘tkazildi"),
         "interviewDate": MessageLookupByLibrary.simpleMessage("Suhbat sanasi"),
         "interview_conducted_field":
             MessageLookupByLibrary.simpleMessage("Beseeda o‘tkazildi"),
         "interview_conducted_hint":
-            MessageLookupByLibrary.simpleMessage("Беседа проведена"),
+            MessageLookupByLibrary.simpleMessage("Suhbat o‘tkazildi"),
         "interview_recorded_field":
-            MessageLookupByLibrary.simpleMessage("Beseeda video yozuvi"),
+            MessageLookupByLibrary.simpleMessage("Suhbat video yozuvi"),
         "interview_recorded_hint": MessageLookupByLibrary.simpleMessage(
-            "Процесс собеседования видеозаписью"),
+            "Suhbat jarayoni videotasvirga olindi"),
         "interview_start_date_field":
-            MessageLookupByLibrary.simpleMessage("Beseeda sanasi"),
+            MessageLookupByLibrary.simpleMessage("Suhbat sanasi"),
         "interview_start_date_hint":
-            MessageLookupByLibrary.simpleMessage("Дата беседы"),
+            MessageLookupByLibrary.simpleMessage("Suhbat sanasi"),
         "invalid_email": MessageLookupByLibrary.simpleMessage(
             "E-mail noto\'g\'ri kiritilgan"),
         "investigator_full_name_field":
             MessageLookupByLibrary.simpleMessage("Terguvchi FIO"),
         "investigator_full_name_hint": MessageLookupByLibrary.simpleMessage(
-            "Начальник следственного отделения, проводивший беседу: ФИО"),
+            "Suhbatni o‘tkazgan tergov bo‘limi boshlig‘i: F.I.O"),
         "job": MessageLookupByLibrary.simpleMessage("Kasbi"),
         "keepMeLoggedIn":
             MessageLookupByLibrary.simpleMessage("Tizimda qolish"),
@@ -134,11 +134,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "officer_full_name_field": MessageLookupByLibrary.simpleMessage(
             "Tekshiruv o‘tkazgan xodim FIO"),
         "officer_full_name_hint": MessageLookupByLibrary.simpleMessage(
-            "Сотрудник, проводивший доследственную проверку, дознание или расследование: ФИО"),
+            "Dastlabki tergov, surishtiruv yoki tekshiruvni o‘tkazgan xodim: F.I.O"),
         "participant_status_field":
             MessageLookupByLibrary.simpleMessage("Ishtirokchi statusi"),
         "participant_status_hint": MessageLookupByLibrary.simpleMessage(
-            "Выберите Статус участника(цы) процесса"),
+            "Jarayon ishtirokchisi maqomini tanlang"),
         "password": MessageLookupByLibrary.simpleMessage("Parol"),
         "password_empty": MessageLookupByLibrary.simpleMessage(
             "Parol bo\'sh bo\'lishi kerak emas"),
@@ -148,7 +148,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "phone_number_field":
             MessageLookupByLibrary.simpleMessage("Telefon raqami"),
         "phone_number_hint":
-            MessageLookupByLibrary.simpleMessage("Номер телефона"),
+            MessageLookupByLibrary.simpleMessage("Telefon raqami"),
         "physicalPressure":
             MessageLookupByLibrary.simpleMessage("Jismoniy bosim"),
         "physical_pressure_field":
@@ -169,8 +169,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("E-mailga qayta yuborish"),
         "residence": MessageLookupByLibrary.simpleMessage("Yashash joyi"),
         "residence_field": MessageLookupByLibrary.simpleMessage("Turar joyi"),
-        "residence_hint":
-            MessageLookupByLibrary.simpleMessage("Место проживания"),
+        "residence_hint": MessageLookupByLibrary.simpleMessage("Yashash joyi"),
         "rudeBehavior":
             MessageLookupByLibrary.simpleMessage("Qo‘pol munosabat"),
         "rude_behavior_field":
