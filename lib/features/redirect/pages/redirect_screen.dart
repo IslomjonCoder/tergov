@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tergov/features/authentication/presentation/pages/login/login_screen.dart';
 import 'package:tergov/features/navigation/presentation/pages/navigation_screen.dart';
 import 'package:tergov/features/redirect/manager/user_status.dart';
+import 'package:tergov/features/success/presentation/pages/success_screen.dart';
 import 'package:tergov/features/user/home/presentation/pages/home_page.dart';
 import 'package:tergov/main.dart';
 
@@ -19,6 +20,7 @@ class RedirectScreen extends StatelessWidget {
           return const LoginScreen();
         }
         if (state) {
+          // return SuccessScreen();
           return const HomePage();
         }
         return StreamBuilder(

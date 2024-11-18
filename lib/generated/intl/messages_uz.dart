@@ -62,16 +62,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "employeeConductingInquiry": MessageLookupByLibrary.simpleMessage(
             "Dastlabki tergov yoki surishtiruv olib borgan xodim: F.I.Sh"),
         "employee_facts_field":
-            MessageLookupByLibrary.simpleMessage("Xodim faktlari"),
+            MessageLookupByLibrary.simpleMessage("Xodimga oid faktlar"),
         "employee_facts_hint": MessageLookupByLibrary.simpleMessage(
             "Xodimda quyidagi holatlar bo\'lganmi?"),
         "enterYourEmail": MessageLookupByLibrary.simpleMessage(
             "Email hamda parolingizni kiriting"),
-        "extortion_field":
-            MessageLookupByLibrary.simpleMessage("Vymogatel\'stvo"),
+        "extortion_field": MessageLookupByLibrary.simpleMessage(
+            "Qonuniy mukofot talab qilish"),
         "extortion_hint": MessageLookupByLibrary.simpleMessage(
             "Qonuniy mukofot talab qilish"),
         "field_empty": m0,
+        "finish": MessageLookupByLibrary.simpleMessage("Yakunlash"),
         "fixed": MessageLookupByLibrary.simpleMessage("Yozib olindi"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Parolni unutdingizmi?"),
@@ -183,6 +184,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Ishtirokchi maqomini tanlang"),
         "selectRole": MessageLookupByLibrary.simpleMessage("Rol tanlash"),
         "selectStatus": MessageLookupByLibrary.simpleMessage("Holatni tanlang"),
+        "send": MessageLookupByLibrary.simpleMessage("Yuborish"),
         "settings": MessageLookupByLibrary.simpleMessage("Sozlamalar"),
         "signIn": MessageLookupByLibrary.simpleMessage("Kirish"),
         "simpleAdmin": MessageLookupByLibrary.simpleMessage("Administrator"),
@@ -204,6 +206,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "videoRecording": MessageLookupByLibrary.simpleMessage(
             "Suhbat jarayonining videotasviri"),
         "warning": MessageLookupByLibrary.simpleMessage("Ogohlantirish"),
+        "warning_message_first": MessageLookupByLibrary.simpleMessage(
+            "Menga tushuntirildiki, pora berish, ya\'ni davlat organi, davlat ishtirokidagi tashkilot yoki fuqarolar o‘zini o‘zi boshqarish organi mansabdor shaxsiga yoki vositachi orqali moddiy boyliklar yoki mol-mulk foydasini qasddan noqonuniy taqdim etish, pora beruvchining manfaatlari yo‘lida mansabdor shaxs o‘z xizmat mavqeidan foydalangan holda bajarishi yoki bajarishi mumkin bo‘lgan muayyan harakatni amalga oshirishi yoki amalga oshirmasligi uchun beriladigan pora, 5 yildan 15 yilgacha ozodlikdan mahrum qilish bilan bog‘liq jinoiy javobgarlikka sabab bo‘ladi."),
+        "warning_message_second": MessageLookupByLibrary.simpleMessage(
+            "Agar siz ichki ishlar organlarining tergov bo‘linmalari tomonidan o‘tkazilgan tergovga qadar tekshiruv, surishtiruv yoki dastlabki tergovdan, shuningdek, murojaatlaringizning o‘z vaqtida ko‘rib chiqilmasligidan norozi bo‘lsangiz, Namangan viloyati IIB huzuridagi Tergov boshqarmasi va uning hududiy bo‘linmalari rahbarlariga quyidagi telefonlar orqali to‘g‘ridan-to‘g‘ri murojaat qilishingiz mumkin: Namangan viloyati IIB boshlig‘ining o‘rinbosari – Tergov boshqarmasi boshlig‘i Jahongir Nasullo o‘g‘li Ibodov: Tel: +998 95-318-04-00, +998 69-210-30-04."),
         "wed": MessageLookupByLibrary.simpleMessage("Chor"),
         "week": MessageLookupByLibrary.simpleMessage("Hafta"),
         "year": MessageLookupByLibrary.simpleMessage("Yil"),

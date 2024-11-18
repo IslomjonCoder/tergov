@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/next_form_button.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/warning_container.dart';
+import 'package:tergov/generated/l10n.dart';
 
 class WarningMessage extends StatelessWidget {
   final bool padding;
@@ -22,9 +23,9 @@ class WarningMessage extends StatelessWidget {
                 margin: padding,
                 title: state
                     ?
-                "Мне разъяснено о том, что дача взятки, то есть заведомо незаконное предоставление должностному лицу государственного органа, организации с государственным участием или органа самоуправления граждан лично или через посредника материальных ценностей или имущественной выгоды за выполнение или невыполнение в интересах давшего взятку определенного действия, которое должностное лицо должно было или могло совершить с использованием своего служебного положения, предусматривает уголовное наказание в виде лишения свободы от пяти до пятнадцати лет."
+                S.of(context).warning_message_first
                     :
-                "Если Вас не устраивают доследственная проверка, дознание или предварительное следствие проведенных следственными подразделениями органов внутренних дел, а также несвоевременное рассмотрение Ваших обращений, Вы можете напрямую связаться с руководителями Следственного управления при УВД Наманганской области и его территориальных подразделений по следующим телефонам:Заместитель начальника УВД Наманганской области – начальник Следственного управления Ибодов Жаҳонгир Насулло ўғли:Тел: 998 95-318-04-00, 998 69-210-30-04",
+                S.of(context).warning_message_second,
               ),
               const Gap(50),
               const NextFormButton(),
