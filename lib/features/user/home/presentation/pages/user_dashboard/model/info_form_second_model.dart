@@ -2,17 +2,17 @@ import 'package:tergov/utils/constants/enums.dart';
 
 class InfoFormSecondModel {
   String employeeFacts;
-  String longWaits;
-  String rudeBehavior;
-  String psychologicalPressure;
+  YesNo longWaits;
+  YesNo rudeBehavior;
+  YesNo psychologicalPressure;
   YesNo physicalPressure;
   YesNo extortion;
 
   InfoFormSecondModel({
     this.employeeFacts = '',
-    this.longWaits = '',
-    this.rudeBehavior = '',
-    this.psychologicalPressure = '',
+    this.longWaits = YesNo.yes,
+    this.rudeBehavior = YesNo.yes,
+    this.psychologicalPressure = YesNo.yes,
     this.physicalPressure = YesNo.yes,
     this.extortion = YesNo.yes,
   });
@@ -36,9 +36,9 @@ class InfoFormSecondModel {
   factory InfoFormSecondModel.fromMap(Map<String, dynamic> map) {
     return InfoFormSecondModel(
       employeeFacts: map['employeeFacts'] as String,
-      longWaits: map['longWaits'] as String,
-      rudeBehavior: map['rudeBehavior'] as String,
-      psychologicalPressure: map['psychologicalPressure'] as String,
+      longWaits: YesNo.values.firstWhere((e) => e.name == map['longWaits'] as String, orElse: () => YesNo.yes),
+      rudeBehavior:YesNo.values.firstWhere((e) => e.name == map['rudeBehavior'] as String, orElse: () => YesNo.yes),
+      psychologicalPressure: YesNo.values.firstWhere((e) => e.name == map['psychologicalPressure'] as String, orElse: () => YesNo.yes),
       physicalPressure: YesNo.values.firstWhere((e) => e.name == map['physicalPressure'] as String, orElse: () => YesNo.yes),
       extortion: YesNo.values.firstWhere((e) => e.name == map['extortion'] as String, orElse: () => YesNo.yes),
     );
@@ -49,9 +49,9 @@ class InfoFormSecondModel {
 extension InfoFormSecondModelCopyWith on InfoFormSecondModel {
   InfoFormSecondModel copyWith({
     String? employeeFacts,
-    String? longWaits,
-    String? rudeBehavior,
-    String? psychologicalPressure,
+    YesNo? longWaits,
+    YesNo? rudeBehavior,
+    YesNo? psychologicalPressure,
     YesNo? physicalPressure,
     YesNo? extortion,
   }) {

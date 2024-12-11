@@ -16,9 +16,9 @@ class Participant {
   final bool interviewRecorded;
   final DateTime interviewStartDate;
   final String employeeFacts;
-  final String longWaits;
-  final String rudeBehavior;
-  final String psychologicalPressure;
+  final YesNo longWaits;
+  final YesNo rudeBehavior;
+  final YesNo psychologicalPressure;
   final YesNo physicalPressure;
   final YesNo extortion;
 
@@ -88,9 +88,9 @@ class Participant {
       interviewRecorded: json['interview_recorded'] as bool,
       interviewStartDate: DateTime.parse(json['interview_start_date'] as String),
       employeeFacts: json['employee_facts'] as String,
-      longWaits: json['long_waits'] as String,
-      rudeBehavior: json['rude_behavior'] as String,
-      psychologicalPressure: json['psychological_pressure'] as String,
+      longWaits: json['long_waits'] == 'yes' ? YesNo.yes : YesNo.no,
+      rudeBehavior: json['rude_behavior'] == 'yes' ? YesNo.yes : YesNo.no,
+      psychologicalPressure:  json['psychological_pressure'] == 'yes' ? YesNo.yes : YesNo.no,
       physicalPressure: json['physical_pressure'] == 'yes' ? YesNo.yes : YesNo.no,
       extortion: json['extortion'] == 'yes' ? YesNo.yes : YesNo.no,
     );

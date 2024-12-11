@@ -33,9 +33,12 @@ class SocialDataElements extends StatelessWidget {
             ),
           ),
           const Gap(10),
-          Text(
-            title,
-            style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),
+          Expanded(
+            child: Text(
+              title,
+              
+              style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 15.0),
+            ),
           ),
         ],
       ),

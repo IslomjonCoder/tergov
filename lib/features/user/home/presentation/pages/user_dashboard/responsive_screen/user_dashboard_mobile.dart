@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_card.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_form_1.dart';
+import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/info_form_2.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/step_part.dart';
 import 'package:tergov/features/user/home/presentation/pages/user_dashboard/widgets/warning_message.dart';
 import 'package:tergov/utils/constants/sizes.dart';
@@ -31,7 +32,7 @@ class UserDashboardMobile extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const InfoFormFirst(),
+                            if (state) const InfoFormFirst() else const InfoFormSecond(),
                             const Gap(TSizes.lg / 2),
                             StepPart(step: "Шаг ${state ? "1" : "2"}",),
                           ],

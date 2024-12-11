@@ -15,34 +15,38 @@ class SuccessScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: Theme(
         data: context.theme.copyWith(
-            floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: Colors.blue,
-          foregroundColor: TColors.white,
-        )),
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            backgroundColor: Colors.blue,
+            foregroundColor: TColors.white,
+          ),
+        ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             FloatingActionButton(
+              heroTag: 'telegram',
               onPressed: () => redirectToTelegram('tergov_uz'),
-              child: Icon(Icons.telegram),
+              child: const Icon(Icons.telegram),
             ),
-            Gap(16),
+            const Gap(16),
             FloatingActionButton(
+              heroTag: 'call',
               onPressed: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(builder: (context) => const CallScreen()),
                 );
               },
-              child: Icon(Icons.call),
+              child: const Icon(Icons.call),
             ),
-            Gap(16),
-
-            FloatingActionButton.extended(onPressed: (){
-              Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => const RedirectScreen()),
-                (route) => false
-              );
-            }, label: Text(S.of(context).finish),)
+            const Gap(16),
+            FloatingActionButton.extended(
+              heroTag: 'finish',
+              onPressed: () {
+                Navigator.of(context)
+                    .pushAndRemoveUntil(MaterialPageRoute(builder: (context) => const RedirectScreen()), (route) => false);
+              },
+              label: Text(S.of(context).finish),
+            )
           ],
         ),
       ),

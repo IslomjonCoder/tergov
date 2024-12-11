@@ -21,12 +21,22 @@ class InfoFormSecondCubit extends Cubit<InfoFormSecondModel> {
     emit(state.copyWith(extortion: value));
   }
 
+  void updateLongWaits(YesNo? value) {
+    emit(state.copyWith(longWaits: value));
+  }
+  void updateRudeBehavior(YesNo? value) {
+    emit(state.copyWith(rudeBehavior: value));
+  }
+
+  void updatePsychologicalPressure(YesNo? value) {
+    emit(state.copyWith(psychologicalPressure: value));
+  }
   InfoFormSecondModel build() {
     return state.copyWith(
       employeeFacts: employeeFactsController.text,
-      longWaits: longWaitsController.text,
-      rudeBehavior: rudeBehaviorController.text,
-      psychologicalPressure: psychologicalPressureController.text,
+      longWaits: state.longWaits,
+      rudeBehavior: state.rudeBehavior,
+      psychologicalPressure: state.psychologicalPressure,
     );
   }
 }

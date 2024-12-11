@@ -21,29 +21,25 @@ class InfoFormSecond extends StatelessWidget {
             "hintText": "Имели ли место со стороны сотрудника следующие факты?",
             "hasDropdown": true,
             "value": state.employeeFacts,
-            "onChanged": (String value) {
-            },
+            "onChanged": (String value) {},
           },
           {
             "hintText": "Длительные беспричинные ожидания",
             "hasDropdown": false,
             "value": state.longWaits,
-            "onChanged": (String value) {
-            },
+            "onChanged": (String value) {},
           },
           {
             "hintText": "Грубое обращение",
             "hasDropdown": false,
             "value": state.rudeBehavior,
-            "onChanged": (String value) {
-            },
+            "onChanged": (String value) {},
           },
           {
             "hintText": "Психологическое давление",
             "hasDropdown": false,
             "value": state.psychologicalPressure,
-            "onChanged": (String value) {
-            },
+            "onChanged": (String value) {},
           },
           {
             "hintText": "Физическое давление",
@@ -91,47 +87,68 @@ class InfoFormSecond extends StatelessWidget {
                 controller: infoFormSecondCubit.employeeFactsController,
               ),
               const Gap(TSizes.spaceBtwItems),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
+              DropdownButtonFormField<YesNo>(
+                items: YesNo.values
+                    .map((value) => DropdownMenuItem<YesNo>(
+                        value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no)))
+                    .toList(),
+                // keyboardType: TextInputType.text,
+                // textInputAction: TextInputAction.next,
                 decoration: InputDecoration(labelText: S.of(context).long_waits_hint),
-                textCapitalization: TextCapitalization.sentences,
-                validator: (value) => AppValidators.validateEmpty(value, fieldName: S.of(context).long_waits_field),
+                // textCapitalization: TextCapitalization.sentences,
+                validator: (value) => AppValidators.validateType<YesNo>(value, fieldName: S.of(context).long_waits_field),
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: infoFormSecondCubit.longWaitsController,
-              ),
-              const Gap(TSizes.spaceBtwItems),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                decoration: InputDecoration(labelText: S.of(context).rude_behavior_hint),
-                textCapitalization: TextCapitalization.sentences,
-                validator: (value) => AppValidators.validateEmpty(value, fieldName: S.of(context).rude_behavior_field),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: infoFormSecondCubit.rudeBehaviorController,
-              ),
-              const Gap(TSizes.spaceBtwItems),
-              TextFormField(
-                keyboardType: TextInputType.text,
-                textInputAction: TextInputAction.next,
-                decoration: InputDecoration(labelText: S.of(context).psychological_pressure_hint),
-                textCapitalization: TextCapitalization.sentences,
-                validator: (value) => AppValidators.validateEmpty(value, fieldName: S.of(context).psychological_pressure_field),
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: infoFormSecondCubit.psychologicalPressureController,
+                onChanged: infoFormSecondCubit.updateLongWaits,
+                // controller: infoFormSecondCubit.longWaitsController,
               ),
               const Gap(TSizes.spaceBtwItems),
               DropdownButtonFormField<YesNo>(
-                items: YesNo.values.map((value) => DropdownMenuItem<YesNo>(value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no))).toList(),
+                items: YesNo.values
+                    .map((value) => DropdownMenuItem<YesNo>(
+                        value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no)))
+                    .toList(),
+                // keyboardType: TextInputType.text,
+                // textInputAction: TextInputAction.next,
+                decoration: InputDecoration(labelText: S.of(context).rude_behavior_hint),
+                onChanged: infoFormSecondCubit.updateRudeBehavior,
+                // textCapitalization: TextCapitalization.sentences,
+                validator: (value) => AppValidators.validateType<YesNo>(value, fieldName: S.of(context).rude_behavior_field),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                // controller: infoFormSecondCubit.rudeBehaviorController,
+              ),
+              const Gap(TSizes.spaceBtwItems),
+              DropdownButtonFormField<YesNo>(
+                items: YesNo.values
+                    .map((value) => DropdownMenuItem<YesNo>(
+                        value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no)))
+                    .toList(),
+                // keyboardType: TextInputType.text,
+                onChanged: infoFormSecondCubit.updatePsychologicalPressure,
+                // textInputAction: TextInputAction.next,
+                decoration: InputDecoration(labelText: S.of(context).psychological_pressure_hint),
+                // textCapitalization: TextCapitalization.sentences,
+                validator: (value) => AppValidators.validateType<YesNo>(value, fieldName: S.of(context).psychological_pressure_field),
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                // controller: infoFormSecondCubit.psychologicalPressureController,
+              ),
+              const Gap(TSizes.spaceBtwItems),
+              DropdownButtonFormField<YesNo>(
+                items: YesNo.values
+                    .map((value) => DropdownMenuItem<YesNo>(
+                        value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no)))
+                    .toList(),
                 onChanged: infoFormSecondCubit.updatePhysicalPressure,
-                 decoration:  InputDecoration(labelText: S.of(context).physical_pressure_hint),
+                decoration: InputDecoration(labelText: S.of(context).physical_pressure_hint),
                 validator: (value) => AppValidators.validateType<YesNo>(value, fieldName: S.of(context).physical_pressure_field),
               ),
               const Gap(TSizes.spaceBtwItems),
               DropdownButtonFormField<YesNo>(
-                items: YesNo.values.map((value) => DropdownMenuItem<YesNo>(value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no))).toList(),
+                items: YesNo.values
+                    .map((value) => DropdownMenuItem<YesNo>(
+                        value: value, child: Text(value == YesNo.yes ? S.of(context).yes : S.of(context).no)))
+                    .toList(),
                 onChanged: infoFormSecondCubit.updateExtortion,
-                 decoration:  InputDecoration(labelText: S.of(context).extortion_hint),
+                decoration: InputDecoration(labelText: S.of(context).extortion_hint),
                 validator: (value) => AppValidators.validateType<YesNo>(value, fieldName: S.of(context).extortion_field),
               ),
 

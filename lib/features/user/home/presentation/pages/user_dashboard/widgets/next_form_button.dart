@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:open_file/open_file.dart';
+import 'package:tergov/common/cubits/locale_cubit/locale_cubit.dart';
 import 'package:tergov/features/dashboard/data/models/participant_model.dart';
 import 'package:tergov/features/success/presentation/pages/success_screen.dart';
 import 'package:tergov/features/user/home/cubit/info_form_cubit.dart';
@@ -9,6 +10,8 @@ import 'package:tergov/features/user/home/cubit/info_form_second_cubit.dart';
 import 'package:tergov/generated/l10n.dart';
 import 'package:tergov/utils/constants/colors.dart';
 import 'package:tergov/utils/helpers/pdf_helper.dart';
+
+import '../../../../../../redirect/manager/user_status.dart';
 
 class NextFormButton extends StatelessWidget {
   const NextFormButton({super.key});

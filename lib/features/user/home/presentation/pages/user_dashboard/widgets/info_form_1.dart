@@ -175,7 +175,7 @@ class InfoFormFirst extends StatelessWidget {
                 decoration: InputDecoration(
                   labelText: S.of(context).interview_conducted_hint,
                 ),
-                // hint: context.watch<ParticipantStatusListCubit>().state is ParticipantStatusListError ?Text((context.watch<ParticipantStatusListCubit>().state as ParticipantStatusListError).failure.message):null,
+                hint: context.watch<ParticipantStatusListCubit>().state is ParticipantStatusListError ?Text((context.watch<ParticipantStatusListCubit>().state as ParticipantStatusListError).failure.message):null,
                 // validator: (value) => AppValidators.validateEmpty(value?.roleName, fieldName: S.of(context).participant_status_field),
                 validator: (value) =>
                     AppValidators.validateType<ParticipantRole>(value, fieldName: S.of(context).interview_conducted_field),
